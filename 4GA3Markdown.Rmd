@@ -31,5 +31,6 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 ```{r}
 ## this is where our project starts!
+library(cancensus)
 ```
 
