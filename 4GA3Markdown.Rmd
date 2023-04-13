@@ -62,7 +62,7 @@ homeless_shelters <- read.csv(file = "Project data/homeless-shelter-locations.cs
 
 ```{r}
 #extracting point data from csv files
-data.frame(do.call("rbind", strsplit(as.character(homeless_shelters$geo_point_2d), ",", fixed = TRUE)))
+homeless_shelters_coordinates <- data.frame(do.call("rbind", strsplit(as.character(homeless_shelters$geo_point_2d), ",", fixed = TRUE)))
 
 
 
