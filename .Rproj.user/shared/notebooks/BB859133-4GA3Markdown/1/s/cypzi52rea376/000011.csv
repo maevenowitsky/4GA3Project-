@@ -1,2 +1,0 @@
-"0","census_data.sf <- census_data.sf %>%"
-"0","  mutate(PropVisMin = (v.CA21.4875..Total.visible.minority.population / v.CA21.1..Population..2021)*100)"

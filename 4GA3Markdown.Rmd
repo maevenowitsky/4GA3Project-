@@ -68,34 +68,20 @@ CT_centroids <- st_coordinates(st_centroid(census_data))
 ```
 
 ```{r}
-census_data.sf <- st_as_sf(census_data)
+census_data <- census_data %>%
+  mutate(Proportion.visible.minority = (v.CA21.4875..Total.visible.minority.population / v.CA21.1..Population..2021))
 ```
 
 ```{r}
-census_data.sf <- census_data.sf %>%
-  mutate(PropVisMin = (v.CA21.4875..Total.visible.minority.population / v.CA21.1..Population..2021)*100)
-```
-
-```{r}
-minority_prop_map <- ggplot(census_data.sf) +
-geom_sf(aes(fill = cut_number(PropVisMin, 5)),
+minority_prop_map <- ggplot(census_data) +
+geom_sf(aes(fill = cut_number(Proportion.visible.minority, 5)),
 color = "black",
 size = 0.1) +
 scale_fill_brewer(palette = "YlOrRd") +
-labs(fill = "Proportion of Visible Minority Population in Vancouver CTs")
+labs(fill = "Prop Visible Minority Vancouver CTs")
 
 minority_prop_map
 ```
-```{r}
-minority_prop_map +
-  geom_point(aes(CT_centroids))
-```
-
-
-
-
-
-
 
 
 ```{r}
