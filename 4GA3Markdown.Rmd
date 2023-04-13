@@ -30,17 +30,31 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 
 ```{r}
-## this is where our project starts!
+# loading cancensus package
 library(cancensus)
 ```
 
 ```{r}
-#this is jill just testing the github thingy
+# storing the API key in system environment to be easily used in API calls
+options(cancensus.api_key = "CensusMapper_ff4c917e80df34b71900e0a048c999dd")
 ```
 
 ```{r}
-#Vancouver_DAs
+# assigning a persistent local cache
+options(cancensus.cache_path = "/Users/dainadeangelis/Desktop/4GA3Project-/Project data")
 ```
 
+```{r}
+# returning census data and geography for Vancouver as an sf-class dataframe
+census_data <- get_census(dataset='CA21', regions=list(PR="59"), vectors=c("v_CA21_1","v_CA21_906","v_CA21_4237","v_CA21_4917","v_CA21_434"), labels="detailed", geo_format="sf", level='CT')
+```
 
+```{r}
+# reading csv packages
 
+parks <- read.csv(file = "Project data/parks.csv", head = TRUE, sep = ";") 
+
+street_trees <- read.csv(file = "Project data/street-trees.csv", head = TRUE, sep = ";") 
+
+homeless_shelters <- read.csv(file = "Project data/homeless-shelter-locations.csv", head = TRUE, sep = ";") 
+```

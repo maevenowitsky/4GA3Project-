@@ -1,0 +1,18 @@
+﻿FACILITY;CATEGORY;PHONE;MEALS;PETS;CARTS;Geom;Geo Local Area;geo_point_2d
+Triage;Adults (all genders);604-254-3700;no;no;no;"{""coordinates"": [-123.08914065335308, 49.28325701333048], ""type"": ""Point""}";Strathcona;49.28325701333048, -123.08914065335308
+Union Gospel Mission;Men;604-253-3323;yes;no;no;"{""coordinates"": [-123.09098604679792, 49.281871703205425], ""type"": ""Point""}";Strathcona;49.281871703205425, -123.09098604679792
+Aboriginal Shelter;Adults (all genders);604-347-0299;yes;yes;yes;"{""coordinates"": [-123.09934686157887, 49.27157435253819], ""type"": ""Point""}";Strathcona;49.27157435253819, -123.09934686157887
+Vineyard Church;Adults (all genders);604-255-4463;yes;no;no;"{""coordinates"": [-123.07055190144827, 49.269335660054985], ""type"": ""Point""}";Grandview-Woodland;49.269335660054985, -123.07055190144827
+First United Church;Adults (all genders);604-681-8365;yes;yes;yes;"{""coordinates"": [-123.09704179173589, 49.28098552764485], ""type"": ""Point""}";Strathcona;49.28098552764485, -123.09704179173589
+Grandview Calvary Baptist Church;Adults (all genders);604-255-1411;yes;no;no;"{""coordinates"": [-123.06735635798717, 49.26974745114546], ""type"": ""Point""}";Grandview-Woodland;49.26974745114546, -123.06735635798717
+Belkin House;Adults (all genders);604-681-3405;no;no;no;"{""coordinates"": [-123.11293968534518, 49.28245838143064], ""type"": ""Point""}";Downtown;49.28245838143064, -123.11293968534518
+Anchor of Hope;Adults (all genders);604-646-6899;yes;no;no;"{""coordinates"": [-123.10109474719326, 49.282056211986955], ""type"": ""Point""}";Downtown;49.282056211986955, -123.10109474719326
+Lookout Downtown;Adults (all genders);604-681-9126;no;yes;no;"{""coordinates"": [-123.09620765787055, 49.28374408771319], ""type"": ""Point""}";Strathcona;49.28374408771319, -123.09620765787055
+First Baptist Church;Adults (all genders);604-683-8441;yes;no;no;"{""coordinates"": [-123.12645824751823, 49.281851154764425], ""type"": ""Point""}";West End;49.281851154764425, -123.12645824751823
+Crosswalk;Adults (all genders);604-669-4349;no;no;no;"{""coordinates"": [-123.10767247883172, 49.28180507947213], ""type"": ""Point""}";Downtown;49.28180507947213, -123.10767247883172
+The Beacon;Men;604-646-6846;no;no;no;"{""coordinates"": [-123.10109474719326, 49.282056211986955], ""type"": ""Point""}";Downtown;49.282056211986955, -123.10109474719326
+The Haven;Men;604-646-6800;no;no;no;"{""coordinates"": [-123.10109474719326, 49.282056211986955], ""type"": ""Point""}";Downtown;49.282056211986955, -123.10109474719326
+Catholic Charities Men's Hostel;Men;604-443-3292;no;no;no;"{""coordinates"": [-123.1147756731615, 49.27769337237721], ""type"": ""Point""}";Downtown;49.27769337237721, -123.1147756731615
+Tenth Avenue Church;Adults (all genders);604-876-2181;yes;no;no;"{""coordinates"": [-123.10586046207774, 49.262338305195684], ""type"": ""Point""}";Mount Pleasant;49.262338305195684, -123.10586046207774
+Dusk to Dawn-Directions Youth Centre;Youth (all genders);604-633-1472;yes;no;no;"{""coordinates"": [-123.12779292707766, 49.279567168411575], ""type"": ""Point""}";Downtown;49.279567168411575, -123.12779292707766
+Yukon Shelter;Adults (all genders);604-264-1680;no;yes;no;"{""coordinates"": [-123.11236726193974, 49.26689088504469], ""type"": ""Point""}";Mount Pleasant;49.26689088504469, -123.11236726193974
