@@ -1,0 +1,84 @@
+"0","# loading packages"
+"0","library(cancensus)"
+"0","library(ggplot2)"
+"0","library(tidyverse)"
+"0","library(tidycensus)"
+"0","library(tigris)"
+"0","library(kableExtra)"
+"2","
+Attaching package: ‘kableExtra’
+
+"
+"2","The following object is masked from ‘package:dplyr’:
+
+    group_rows
+
+"
+"0","library(plotly)"
+"2","Registered S3 method overwritten by 'data.table':
+  method           from
+  print.data.table     
+"
+"2","Registered S3 method overwritten by 'htmlwidgets':
+  method           from         
+  print.htmlwidget tools:rstudio
+"
+"2","
+Attaching package: ‘plotly’
+
+"
+"2","The following object is masked from ‘package:ggplot2’:
+
+    last_plot
+
+"
+"2","The following object is masked from ‘package:stats’:
+
+    filter
+
+"
+"2","The following object is masked from ‘package:graphics’:
+
+    layout
+
+"
+"0","library(sf)"
+"2","Linking to GEOS 3.10.2, GDAL 3.4.2, PROJ 8.2.1; sf_use_s2() is TRUE
+"
+"0","library(spatialreg)"
+"2","Loading required package: spData
+"
+"2","To access larger datasets in this package, install the
+spDataLarge package with: `install.packages('spDataLarge',
+repos='https://nowosad.github.io/drat/', type='source')`
+"
+"2","Loading required package: Matrix
+"
+"2","
+Attaching package: ‘Matrix’
+
+"
+"2","The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+"
+"0","library(spdep)"
+"2","
+Attaching package: ‘spdep’
+
+"
+"2","The following objects are masked from ‘package:spatialreg’:
+
+    get.ClusterOption, get.coresOption, get.mcOption,
+    get.VerboseOption, get.ZeroPolicyOption,
+    set.ClusterOption, set.coresOption, set.mcOption,
+    set.VerboseOption, set.ZeroPolicyOption
+
+"
+"0","library(spgwr)"
+"2","Loading required package: sp
+"
+"2","NOTE: This package does not constitute approval of GWR
+as a method of spatial analysis; see example(gwr)
+"

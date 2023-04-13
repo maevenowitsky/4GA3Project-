@@ -30,8 +30,18 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 
 ```{r}
-# loading cancensus package
+# loading packages
 library(cancensus)
+library(ggplot2)
+library(tidyverse)
+library(tidycensus)
+library(tigris)
+library(kableExtra)
+library(plotly)
+library(sf)
+library(spatialreg)
+library(spdep)
+library(spgwr)
 ```
 
 ```{r}
@@ -45,9 +55,48 @@ options(cancensus.cache_path = "/Users/dainadeangelis/Desktop/4GA3Project-/Proje
 ```
 
 ```{r}
-# returning census data and geography for Vancouver as an sf-class dataframe
-census_data <- get_census(dataset='CA21', regions=list(PR="59"), vectors=c("v_CA21_1","v_CA21_906","v_CA21_4237","v_CA21_4917","v_CA21_434"), labels="detailed", geo_format="sf", level='CT')
+# returning census data and geography for the Vancouver CMA as an sf-class dataframe
+census_data <- get_census(dataset='CA21', regions=list(CMA="59933"), vectors=c("v_CA21_1","v_CA21_386","v_CA21_906","v_CA21_4238","v_CA21_4239", "v_CA21_4240", "v_CA21_4875", "v_CA21_4914"), labels="detailed", geo_format="sf", level='CT')
 ```
+
+```{r}
+colnames(census_data) =  gsub(colnames(census_data),pattern="\\s|[[:punct:]]",replacement = ".")
+```
+
+```{r}
+CT_centroids <- st_coordinates(st_centroid(census_data))
+```
+
+```{r}
+census_data.sf <- st_as_sf(census_data)
+```
+
+```{r}
+census_data.sf <- census_data.sf %>%
+  mutate(PropVisMin = (v.CA21.4875..Total.visible.minority.population / v.CA21.1..Population..2021)*100)
+```
+
+```{r}
+minority_prop_map <- ggplot(census_data.sf) +
+geom_sf(aes(fill = cut_number(PropVisMin, 5)),
+color = "black",
+size = 0.1) +
+scale_fill_brewer(palette = "YlOrRd") +
+labs(fill = "Proportion of Visible Minority Population in Vancouver CTs")
+
+minority_prop_map
+```
+```{r}
+minority_prop_map +
+  geom_point(aes(CT_centroids))
+```
+
+
+
+
+
+
+
 
 ```{r}
 # reading csv packages
@@ -63,8 +112,5 @@ homeless_shelters <- read.csv(file = "Project data/homeless-shelter-locations.cs
 ```{r}
 #extracting point data from csv files
 homeless_shelters_coordinates <- data.frame(do.call("rbind", strsplit(as.character(homeless_shelters$geo_point_2d), ",", fixed = TRUE)))
-
-
-
 ```
 

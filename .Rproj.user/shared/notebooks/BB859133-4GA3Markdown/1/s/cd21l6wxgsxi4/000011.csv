@@ -1,0 +1,1 @@
+"0","CT_centroids <- st_coordinates(st_centroid(census_data))"

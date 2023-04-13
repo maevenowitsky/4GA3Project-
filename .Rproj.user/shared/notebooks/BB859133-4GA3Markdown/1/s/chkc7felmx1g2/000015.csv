@@ -1,0 +1,8 @@
+"0","minority_prop_map <- ggplot(census_data.sf) +"
+"0","geom_sf(aes(fill = cut_number(PropVisMin, 5)),"
+"0","color = ""black"","
+"0","size = 0.1) +"
+"0","scale_fill_brewer(palette = ""YlOrRd"") +"
+"0","labs(fill = ""Proportion of Visible Minority Population in Vancouver CTs"")"
+"0",""
+"0","minority_prop_map"

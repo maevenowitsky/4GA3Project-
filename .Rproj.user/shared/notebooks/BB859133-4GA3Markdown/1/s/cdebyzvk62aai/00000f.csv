@@ -1,0 +1,1 @@
+"0","colnames(census_data) =  gsub(colnames(census_data),pattern=""\\s|[[:punct:]]"",replacement = ""."")"
