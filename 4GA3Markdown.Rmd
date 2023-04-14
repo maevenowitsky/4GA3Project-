@@ -43,6 +43,7 @@ library(spatialreg)
 library(spdep)
 library(spgwr)
 library(dplyr)
+library(r5r)
 ```
 
 ```{r}
@@ -127,3 +128,17 @@ trees_coord <- trees_coord %>%
                     rename("X" = "X1",
                            "Y" = "X2")
 ```
+
+```{r}
+#allocating RAM memory to Java to use the r5r package
+options(java.parameters = "-Xmx2G")
+```
+
+
+```{r}
+#building transport netowrk for r5r
+path <- system.file("Project data/r5rpath", package = "r5r")
+list.files(path)
+r5r_core <- setup_r5(data_path = path, verbose = FALSE)
+```
+
