@@ -30,6 +30,7 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 
 ```{r}
+<<<<<<< HEAD
 # loading packages
 library(cancensus)
 library(ggplot2)
@@ -43,6 +44,10 @@ library(spatialreg)
 library(spdep)
 library(spgwr)
 library(dplyr)
+=======
+# loading cancensus package
+library(cancensus)
+>>>>>>> parent of 558488d (fetching more?)
 ```
 
 ```{r}
@@ -56,6 +61,7 @@ options(cancensus.cache_path = "/Users/dainadeangelis/Desktop/4GA3Project-/Proje
 ```
 
 ```{r}
+<<<<<<< HEAD
 # returning census data and geography for the Vancouver CMA as an sf-class dataframe
 census_data <- get_census(dataset='CA21', regions=list(CMA="59933"), vectors=c("v_CA21_1","v_CA21_386","v_CA21_906","v_CA21_4238","v_CA21_4239", "v_CA21_4240", "v_CA21_4875", "v_CA21_4914"), labels="detailed", geo_format="sf", level='CT')
 ```
@@ -86,6 +92,10 @@ scale_fill_brewer(palette = "YlOrRd") +
 labs(fill = "Prop Visible Minority Vancouver CTs")
 
 minority_prop_map
+=======
+# returning census data and geography for Vancouver as an sf-class dataframe
+census_data <- get_census(dataset='CA21', regions=list(PR="59"), vectors=c("v_CA21_1","v_CA21_906","v_CA21_4237","v_CA21_4917","v_CA21_434"), labels="detailed", geo_format="sf", level='CT')
+>>>>>>> parent of 558488d (fetching more?)
 ```
 
 ```{r}
@@ -97,6 +107,7 @@ street_trees <- read.csv(file = "Project data/street-trees.csv", head = TRUE, se
 
 homeless_shelters <- read.csv(file = "Project data/homeless-shelter-locations.csv", head = TRUE, sep = ";") 
 ```
+<<<<<<< HEAD
 
 ```{r}
 #extracting point data from homeless shelter csv file
@@ -127,3 +138,5 @@ trees_coord <- trees_coord %>%
                     rename("X" = "X1",
                            "Y" = "X2")
 ```
+=======
+>>>>>>> parent of 558488d (fetching more?)
