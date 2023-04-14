@@ -102,3 +102,4 @@ Attaching package: ‘spdep’
 "2","NOTE: This package does not constitute approval of GWR
 as a method of spatial analysis; see example(gwr)
 "
+"0","library(dplyr)"

@@ -42,6 +42,7 @@ library(sf)
 library(spatialreg)
 library(spdep)
 library(spgwr)
+library(dplyr)
 ```
 
 ```{r}
@@ -60,19 +61,23 @@ census_data <- get_census(dataset='CA21', regions=list(CMA="59933"), vectors=c("
 ```
 
 ```{r}
+# replacing spaces for variable names with periods
 colnames(census_data) =  gsub(colnames(census_data),pattern="\\s|[[:punct:]]",replacement = ".")
 ```
 
 ```{r}
+# obtaining centroids for census tracts in the Vancouver CMA
 CT_centroids <- st_coordinates(st_centroid(census_data))
 ```
 
 ```{r}
+# example
 census_data <- census_data %>%
   mutate(Proportion.visible.minority = (v.CA21.4875..Total.visible.minority.population / v.CA21.1..Population..2021))
 ```
 
 ```{r}
+# example
 minority_prop_map <- ggplot(census_data) +
 geom_sf(aes(fill = cut_number(Proportion.visible.minority, 5)),
 color = "black",
@@ -82,7 +87,6 @@ labs(fill = "Prop Visible Minority Vancouver CTs")
 
 minority_prop_map
 ```
-
 
 ```{r}
 # reading csv packages
@@ -94,9 +98,32 @@ street_trees <- read.csv(file = "Project data/street-trees.csv", head = TRUE, se
 homeless_shelters <- read.csv(file = "Project data/homeless-shelter-locations.csv", head = TRUE, sep = ";") 
 ```
 
-
 ```{r}
-#extracting point data from csv files
-homeless_shelters_coordinates <- data.frame(do.call("rbind", strsplit(as.character(homeless_shelters$geo_point_2d), ",", fixed = TRUE)))
+#extracting point data from homeless shelter csv file
+homeless_shelt_coord <- data.frame(do.call("rbind", strsplit(as.character(homeless_shelters$geo_point_2d), ",", fixed = TRUE)))
+
+# Rename multiple columns
+homeless_shelt_coord <- homeless_shelt_coord %>% 
+                    rename("X" = "X1",
+                           "Y" = "X2")
 ```
 
+```{r}
+#extracting point data from park csv file
+parks_coord <- data.frame(do.call("rbind", strsplit(as.character(parks$GoogleMapDest), ",", fixed = TRUE)))
+
+# Rename multiple columns
+parks_coord <- parks_coord %>% 
+                    rename("X" = "X1",
+                           "Y" = "X2")
+```
+
+```{r}
+#extracting point data from trees csv files
+trees_coord <- data.frame(do.call("rbind", strsplit(as.character(street_trees$geo_point_2d), ",", fixed = TRUE)))
+
+# Rename multiple columns
+trees_coord <- trees_coord %>% 
+                    rename("X" = "X1",
+                           "Y" = "X2")
+```

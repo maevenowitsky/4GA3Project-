@@ -1,2 +1,0 @@
-"0","census_data <- census_data %>%"
-"0","  mutate(Proportion.visible.minority = (v.CA21.4875..Total.visible.minority.population / v.CA21.1..Population..2021))"
