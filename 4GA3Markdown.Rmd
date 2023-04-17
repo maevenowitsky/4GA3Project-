@@ -90,7 +90,6 @@ labs(fill = "Prop Visible Minority Vancouver CTs")
 minority_prop_map
 ```
 
-
 ```{r}
 # reading csv packages
 
@@ -131,12 +130,10 @@ trees_coord <- trees_coord %>%
                            "Y" = "X2")
 ```
 
-
 ```{r}
 #allocating RAM memory to Java to use the r5r package
 options(java.parameters = "-Xmx2G")
 ```
-
 
 ```{r}
 #building transport network for r5r

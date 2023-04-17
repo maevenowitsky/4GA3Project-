@@ -1,2 +1,0 @@
-"0","# obtaining centroids for census tracts in the Vancouver CMA"
-"0","CT_centroids <- st_coordinates(st_centroid(census_data))"

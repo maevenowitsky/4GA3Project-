@@ -90,7 +90,6 @@ labs(fill = "Prop Visible Minority Vancouver CTs")
 minority_prop_map
 ```
 
-
 ```{r}
 # reading csv packages
 
@@ -136,23 +135,35 @@ trees_coord <- trees_coord %>%
 options(java.parameters = "-Xmx2G")
 ```
 
-
 ```{r}
 #building transport network for r5r
-path <- system.file("Project data/r5rpath", package = "r5r")
-list.files(path)
-r5r_core <- setup_r5(data_path = path, verbose = FALSE)
-```
+path <- file.path("Project data/r5rpath")
 
-```{r}
-#allocating RAM memory to Java to use the r5r package
-options(java.parameters = "-Xmx2G")
-```
-
-```{r}
 #building transport network for r5r
-path <-file.path("Project data/r5rpath")
 list.files(path)
 r5r_core <- setup_r5(data_path = path)
+```
+```{r}
+#load origin points 
+points <- CT_centroids
+#points of interest: parks
+poi <- parks_coord
+#departure times
+departure_datetime <- as.POSIXct("13-05-2019 14:00:00",
+                                 format = "%d-%m-%Y %H:%M:%S")
+
+```
+
+```{r}
+access <- accessibility(r5r_core = r5r_core,
+                        origins = points,
+                        destinations = points,
+                        opportunities_colnames = c("schools", "healthcare"),
+                        mode = c("WALK", "TRANSIT"),
+                        departure_datetime = departure_datetime,
+                        decay_function = "step",
+                        cutoffs = 60
+                        )
+head(access)
 ```
 
