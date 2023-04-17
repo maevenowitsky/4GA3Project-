@@ -139,13 +139,10 @@ options(java.parameters = "-Xmx2G")
 
 
 ```{r}
-<<<<<<< Updated upstream
-#building transport netowork for r5r
-path <- file.path("Project data/r5rpath")
-=======
 #building transport network for r5r
-path <- system.file("Project data/r5rpath", package = "r5r")
->>>>>>> Stashed changes
+path <- file.path("Project data/r5rpath")
+
+#building transport network for r5r
 list.files(path)
 r5r_core <- setup_r5(data_path = path)
 ```
@@ -158,5 +155,18 @@ poi <- parks_coord
 departure_datetime <- as.POSIXct("13-05-2019 14:00:00",
                                  format = "%d-%m-%Y %H:%M:%S")
 
+```
+
+```{r}
+access <- accessibility(r5r_core = r5r_core,
+                        origins = points,
+                        destinations = points,
+                        opportunities_colnames = c("schools", "healthcare"),
+                        mode = c("WALK", "TRANSIT"),
+                        departure_datetime = departure_datetime,
+                        decay_function = "step",
+                        cutoffs = 60
+                        )
+head(access)
 ```
 
