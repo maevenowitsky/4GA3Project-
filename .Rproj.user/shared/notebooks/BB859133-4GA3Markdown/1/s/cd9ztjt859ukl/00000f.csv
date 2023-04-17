@@ -1,0 +1,7 @@
+"0","#extracting point data from trees csv files"
+"0","trees_coord <- data.frame(do.call(""rbind"", strsplit(as.character(street_trees$geo_point_2d), "","", fixed = TRUE)))"
+"0",""
+"0","# Rename multiple columns"
+"0","trees_coord <- trees_coord %>% "
+"0","                    rename(""X"" = ""X1"","
+"0","                           ""Y"" = ""X2"")"

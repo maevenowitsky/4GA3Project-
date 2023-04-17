@@ -1,5 +1,1 @@
-<<<<<<< Updated upstream
-{"r5_version":"6.7", "r5_network_version":"nv2", "r5r_version":"1.0.0", "creation_date":"2023-04-14T19:59:28.139001", "pbf_file_name":"/Users/maevenowitsky/Documents/GitHub/4GA3Project-/Project data/r5rpath/Vancouver.osm.pbf", "gtfs_1":"/Users/maevenowitsky/Documents/GitHub/4GA3Project-/Project data/r5rpath/GTFS_TRANIST.zip", "use_elevation":"false", "elevation_cost_function":"NONE", "tiff_file_name":""}
-=======
-{"r5_version":"6.7", "r5_network_version":"nv2", "r5r_version":"1.0.0", "creation_date":"2023-04-17T15:53:30.809681", "pbf_file_name":"/Users/dainadeangelis/Desktop/4GA3Project-/Project data/r5rpath/Vancouver.osm.pbf", "gtfs_1":"/Users/dainadeangelis/Desktop/4GA3Project-/Project data/r5rpath/GTFS_TRANIST.zip", "use_elevation":"false", "elevation_cost_function":"NONE", "tiff_file_name":""}
->>>>>>> Stashed changes
+{"r5_version":"6.7", "r5_network_version":"nv2", "r5r_version":"1.0.0", "creation_date":"2023-04-17T16:09:28.137502", "pbf_file_name":"/Users/dainadeangelis/Desktop/4GA3Project-/Project data/r5rpath/Vancouver.osm.pbf", "gtfs_1":"/Users/dainadeangelis/Desktop/4GA3Project-/Project data/r5rpath/GTFS_TRANIST.zip", "use_elevation":"false", "elevation_cost_function":"NONE", "tiff_file_name":""}

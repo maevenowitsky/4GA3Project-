@@ -1,0 +1,8 @@
+"0","#load origin points "
+"0","points <- CT_centroids"
+"0","#points of interest: parks"
+"0","poi <- parks_coord"
+"0","#departure times"
+"0","departure_datetime <- as.POSIXct(""13-05-2019 14:00:00"","
+"0","                                 format = ""%d-%m-%Y %H:%M:%S"")"
+"0",""

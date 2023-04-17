@@ -1,0 +1,7 @@
+"0","# reading csv packages"
+"0",""
+"0","parks <- read.csv(file = ""Project data/parks.csv"", head = TRUE, sep = "";"") "
+"0",""
+"0","street_trees <- read.csv(file = ""Project data/street-trees.csv"", head = TRUE, sep = "";"") "
+"0",""
+"0","homeless_shelters <- read.csv(file = ""Project data/homeless-shelter-locations.csv"", head = TRUE, sep = "";"") "
