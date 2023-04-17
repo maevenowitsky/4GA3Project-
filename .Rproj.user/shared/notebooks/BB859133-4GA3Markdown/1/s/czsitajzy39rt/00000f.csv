@@ -1,4 +1,4 @@
-"0","#extracting point data from csv files"
+"0","#extracting point data from park csv file"
 "0","parks_coord <- data.frame(do.call(""rbind"", strsplit(as.character(parks$GoogleMapDest), "","", fixed = TRUE)))"
 "0",""
 "0","# Rename multiple columns"

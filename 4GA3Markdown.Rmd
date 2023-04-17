@@ -90,6 +90,7 @@ labs(fill = "Prop Visible Minority Vancouver CTs")
 minority_prop_map
 ```
 
+
 ```{r}
 # reading csv packages
 
@@ -138,8 +139,13 @@ options(java.parameters = "-Xmx2G")
 
 
 ```{r}
+<<<<<<< Updated upstream
 #building transport netowork for r5r
 path <- file.path("Project data/r5rpath")
+=======
+#building transport network for r5r
+path <- system.file("Project data/r5rpath", package = "r5r")
+>>>>>>> Stashed changes
 list.files(path)
 r5r_core <- setup_r5(data_path = path)
 ```
