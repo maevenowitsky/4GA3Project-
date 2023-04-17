@@ -1,0 +1,802 @@
+"0","#building transport network for r5r"
+"0","path <-file.path(""Project data/r5rpath"")"
+"0","list.files(path)"
+"1","[1]"
+"1"," ""GTFS_TRANIST.zip"" "
+"1"," ""Vancouver.osm.pbf"""
+"1","
+"
+"0","r5r_core <- setup_r5(data_path = path)"
+"2","No raster .tif files found. Using elevation = 'NONE'.
+"
+"2","Downloading R5 jar file to /Library/Frameworks/R.framework/Versions/4.2/Resources/library/r5r/jar/r5-v6.9-all.jar
+"
+"2","2023-04-17 15:52:27,794 [main] ERROR c.c.r.s.StreetLayer - Continuing to load but ignoring generalized costs due to exception: java.lang.RuntimeException: All ways are expected to have generalized cost tags. Missing: slope_1:forward
+"
+"2","Apr. 17, 2023 3:52:36 P.M. org.hsqldb.persist.Logger logInfoEvent
+INFO: dataFileCache open start
+"
+"2","2023-04-17 15:52:37,114 [main] ERROR c.c.r.s.StreetLayer - Restriction 414467 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,117 [main] ERROR c.c.r.s.StreetLayer - Restriction 414531 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,118 [main] ERROR c.c.r.s.StreetLayer - Restriction 414534 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,118 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 1073810, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,119 [main] ERROR c.c.r.s.StreetLayer - Restriction 1104926 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,119 [main] ERROR c.c.r.s.StreetLayer - Restriction 1104941 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,119 [main] ERROR c.c.r.s.StreetLayer - Restriction 1104942 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,120 [main] ERROR c.c.r.s.StreetLayer - Restriction 1104943 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,120 [main] ERROR c.c.r.s.StreetLayer - Restriction 1104945 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,121 [main] ERROR c.c.r.s.StreetLayer - Restriction 1104946 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,121 [main] ERROR c.c.r.s.StreetLayer - Restriction 1105673 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,122 [main] ERROR c.c.r.s.StreetLayer - Restriction 1110816 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,122 [main] ERROR c.c.r.s.StreetLayer - Restriction 1114341 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,123 [main] ERROR c.c.r.s.StreetLayer - Restriction 1114345 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,123 [main] ERROR c.c.r.s.StreetLayer - Restriction 1114347 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,123 [main] ERROR c.c.r.s.StreetLayer - Restriction 1114348 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,123 [main] ERROR c.c.r.s.StreetLayer - Restriction 1114350 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,124 [main] ERROR c.c.r.s.StreetLayer - Restriction 1114351 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,124 [main] ERROR c.c.r.s.StreetLayer - Restriction 1114352 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,124 [main] ERROR c.c.r.s.StreetLayer - Restriction 1116206 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,124 [main] ERROR c.c.r.s.StreetLayer - Restriction 1142578 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,125 [main] ERROR c.c.r.s.StreetLayer - Restriction 1142579 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,125 [main] ERROR c.c.r.s.StreetLayer - Restriction 1142580 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,126 [main] ERROR c.c.r.s.StreetLayer - Restriction 1229914 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,128 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 1574002, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,129 [main] ERROR c.c.r.s.StreetLayer - Restriction 1750215 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,129 [main] ERROR c.c.r.s.StreetLayer - Restriction 1750216 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,132 [main] ERROR c.c.r.s.StreetLayer - Restriction 3809433 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,133 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 4502434, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,134 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 4502435, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,134 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 4502436, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,134 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 4502437, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,134 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 4502438, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,135 [main] ERROR c.c.r.s.StreetLayer - Restriction 4547630 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,135 [main] ERROR c.c.r.s.StreetLayer - Restriction 4547631 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,136 [main] ERROR c.c.r.s.StreetLayer - Restriction 4822245 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,137 [main] ERROR c.c.r.s.StreetLayer - Restriction 4822247 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,139 [main] ERROR c.c.r.s.StreetLayer - Restriction 5499007 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,140 [main] ERROR c.c.r.s.StreetLayer - Restriction 5499044 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,142 [main] ERROR c.c.r.s.StreetLayer - Restriction 5819155 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,146 [main] ERROR c.c.r.s.StreetLayer - Restriction 5863066 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,152 [main] ERROR c.c.r.s.StreetLayer - Restriction 6436061 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,153 [main] ERROR c.c.r.s.StreetLayer - Restriction 6436198 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,154 [main] ERROR c.c.r.s.StreetLayer - Restriction 6436218 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,154 [main] ERROR c.c.r.s.StreetLayer - Restriction 6436222 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,154 [main] ERROR c.c.r.s.StreetLayer - Restriction 6436223 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,155 [main] ERROR c.c.r.s.StreetLayer - Restriction 6436234 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,155 [main] ERROR c.c.r.s.StreetLayer - Restriction 6436239 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,156 [main] ERROR c.c.r.s.StreetLayer - Restriction 6436240 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,156 [main] ERROR c.c.r.s.StreetLayer - Restriction 6436247 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,156 [main] ERROR c.c.r.s.StreetLayer - Restriction 6436248 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,157 [main] ERROR c.c.r.s.StreetLayer - Restriction 6436250 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,157 [main] ERROR c.c.r.s.StreetLayer - Restriction 6436252 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,158 [main] ERROR c.c.r.s.StreetLayer - Restriction 6436256 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,158 [main] ERROR c.c.r.s.StreetLayer - Restriction 6436275 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,159 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 6450580, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,160 [main] ERROR c.c.r.s.StreetLayer - Restriction 6451048 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,160 [main] ERROR c.c.r.s.StreetLayer - Restriction 6451094 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,161 [main] ERROR c.c.r.s.StreetLayer - Restriction 6451123 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,161 [main] ERROR c.c.r.s.StreetLayer - Restriction 6451794 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,162 [main] ERROR c.c.r.s.StreetLayer - Restriction 6453077 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,162 [main] ERROR c.c.r.s.StreetLayer - Restriction 6453097 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,163 [main] ERROR c.c.r.s.StreetLayer - Restriction 6453392 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,163 [main] ERROR c.c.r.s.StreetLayer - Restriction 6453400 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,164 [main] ERROR c.c.r.s.StreetLayer - Restriction 6453426 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,164 [main] ERROR c.c.r.s.StreetLayer - Restriction 6453536 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,164 [main] ERROR c.c.r.s.StreetLayer - Restriction 6453554 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,165 [main] ERROR c.c.r.s.StreetLayer - Restriction 6454383 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,165 [main] ERROR c.c.r.s.StreetLayer - Restriction 6454389 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,165 [main] ERROR c.c.r.s.StreetLayer - Restriction 6454394 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,166 [main] ERROR c.c.r.s.StreetLayer - Restriction 6454401 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,166 [main] ERROR c.c.r.s.StreetLayer - Restriction 6454408 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,167 [main] ERROR c.c.r.s.StreetLayer - Restriction 6476585 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,167 [main] ERROR c.c.r.s.StreetLayer - Restriction 6476647 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,168 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 6655194, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,169 [main] ERROR c.c.r.s.StreetLayer - Restriction 6693484 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,171 [main] ERROR c.c.r.s.StreetLayer - Turn restriction 6746529 has multiple 'to' members, skipping.
+"
+"2","2023-04-17 15:52:37,177 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 6777218, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,183 [main] ERROR c.c.r.s.StreetLayer - Restriction 6814459 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,185 [main] ERROR c.c.r.s.StreetLayer - Restriction 6834090 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,188 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 6847849, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,190 [main] ERROR c.c.r.s.StreetLayer - From way enters vertex 180012 twice, restriction 6849699 is therefore ambiguous, skipping
+"
+"2","2023-04-17 15:52:37,193 [main] ERROR c.c.r.s.StreetLayer - Restriction 6852841 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,197 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 6886169, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,200 [main] ERROR c.c.r.s.StreetLayer - Restriction 6893366 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,201 [main] ERROR c.c.r.s.StreetLayer - Restriction 6895085 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,201 [main] ERROR c.c.r.s.StreetLayer - Restriction 6895108 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,202 [main] ERROR c.c.r.s.StreetLayer - Restriction 6902339 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,203 [main] ERROR c.c.r.s.StreetLayer - Restriction 6903159 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,203 [main] ERROR c.c.r.s.StreetLayer - Restriction 6903240 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,207 [main] ERROR c.c.r.s.StreetLayer - Restriction 6912310 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,208 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 6913022, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,211 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 6927817, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,212 [main] ERROR c.c.r.s.StreetLayer - Restriction 6928491 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,215 [main] ERROR c.c.r.s.StreetLayer - Restriction 6931953 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,215 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 6935046, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,217 [main] ERROR c.c.r.s.StreetLayer - Restriction 6939294 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,218 [main] ERROR c.c.r.s.StreetLayer - Restriction 6939295 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,219 [main] ERROR c.c.r.s.StreetLayer - Restriction 6940848 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,220 [main] ERROR c.c.r.s.StreetLayer - Restriction 6940935 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,221 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 6943192, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,221 [main] ERROR c.c.r.s.StreetLayer - Restriction 6943215 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,221 [main] ERROR c.c.r.s.StreetLayer - Restriction 6943216 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,222 [main] ERROR c.c.r.s.StreetLayer - Restriction 6944083 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,223 [main] ERROR c.c.r.s.StreetLayer - Restriction 6944320 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,223 [main] ERROR c.c.r.s.StreetLayer - Restriction 6944321 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,224 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 6944420, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,225 [main] ERROR c.c.r.s.StreetLayer - Restriction 6951558 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,226 [main] ERROR c.c.r.s.StreetLayer - Restriction 6951615 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,226 [main] ERROR c.c.r.s.StreetLayer - Restriction 6952708 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,227 [main] ERROR c.c.r.s.StreetLayer - Restriction 6953388 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,229 [main] ERROR c.c.r.s.StreetLayer - Restriction 6955704 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,230 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 6956115, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,231 [main] ERROR c.c.r.s.StreetLayer - Restriction 6956475 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,232 [main] ERROR c.c.r.s.StreetLayer - Restriction 6956476 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,232 [main] ERROR c.c.r.s.StreetLayer - Restriction 6956554 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,233 [main] ERROR c.c.r.s.StreetLayer - Restriction 6958740 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,233 [main] ERROR c.c.r.s.StreetLayer - Restriction 6958763 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,233 [main] ERROR c.c.r.s.StreetLayer - Restriction 6958764 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,234 [main] ERROR c.c.r.s.StreetLayer - Restriction 6958765 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,234 [main] ERROR c.c.r.s.StreetLayer - Restriction 6958767 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,234 [main] ERROR c.c.r.s.StreetLayer - Restriction 6958781 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,235 [main] ERROR c.c.r.s.StreetLayer - Restriction 6958794 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,235 [main] ERROR c.c.r.s.StreetLayer - Restriction 6958795 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,236 [main] ERROR c.c.r.s.StreetLayer - Restriction 6958858 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,236 [main] ERROR c.c.r.s.StreetLayer - Restriction 6958956 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,236 [main] ERROR c.c.r.s.StreetLayer - Restriction 6958958 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,237 [main] ERROR c.c.r.s.StreetLayer - Restriction 6959125 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,238 [main] ERROR c.c.r.s.StreetLayer - Restriction 6959973 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,239 [main] ERROR c.c.r.s.StreetLayer - Restriction 6959987 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,239 [main] ERROR c.c.r.s.StreetLayer - Restriction 6959988 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,240 [main] ERROR c.c.r.s.StreetLayer - Restriction 6962029 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,241 [main] ERROR c.c.r.s.StreetLayer - Restriction 6963027 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,242 [main] ERROR c.c.r.s.StreetLayer - Restriction 6963435 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,242 [main] ERROR c.c.r.s.StreetLayer - Restriction 6963486 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,243 [main] ERROR c.c.r.s.StreetLayer - Restriction 6963516 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,243 [main] ERROR c.c.r.s.StreetLayer - Restriction 6963517 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,244 [main] ERROR c.c.r.s.StreetLayer - Restriction 6965007 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,245 [main] ERROR c.c.r.s.StreetLayer - Restriction 6965008 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,245 [main] ERROR c.c.r.s.StreetLayer - Restriction 6965013 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,246 [main] ERROR c.c.r.s.StreetLayer - Restriction 6965562 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,247 [main] ERROR c.c.r.s.StreetLayer - Restriction 6965563 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,247 [main] ERROR c.c.r.s.StreetLayer - Restriction 6965564 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,248 [main] ERROR c.c.r.s.StreetLayer - Restriction 6965826 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,248 [main] ERROR c.c.r.s.StreetLayer - Restriction 6965850 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,249 [main] ERROR c.c.r.s.StreetLayer - Restriction 6965925 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,249 [main] ERROR c.c.r.s.StreetLayer - Restriction 6966051 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,249 [main] ERROR c.c.r.s.StreetLayer - Restriction 6966118 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,250 [main] ERROR c.c.r.s.StreetLayer - Restriction 6966136 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,250 [main] ERROR c.c.r.s.StreetLayer - Restriction 6973731 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,251 [main] ERROR c.c.r.s.StreetLayer - Restriction 6973857 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,251 [main] ERROR c.c.r.s.StreetLayer - Restriction 6973947 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,251 [main] ERROR c.c.r.s.StreetLayer - Restriction 6974057 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,254 [main] ERROR c.c.r.s.StreetLayer - Restriction 6982821 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,254 [main] ERROR c.c.r.s.StreetLayer - Restriction 6982822 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,255 [main] ERROR c.c.r.s.StreetLayer - Restriction 6985082 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,256 [main] ERROR c.c.r.s.StreetLayer - Restriction 6985482 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,256 [main] ERROR c.c.r.s.StreetLayer - Restriction 6985483 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,257 [main] ERROR c.c.r.s.StreetLayer - Restriction 6987674 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,258 [main] ERROR c.c.r.s.StreetLayer - Restriction 6987784 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,258 [main] ERROR c.c.r.s.StreetLayer - Restriction 6987859 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,259 [main] ERROR c.c.r.s.StreetLayer - Restriction 6987860 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,259 [main] ERROR c.c.r.s.StreetLayer - Restriction 6987871 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,260 [main] ERROR c.c.r.s.StreetLayer - Restriction 6987872 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,260 [main] ERROR c.c.r.s.StreetLayer - Restriction 6987994 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,261 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 6988048, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,261 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 6988051, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,262 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 6988052, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,262 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 6988053, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,263 [main] ERROR c.c.r.s.StreetLayer - Restriction 6988113 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,263 [main] ERROR c.c.r.s.StreetLayer - Restriction 6988114 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,264 [main] ERROR c.c.r.s.StreetLayer - Restriction 6988571 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,265 [main] ERROR c.c.r.s.StreetLayer - Restriction 6994996 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,266 [main] ERROR c.c.r.s.StreetLayer - Restriction 6995000 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,266 [main] ERROR c.c.r.s.StreetLayer - Restriction 6995004 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,266 [main] ERROR c.c.r.s.StreetLayer - Restriction 6995005 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,267 [main] ERROR c.c.r.s.StreetLayer - Restriction 6995377 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,267 [main] ERROR c.c.r.s.StreetLayer - Restriction 6995428 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,267 [main] ERROR c.c.r.s.StreetLayer - Restriction 6995435 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,268 [main] ERROR c.c.r.s.StreetLayer - Restriction 6995436 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,268 [main] ERROR c.c.r.s.StreetLayer - Restriction 6995670 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,268 [main] ERROR c.c.r.s.StreetLayer - Restriction 6995671 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,269 [main] ERROR c.c.r.s.StreetLayer - Restriction 6996004 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,269 [main] ERROR c.c.r.s.StreetLayer - Restriction 6997913 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,270 [main] ERROR c.c.r.s.StreetLayer - Restriction 6997917 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,270 [main] ERROR c.c.r.s.StreetLayer - Restriction 6997918 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,271 [main] ERROR c.c.r.s.StreetLayer - Restriction 6997940 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,271 [main] ERROR c.c.r.s.StreetLayer - Restriction 6997954 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,271 [main] ERROR c.c.r.s.StreetLayer - Restriction 6997961 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,272 [main] ERROR c.c.r.s.StreetLayer - Restriction 6998126 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,272 [main] ERROR c.c.r.s.StreetLayer - Restriction 6998141 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,273 [main] ERROR c.c.r.s.StreetLayer - Restriction 6998293 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,273 [main] ERROR c.c.r.s.StreetLayer - Restriction 6998364 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,274 [main] ERROR c.c.r.s.StreetLayer - Restriction 6998410 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,274 [main] ERROR c.c.r.s.StreetLayer - From way enters vertex 25627 twice, restriction 6998529 is therefore ambiguous, skipping
+"
+"2","2023-04-17 15:52:37,275 [main] ERROR c.c.r.s.StreetLayer - Restriction 6998784 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,275 [main] ERROR c.c.r.s.StreetLayer - Restriction 6998820 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,276 [main] ERROR c.c.r.s.StreetLayer - Restriction 6999235 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,276 [main] ERROR c.c.r.s.StreetLayer - Restriction 6999242 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,277 [main] ERROR c.c.r.s.StreetLayer - Restriction 7001604 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,278 [main] ERROR c.c.r.s.StreetLayer - Restriction 7001605 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,278 [main] ERROR c.c.r.s.StreetLayer - Restriction 7001606 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,280 [main] ERROR c.c.r.s.StreetLayer - Restriction 7002296 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,280 [main] ERROR c.c.r.s.StreetLayer - Restriction 7002316 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,281 [main] ERROR c.c.r.s.StreetLayer - Restriction 7002409 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,281 [main] ERROR c.c.r.s.StreetLayer - Restriction 7003943 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,282 [main] ERROR c.c.r.s.StreetLayer - Restriction 7003968 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,282 [main] ERROR c.c.r.s.StreetLayer - Restriction 7003998 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,283 [main] ERROR c.c.r.s.StreetLayer - Restriction 7004000 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,283 [main] ERROR c.c.r.s.StreetLayer - Restriction 7004026 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,284 [main] ERROR c.c.r.s.StreetLayer - Restriction 7004156 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,284 [main] ERROR c.c.r.s.StreetLayer - Restriction 7004157 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,285 [main] ERROR c.c.r.s.StreetLayer - Restriction 7004189 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,285 [main] ERROR c.c.r.s.StreetLayer - Restriction 7004432 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,286 [main] ERROR c.c.r.s.StreetLayer - Restriction 7004500 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,287 [main] ERROR c.c.r.s.StreetLayer - Restriction 7008275 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,288 [main] ERROR c.c.r.s.StreetLayer - Restriction 7008276 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,288 [main] ERROR c.c.r.s.StreetLayer - Restriction 7008277 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,288 [main] ERROR c.c.r.s.StreetLayer - Restriction 7008319 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,289 [main] ERROR c.c.r.s.StreetLayer - Restriction 7019209 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,290 [main] ERROR c.c.r.s.StreetLayer - Restriction 7031165 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,291 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 7048461, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,292 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 7055722, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,293 [main] ERROR c.c.r.s.StreetLayer - Restriction 7058816 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,294 [main] ERROR c.c.r.s.StreetLayer - Restriction 7058847 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,294 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 7058909, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,295 [main] ERROR c.c.r.s.StreetLayer - Restriction 7068061 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,297 [main] ERROR c.c.r.s.StreetLayer - To way exits vertex 184839 twice, restriction 7072711 is therefore ambiguous, skipping
+"
+"2","2023-04-17 15:52:37,298 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 7074717, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,299 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 7074747, no way from from to to via via, skipping
+"
+"2","2023-04-17 15:52:37,300 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 7100543, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,302 [main] ERROR c.c.r.s.StreetLayer - Restriction 7155976 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,302 [main] ERROR c.c.r.s.StreetLayer - Restriction 7157135 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,302 [main] ERROR c.c.r.s.StreetLayer - Restriction 7157239 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,303 [main] ERROR c.c.r.s.StreetLayer - Restriction 7157616 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,304 [main] ERROR c.c.r.s.StreetLayer - Restriction 7157683 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,304 [main] ERROR c.c.r.s.StreetLayer - Restriction 7157685 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,305 [main] ERROR c.c.r.s.StreetLayer - Restriction 7157689 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,306 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 7157958, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,308 [main] ERROR c.c.r.s.StreetLayer - Restriction 7256295 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,309 [main] ERROR c.c.r.s.StreetLayer - Restriction 7256296 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,310 [main] ERROR c.c.r.s.StreetLayer - Restriction 7283636 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,310 [main] ERROR c.c.r.s.StreetLayer - Restriction 7283637 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,311 [main] ERROR c.c.r.s.StreetLayer - Restriction 7283638 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,311 [main] ERROR c.c.r.s.StreetLayer - Restriction 7283639 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,312 [main] ERROR c.c.r.s.StreetLayer - Restriction 7283828 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,312 [main] ERROR c.c.r.s.StreetLayer - Restriction 7283840 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,313 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 7284159, no way from from to to via via, skipping
+"
+"2","2023-04-17 15:52:37,313 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 7304453, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,314 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 7304456, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,314 [main] ERROR c.c.r.s.StreetLayer - Restriction 7319582 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,316 [main] ERROR c.c.r.s.StreetLayer - Restriction 7331848 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,317 [main] ERROR c.c.r.s.StreetLayer - Restriction 7333910 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,319 [main] ERROR c.c.r.s.StreetLayer - Restriction 7431932 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,319 [main] ERROR c.c.r.s.StreetLayer - Restriction 7432068 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,320 [main] ERROR c.c.r.s.StreetLayer - Restriction 7432113 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,321 [main] ERROR c.c.r.s.StreetLayer - Restriction 7434043 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,322 [main] ERROR c.c.r.s.StreetLayer - Restriction 7451496 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,323 [main] ERROR c.c.r.s.StreetLayer - Restriction 7451497 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,323 [main] ERROR c.c.r.s.StreetLayer - Restriction 7451995 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,324 [main] ERROR c.c.r.s.StreetLayer - Restriction 7452089 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,324 [main] ERROR c.c.r.s.StreetLayer - Restriction 7452095 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,325 [main] ERROR c.c.r.s.StreetLayer - Restriction 7452289 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,326 [main] ERROR c.c.r.s.StreetLayer - Restriction 7454213 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,326 [main] ERROR c.c.r.s.StreetLayer - Restriction 7454613 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,327 [main] ERROR c.c.r.s.StreetLayer - Restriction 7454614 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,327 [main] ERROR c.c.r.s.StreetLayer - Restriction 7454653 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,328 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 7600489, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,329 [main] ERROR c.c.r.s.StreetLayer - Restriction 7764114 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,330 [main] ERROR c.c.r.s.StreetLayer - Restriction 7764115 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,331 [main] ERROR c.c.r.s.StreetLayer - Restriction 7767950 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,331 [main] ERROR c.c.r.s.StreetLayer - Restriction 7768118 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,332 [main] ERROR c.c.r.s.StreetLayer - Restriction 7768214 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,332 [main] ERROR c.c.r.s.StreetLayer - Restriction 7780618 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,333 [main] ERROR c.c.r.s.StreetLayer - To way exits vertex 21358 twice, restriction 7781175 is therefore ambiguous, skipping
+"
+"2","2023-04-17 15:52:37,334 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 7920096, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,335 [main] ERROR c.c.r.s.StreetLayer - From way enters vertex 190839 twice, restriction 8111071 is therefore ambiguous, skipping
+"
+"2","2023-04-17 15:52:37,336 [main] ERROR c.c.r.s.StreetLayer - To way exits vertex 190839 twice, restriction 8111074 is therefore ambiguous, skipping
+"
+"2","2023-04-17 15:52:37,337 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 8111147, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,337 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 8111148, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,337 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 8111149, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,338 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 8111159, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,338 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 8111161, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,342 [main] ERROR c.c.r.s.StreetLayer - Restriction 8152106 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,342 [main] ERROR c.c.r.s.StreetLayer - To way exits vertex 164490 twice, restriction 8155628 is therefore ambiguous, skipping
+"
+"2","2023-04-17 15:52:37,342 [main] ERROR c.c.r.s.StreetLayer - From way enters vertex 164490 twice, restriction 8155629 is therefore ambiguous, skipping
+"
+"2","2023-04-17 15:52:37,343 [main] ERROR c.c.r.s.StreetLayer - Restriction 8159386 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,343 [main] ERROR c.c.r.s.StreetLayer - Restriction 8159903 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,344 [main] ERROR c.c.r.s.StreetLayer - Restriction 8162412 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,344 [main] ERROR c.c.r.s.StreetLayer - Restriction 8162436 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,347 [main] ERROR c.c.r.s.StreetLayer - Restriction 8409992 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,348 [main] ERROR c.c.r.s.StreetLayer - Restriction 8438919 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,348 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 8463442, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,349 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 8463443, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,350 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 8777268, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,351 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 8804429, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,351 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 8804430, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,353 [main] ERROR c.c.r.s.StreetLayer - Restriction 8847581 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,354 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 8848017, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,354 [main] ERROR c.c.r.s.StreetLayer - Restriction 8850307 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,355 [main] ERROR c.c.r.s.StreetLayer - Restriction 8850366 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,355 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 8850428, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,358 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 9129947, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,360 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 9232995, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,360 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 9232997, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,362 [main] ERROR c.c.r.s.StreetLayer - Restriction 9521799 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,362 [main] ERROR c.c.r.s.StreetLayer - Restriction 9523488 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,364 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 9737003, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,372 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 10951152, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,374 [main] ERROR c.c.r.s.StreetLayer - Restriction 11012559 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,376 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11125348, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,377 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11169003, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,380 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11334491, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,380 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11334492, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,381 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11334493, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,381 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11334494, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,381 [main] ERROR c.c.r.s.StreetLayer - Restriction 11335773 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,387 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11825340, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,387 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11825341, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,388 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11847658, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,389 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11847659, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,389 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11847660, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,389 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11847661, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,390 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11847662, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,390 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11847663, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,391 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11847666, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,391 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11847670, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,391 [main] ERROR c.c.r.s.StreetLayer - Turn restriction 11847674 has multiple 'to' members, skipping.
+"
+"2","2023-04-17 15:52:37,392 [main] ERROR c.c.r.s.StreetLayer - Turn restriction 11847676 has multiple 'from' members, skipping.
+"
+"2","2023-04-17 15:52:37,392 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11847677, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,393 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11847678, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,394 [main] ERROR c.c.r.s.StreetLayer - Turn restriction 11847680 has multiple 'to' members, skipping.
+"
+"2","2023-04-17 15:52:37,394 [main] ERROR c.c.r.s.StreetLayer - Turn restriction 11847683 has multiple 'from' members, skipping.
+"
+"2","2023-04-17 15:52:37,394 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11847687, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,395 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11850740, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,395 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11850741, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,396 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11855309, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,396 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11855310, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,396 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11855311, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,397 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11905381, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,398 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11922417, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,398 [main] ERROR c.c.r.s.StreetLayer - Did not find from/to edges for restriction 11935375, skipping
+"
+"2","2023-04-17 15:52:37,398 [main] ERROR c.c.r.s.StreetLayer - Did not find from/to edges for restriction 11935376, skipping
+"
+"2","2023-04-17 15:52:37,399 [main] ERROR c.c.r.s.StreetLayer - Turn restriction 11961920 has ambiguous via ways (multiple paths through via ways between from and to), skipping
+"
+"2","2023-04-17 15:52:37,401 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11970866, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,401 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11970867, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,401 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11970868, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,402 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 11970870, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,403 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 12106311, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,404 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 12106312, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,404 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 12106317, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,404 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 12106318, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,408 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 12130823, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,409 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 12130825, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,409 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 12130826, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,411 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 12139922, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,413 [main] ERROR c.c.r.s.StreetLayer - Did not find from/to edges for restriction 12144512, skipping
+"
+"2","2023-04-17 15:52:37,414 [main] ERROR c.c.r.s.StreetLayer - Did not find from/to edges for restriction 12144573, skipping
+"
+"2","2023-04-17 15:52:37,415 [main] ERROR c.c.r.s.StreetLayer - Did not find from/to edges for restriction 12144826, skipping
+"
+"2","2023-04-17 15:52:37,419 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 12166050, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,421 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 12166067, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,422 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 12209456, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,426 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 12495794, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,427 [main] ERROR c.c.r.s.StreetLayer - Restriction 12564210 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,429 [main] ERROR c.c.r.s.StreetLayer - Did not find from/to edges for restriction 12760513, skipping
+"
+"2","2023-04-17 15:52:37,430 [main] ERROR c.c.r.s.StreetLayer - Did not find from/to edges for restriction 12760516, skipping
+"
+"2","2023-04-17 15:52:37,430 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 12796945, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,433 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 13007451, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,435 [main] ERROR c.c.r.s.StreetLayer - Restriction 13249605 has no restriction tag, skipping
+"
+"2","2023-04-17 15:52:37,438 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 13447917, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,443 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 14188225, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,445 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 14327247, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,445 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 14327248, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,446 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 14504649, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,446 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 14504650, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,447 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 14504660, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,448 [main] ERROR c.c.r.s.StreetLayer - From way enters vertex 127269 twice, restriction 14504677 is therefore ambiguous, skipping
+"
+"2","2023-04-17 15:52:37,448 [main] ERROR c.c.r.s.StreetLayer - To way exits vertex 155935 twice, restriction 14504677 is therefore ambiguous, skipping
+"
+"2","2023-04-17 15:52:37,448 [main] ERROR c.c.r.s.StreetLayer - From way enters vertex 155935 twice, restriction 14504678 is therefore ambiguous, skipping
+"
+"2","2023-04-17 15:52:37,449 [main] ERROR c.c.r.s.StreetLayer - To way exits vertex 127269 twice, restriction 14504678 is therefore ambiguous, skipping
+"
+"2","2023-04-17 15:52:37,449 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 14504728, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,449 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 14504729, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,450 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 14504747, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,450 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 14504748, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,451 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 14534419, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,452 [main] ERROR c.c.r.s.StreetLayer - Invalid turn restriction 14548989, does not have from, to and via, skipping
+"
+"2","2023-04-17 15:52:37,454 [main] ERROR c.c.r.s.StreetLayer - Turn restriction 14652249 has ambiguous via ways (multiple paths through via ways between from and to), skipping
+"
+"2","WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.mapdb.Volume$ByteBufferVol (file:/Library/Frameworks/R.framework/Versions/4.2/Resources/library/r5r/jar/r5-v6.9-all.jar) to method java.nio.DirectByteBuffer.cleaner()
+WARNING: Please consider reporting this to the maintainers of org.mapdb.Volume$ByteBufferVol
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release"
+"2","
+"
+"2","
+Finished building network.dat at Project data/r5rpath/network.dat
+"

@@ -1,7 +1,0 @@
-"0","#extracting point data from csv files"
-"0","homeless_shelters_coordinates <- data.frame(do.call(""rbind"", strsplit(as.character(homeless_shelters$geo_point_2d), "","", fixed = TRUE)))"
-"0",""
-"0","# Rename multiple columns"
-"0","homeless_shelters_coordinates <- homeless_shelters_coordinates %>% "
-"0","                    rename(""X"" = ""X1"","
-"0","                           ""Y"" = ""X2"")"
