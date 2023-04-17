@@ -5,5 +5,5 @@
 "0","                        mode = c(""WALK"", ""TRANSIT""),"
 "0","                        departure_datetime = departure_datetime,"
 "0","                        decay_function = ""step"","
-"0","                        cutoffs = 10)"
+"0","                        cutoffs = 30)"
 "2","Warning: 'destinations$id' forcefully cast to character."

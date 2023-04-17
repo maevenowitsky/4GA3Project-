@@ -15,4 +15,3 @@
 "0","# changing columns to numeric"
 "0","parks_coord$lon <- as.numeric(parks_coord$lon)"
 "0","parks_coord$lat <- as.numeric(parks_coord$lat)"
-"0",""

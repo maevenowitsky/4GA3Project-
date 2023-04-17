@@ -23,12 +23,6 @@
 "
 "2","Using cached R5 version from /Library/Frameworks/R.framework/Versions/4.2/Resources/library/r5r/jar/r5-v6.9-all.jar
 "
-"2","WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by com.esotericsoftware.kryo.util.UnsafeUtil (file:/Library/Frameworks/R.framework/Versions/4.2/Resources/library/r5r/jar/r5-v6.9-all.jar) to constructor java.nio.DirectByteBuffer(long,int,java.lang.Object)
-WARNING: Please consider reporting this to the maintainers of com.esotericsoftware.kryo.util.UnsafeUtil
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
-"
 "2","
 Using cached network.dat from Project data/r5rpath/network.dat
 "

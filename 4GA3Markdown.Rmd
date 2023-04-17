@@ -17,6 +17,10 @@ When you click the **Knit** button a document will be generated that includes bo
 ```{r cars}
 summary(cars)
 ```
+```{r}
+# Cleaning data
+rm(list = ls())
+```
 
 ## Including Plots
 
@@ -59,7 +63,7 @@ options(cancensus.cache_path = "/Users/dainadeangelis/Desktop/4GA3Project-/Proje
 
 ```{r}
 # returning census data and geography for the Vancouver CMA as an sf-class dataframe
-census_data <- get_census(dataset='CA21', regions=list(CMA="59933"), vectors=c("v_CA21_1","v_CA21_386","v_CA21_906","v_CA21_4238","v_CA21_4239", "v_CA21_4240", "v_CA21_4875", "v_CA21_4914"), labels="detailed", geo_format="sf", level='CT')
+census_data <- get_census(dataset='CA21', regions=list(CSD="5915022"), vectors=c("v_CA21_1","v_CA21_386","v_CA21_906","v_CA21_4238","v_CA21_4239", "v_CA21_4240", "v_CA21_4875", "v_CA21_4914"), labels="detailed", geo_format="sf", level='CT')
 ```
 
 ```{r}
@@ -77,8 +81,8 @@ class(centroids_df)
 centroids_df<- cbind(centroids_df, census_data$GeoUID)
 
 centroids_df <- centroids_df %>% 
-                    rename("lat" = "X",
-                           "lon" = "Y",
+                    rename("lon" = "X",
+                           "lat" = "Y",
                            "id" = "census_data$GeoUID")
 
 ```
@@ -191,10 +195,10 @@ departure_datetime <- as.POSIXct("16-02-2023 14:00:00",
 access <- accessibility(r5r_core = r5r_core,
                         origins = points,
                         destinations = poi,
-                        opportunities_colnames = c("Parks_count",),
+                        opportunities_colnames = c("Parks_count"),
                         mode = c("WALK", "TRANSIT"),
                         departure_datetime = departure_datetime,
                         decay_function = "step",
-                        cutoffs = 10)
+                        cutoffs = 30)
 ```
 
