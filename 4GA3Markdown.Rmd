@@ -143,4 +143,14 @@ path <- file.path("Project data/r5rpath")
 list.files(path)
 r5r_core <- setup_r5(data_path = path)
 ```
+```{r}
+#load origin points 
+points <- CT_centroids
+#points of interest: parks
+poi <- parks_coord
+#departure times
+departure_datetime <- as.POSIXct("13-05-2019 14:00:00",
+                                 format = "%d-%m-%Y %H:%M:%S")
+
+```
 
