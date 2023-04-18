@@ -4,7 +4,7 @@ author:
   - name: Daina De Angelis 
     student_number: 400240413
   - name: Jill Mezenberg 
-    student_number: 4002
+    student_number: 400243427
   - name: Maeve Nowitsky
     student_number: 400264259
   - name: Tim Truong
@@ -128,17 +128,30 @@ centroids_df <- centroids_df %>%
 ```
 
 ```{r}
-# example
+# calculating population density for the census tracts in Vancouver
 census_data <- census_data %>%
-  mutate(Proportion.visible.minority = (v.CA21.4875..Total.visible.minority.population / v.CA21.1..Population..2021))
+  mutate(Population_density =
+           (Population_2021 / Shape_area_km2))
 ```
 
+```{r}
+# calculating the proportion of the minority population and adding to census_data
+census_data <- census_data %>%
+  mutate(Proportion_visible_minority= (Total_visible_minority_population / Population_2021))
+```
+
+```{r}
+# calculating the proportion of the non visible minority population and adding to census_data
+census_data <- census_data %>%
+  mutate(Proportion_nonvisible_minority= (Not_a_visible_minority / Population_2021))
+```
 
 ```{r}
 # calculating the proportion of low income status in Vancouver census tracts
 census_data <- census_data %>%
-  mutate(Proportion.low.income = (v.CA21.1010..LIM.low.income.status.in.2020.for.the.population.in.private.households / v.CA21.1..Population..2021))
+  mutate(Proportion_low_income = (Low_income_status_for_the_population_in_private_households_2020 / Population_2021))
 ```
+
 
 The point data for park in the Vancouver CSD was obtained from a csv file from Vancouver's open data portal and transformed into a data frame with columns describing the X and Y coordinates of each park.
 ```{r}
@@ -155,7 +168,6 @@ parks_coord <- parks_coord %>%
                     rename("X" = "X1",
                            "Y" = "X2")
 ```
-
 
 The point data for parks was prepared for use of the r5r package by renaming coulumns for latitude, longitude, and park ID data and to the names required by r5r. Data for latitude and longitude was converted into a numeric format. Lastly, a column to indicate that each park point was one singular park was added to meet the requirement of the opportunites parameter in r5r.  
 ```{r}
@@ -219,32 +231,53 @@ access <- accessibility(r5r_core = r5r_core,
 ```
 
 ```{r}
+# creating a choropleth map for the 2021 population
 ggplot(census_data) +
-  geom_sf(aes(fill = cut_number(Population, 5)), colour = "White", size = 0.1) +
+  geom_sf(aes(fill = cut_number(Population_2021, 5)),
+          colour = "black",
+          size = 0.1) +
   scale_fill_brewer(palette = "YlOrRd") +
   coord_sf() +
   labs(fill = "Population")
 ```
 
 ```{r}
-# example
-minority_prop_map <- ggplot(census_data) +
-geom_sf(aes(fill = cut_number(Proportion.visible.minority, 5)),
-color = "black",
-size = 0.1) +
-scale_fill_brewer(palette = "YlOrRd") +
-labs(fill = "Prop Visible Minority Vancouver CTs")
-
-minority_prop_map
+# creating a choropleth map for the population density
+ggplot(census_data) +
+  geom_sf(aes(fill = cut_number(Population_density, 5)),
+          colour = "black",
+          size = 0.1) +
+  scale_fill_brewer(palette = "YlOrRd") +
+  coord_sf() +
+  labs(fill = "Population Density")
 ```
 
 ```{r}
-# constructing a continuous area cartogram for census tracts of the Vancouver CSD, being weighted by population
-CT_pop_cartogram <- cartogram_cont(census_data, weight = "Population")
-
-# using ggplot to create a cartogram for low income status households in census tracts for the Vancouver CSD
-ggplot(CT_pop_cartogram) +
-  geom_sf(aes(fill = cut_number(census_data$Proportion.low.income, 5)), colour = "white", size = 0.1) +
-  scale_fill_brewer(palete = "YlOrRd") +
-  labs(fill = "Proportion of Low Income Status")
+# creating a choropleth map for the proportion of the visisble minority population
+ggplot(census_data) +
+geom_sf(aes(fill = cut_number(Proportion_visible_minority, 5)),
+        color = "black",
+        size = 0.1) +
+scale_fill_brewer(palette = "YlOrRd") +
+labs(fill = "Prop Visible Minority")
 ```
+```{r}
+# creating a choropleth map for the proportion of the non-visisble minority population
+ggplot(census_data) +
+geom_sf(aes(fill = cut_number(Proportion_nonvisible_minority, 5)),
+        color = "black",
+        size = 0.1) +
+scale_fill_brewer(palette = "YlOrRd") +
+labs(fill = "Prop Non-Visible Minority")
+```
+
+```{r}
+# displaying the proportion of low-income groups on a choropleth map
+ggplot(census_data) +
+geom_sf(aes(fill = cut_number(Proportion_low_income, 5)),
+        color = "black",
+        size = 0.1) +
+scale_fill_brewer(palette = "YlOrRd") +
+labs(fill = "Prop Low Income")
+```
+

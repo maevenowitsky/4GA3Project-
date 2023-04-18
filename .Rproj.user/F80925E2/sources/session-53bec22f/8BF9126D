@@ -3,7 +3,7 @@
     "path": "~/Desktop/4GA3Project-/4GA3Markdown.Rmd",
     "project_path": "4GA3Markdown.Rmd",
     "type": "r_markdown",
-    "hash": "603034322",
+    "hash": "1239467207",
     "contents": "",
     "dirty": false,
     "created": 1681442502413.0,
@@ -12,16 +12,16 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "82,3",
-        "scrollLine": "82",
-        "last_setup_crc32": "1e5f781bbb338d19"
+        "cursorPosition": "274,68",
+        "scrollLine": "272",
+        "last_setup_crc32": "53bec22fbb338d19"
     },
     "folds": "",
-    "lastKnownWriteTime": 1681855710,
+    "lastKnownWriteTime": 1681857700,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1681855710305,
+    "last_content_update": 1681857700960,
     "read_only": false,
     "read_only_alternatives": []
 }
