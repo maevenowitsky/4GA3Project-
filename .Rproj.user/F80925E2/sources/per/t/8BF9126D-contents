@@ -17,6 +17,7 @@ When you click the **Knit** button a document will be generated that includes bo
 ```{r cars}
 summary(cars)
 ```
+
 ```{r}
 # Cleaning data
 rm(list = ls())
@@ -49,6 +50,7 @@ library(spgwr)
 library(dplyr)
 library(r5r)
 library(rJava)
+library(cartogram)
 ```
 
 ```{r}
@@ -63,14 +65,13 @@ options(cancensus.cache_path = "/Users/dainadeangelis/Desktop/4GA3Project-/Proje
 
 ```{r}
 # returning census data and geography for the Vancouver CMA as an sf-class dataframe
-census_data <- get_census(dataset='CA21', regions=list(CSD="5915022"), vectors=c("v_CA21_1","v_CA21_386","v_CA21_906","v_CA21_4238","v_CA21_4239", "v_CA21_4240", "v_CA21_4875", "v_CA21_4914"), labels="detailed", geo_format="sf", level='CT')
+census_data <- get_census(dataset='CA21', regions=list(CSD="5915022"), vectors=c("v_CA21_1","v_CA21_386","v_CA21_906","v_CA21_4238","v_CA21_4239", "v_CA21_4240", "v_CA21_4875", "v_CA21_4914", "v_CA21_1010"), labels="detailed", geo_format="sf", level='CT')
 ```
 
 ```{r}
 # replacing spaces for variable names with periods
 colnames(census_data) =  gsub(colnames(census_data),pattern="\\s|[[:punct:]]",replacement = ".")
 ```
-
 
 ```{r}
 # obtaining centroids for census tracts in the Vancouver CMA
@@ -104,6 +105,35 @@ labs(fill = "Prop Visible Minority Vancouver CTs")
 
 minority_prop_map
 ```
+
+```{r}
+ggplot(census_data) +
+  geom_sf(aes(fill = cut_number(Population, 5)), colour = "White", size = 0.1) +
+  scale_fill_brewer(palette = "YlOrRd") +
+  coord_sf() +
+  labs(fill = "Population")
+```
+
+
+```{r}
+# calculating the proportion of low income status in Vancouver census tracts
+census_data <- census_data %>%
+  mutate(Proportion.low.income = (v.CA21.1010..LIM.low.income.status.in.2020.for.the.population.in.private.households / v.CA21.1..Population..2021))
+```
+
+```{r}
+# constructing a continuous area cartogram for census tracts of the Vancouver CSD, being weighted by population
+CT_pop_cartogram <- cartogram_cont(census_data, weight = "Population")
+
+# using ggplot to create a cartogram for low income status households in census tracts for the Vancouver CSD
+ggplot(CT_pop_cartogram) +
+  geom_sf(aes(fill = cut_number(census_data$Proportion.low.income, 5)), colour = "white", size = 0.1) +
+  scale_fill_brewer(palete = "YlOrRd") +
+  labs(fill = "Proportion of Low Income Status")
+```
+
+
+
 
 ```{r}
 # reading csv packages

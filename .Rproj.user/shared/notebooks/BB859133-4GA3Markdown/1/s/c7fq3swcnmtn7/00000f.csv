@@ -1,0 +1,3 @@
+"0","# calculating the proportion of low income status in Vancouver census tracts"
+"0","census_data <- census_data %>%"
+"0","  mutate(Proportion.low.income = (v.CA21.1010..LIM.low.income.status.in.2020.for.the.population.in.private.households / v.CA21.1..Population..2021))"
