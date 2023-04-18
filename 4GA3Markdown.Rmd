@@ -4,7 +4,7 @@ author:
   - name: Daina De Angelis 
     student_number: 400240413
   - name: Jill Mezenberg 
-    student_number: 400240413
+    student_number: 4002
   - name: Maeve Nowitsky
     student_number: 400264259
   - name: Tim Truong
@@ -116,18 +116,6 @@ centroids_df <- centroids_df %>%
 # example
 census_data <- census_data %>%
   mutate(Proportion.visible.minority = (v.CA21.4875..Total.visible.minority.population / v.CA21.1..Population..2021))
-```
-
-```{r}
-# example
-minority_prop_map <- ggplot(census_data) +
-geom_sf(aes(fill = cut_number(Proportion.visible.minority, 5)),
-color = "black",
-size = 0.1) +
-scale_fill_brewer(palette = "YlOrRd") +
-labs(fill = "Prop Visible Minority Vancouver CTs")
-
-minority_prop_map
 ```
 
 The point data for parks, street trees, and homeless shelters in the Vancouver CSD was obtained from csv files from Vancouver's open data portal and transformed into data frames with columns describing the X and Y coordinates of each location.
@@ -262,4 +250,16 @@ access <- accessibility(r5r_core = r5r_core,
                         cutoffs = 30)
 ```
 
+
+```{r}
+# example
+minority_prop_map <- ggplot(census_data) +
+geom_sf(aes(fill = cut_number(Proportion.visible.minority, 5)),
+color = "black",
+size = 0.1) +
+scale_fill_brewer(palette = "YlOrRd") +
+labs(fill = "Prop Visible Minority Vancouver CTs")
+
+minority_prop_map
+```
 
