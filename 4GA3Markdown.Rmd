@@ -1,9 +1,19 @@
 ---
-title: "4GA3Project_markdown"
+title: "The Relationship between Urban Green Space and Socioeconomic Factors in the City of Vancouver: A Case of Environmental Injustice"
+author:
+  - name: Daina De Angelis 
+    student_number: 400240413
+  - name: Jill Mezenberg 
+    student_number: 400240413
+  - name: Maeve Nowitsky
+    student_number: 400264259
+  - name: Tim Truong
+    student_number: 400243427
+  subject: "ENVSOCTY 4GA3"
+  
 output: html_document
 date: "2023-03-20"
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -35,20 +45,20 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 ```{r}
 # loading packages
-library(cancensus)
-library(ggplot2)
-library(tidyverse)
+library(cancensus) #this package allows us to download census data from Stats Canada
+library(ggplot2) 
+library(tidyverse) #collection of packages for data visualization and manipulation (includes dplyr and ggplot2)
 library(tidycensus)
 library(tigris)
-library(kableExtra)
-library(plotly)
-library(sf)
-library(spatialreg)
-library(spdep)
-library(spgwr)
-library(dplyr)
-library(r5r)
-library(rJava)
+library(kableExtra) 
+library(plotly) #packaged used to create interactive graphics 
+library(sf) #package to work with geospatial data of simple feature class
+library(spatialreg) #package used to perform spatial regression analysis
+library(spdep) #package used to compute spatial dependence, weighting schemes, and spatial statistics
+library(spgwr) # package for geographically weighted regression 
+library(dplyr) #package to work with and manipulate data frames
+library(r5r) #package to generate routing analysis and calculate the accessibility of parks in vancouver
+library(rJava) #an r to java interface used to support the r5r package 
 ```
 
 ```{r}
