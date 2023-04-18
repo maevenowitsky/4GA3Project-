@@ -61,6 +61,13 @@ library(r5r) #package to generate routing analysis and calculate the accessibili
 library(rJava) #an r to java interface used to support the r5r package 
 ```
 
+#Introduction
+
+
+#Background
+
+#Study Area
+
 ```{r}
 # storing the API key in system environment to be easily used in API calls
 options(cancensus.api_key = "CensusMapper_ff4c917e80df34b71900e0a048c999dd")
@@ -81,6 +88,11 @@ census_data <- get_census(dataset='CA21', regions=list(CSD="5915022"), vectors=c
 colnames(census_data) =  gsub(colnames(census_data),pattern="\\s|[[:punct:]]",replacement = ".")
 ```
 
+#Data
+
+#Methods
+
+#Results
 
 ```{r}
 # obtaining centroids for census tracts in the Vancouver CMA
@@ -145,6 +157,7 @@ parks_coord <- parks_coord %>%
                            "Y" = "X2")
 ```
 
+The point data for parks was prepared for use of the r5r package by renaming coulumns for latitude, longitude, and park ID data and to the names required by r5r. Data for latitude and longitude was converted into a numeric format. Lastly, a column to indicate that each park point was one singular park was added to meet the requirement of the opportunites parameter in r5r.  
 ```{r}
 #preparing park data for r5r
 class(parks_coord)
@@ -176,6 +189,7 @@ trees_coord <- trees_coord %>%
                            "Y" = "X2")
 ```
 
+Next, the r5r package was used in order to build a transport network for Vancouver, so that the distances and routing between the centroids of census tracts and park locations can be calculated. 
 ```{r}
 #allocating RAM memory to Java to use the r5r package
 options(java.parameters = "-Xmx2G")
@@ -190,7 +204,7 @@ list.files(path)
 r5r_core <- setup_r5(data_path = path)
 ```
 ```{r}
-#load origin points 
+#load origin points as the centroids of census tracts
 points <- centroids_df
 class(points)
 #points of interest: parks
@@ -201,7 +215,9 @@ departure_datetime <- as.POSIXct("16-02-2023 14:00:00",
 
 ```
 
+The accessibility function in r5r was used to compute how many parks were accessible within 30 minutes of each census tracts centroid by walking or public transit. 
 ```{r}
+#using accessibility from r5r
 access <- accessibility(r5r_core = r5r_core,
                         origins = points,
                         destinations = poi,
@@ -211,4 +227,5 @@ access <- accessibility(r5r_core = r5r_core,
                         decay_function = "step",
                         cutoffs = 30)
 ```
+
 
