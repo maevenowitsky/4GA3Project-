@@ -87,6 +87,12 @@ census_data <- get_census(dataset='CA21', regions=list(CSD="5915022"), vectors=c
 colnames(census_data) =  gsub(colnames(census_data),pattern="\\s|[[:punct:]]",replacement = ".")
 ```
 
+```{r}
+# removing columns that are not needed for analysis
+census_data <- census_data[,-c(4,5,9,10,13,15,16)]
+```
+
+
 #Data
 The data used for analysis includes census data for variables of income, 
 

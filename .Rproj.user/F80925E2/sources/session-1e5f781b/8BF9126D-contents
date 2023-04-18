@@ -87,6 +87,12 @@ census_data <- get_census(dataset='CA21', regions=list(CSD="5915022"), vectors=c
 colnames(census_data) =  gsub(colnames(census_data),pattern="\\s|[[:punct:]]",replacement = ".")
 ```
 
+```{r}
+# removing columns that are not needed for analysis
+census_data <- census_data[,-c(4,5,9,10,13,15,16)]
+```
+
+
 #Data
 The data used for analysis includes census data for variables of income, 
 
@@ -124,7 +130,6 @@ census_data <- census_data %>%
   mutate(Proportion.visible.minority = (v.CA21.4875..Total.visible.minority.population / v.CA21.1..Population..2021))
 ```
 
-The point data for parks, street trees, and homeless shelters in the Vancouver CSD was obtained from csv files from Vancouver's open data portal and transformed into data frames with columns describing the X and Y coordinates of each location.
 
 ```{r}
 # calculating the proportion of low income status in Vancouver census tracts
@@ -132,8 +137,9 @@ census_data <- census_data %>%
   mutate(Proportion.low.income = (v.CA21.1010..LIM.low.income.status.in.2020.for.the.population.in.private.households / v.CA21.1..Population..2021))
 ```
 
+The point data for park in the Vancouver CSD was obtained from a csv file from Vancouver's open data portal and transformed into a data frame with columns describing the X and Y coordinates of each park.
 ```{r}
-# reading csv packages
+# reading csv files
 parks <- read.csv(file = "Project data/parks.csv", head = TRUE, sep = ";") 
 ```
 
@@ -146,7 +152,6 @@ parks_coord <- parks_coord %>%
                     rename("X" = "X1",
                            "Y" = "X2")
 ```
-
 
 
 The point data for parks was prepared for use of the r5r package by renaming coulumns for latitude, longitude, and park ID data and to the names required by r5r. Data for latitude and longitude was converted into a numeric format. Lastly, a column to indicate that each park point was one singular park was added to meet the requirement of the opportunites parameter in r5r.  
