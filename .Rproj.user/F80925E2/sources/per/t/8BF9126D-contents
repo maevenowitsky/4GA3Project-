@@ -79,7 +79,7 @@ options(cancensus.cache_path = "/Users/dainadeangelis/Desktop/4GA3Project-/Proje
 
 ```{r}
 # returning census data and geography for the Vancouver CMA as an sf-class dataframe
-census_data <- get_census(dataset='CA21', regions=list(CSD="5915022"), vectors=c("v_CA21_1","v_CA21_386","v_CA21_906","v_CA21_4238","v_CA21_4239", "v_CA21_4240", "v_CA21_4875", "v_CA21_4914", "v_CA21_1010"), labels="detailed", geo_format="sf", level='CT')
+census_data <- get_census(dataset='CA21', regions=list(CSD="5915022"), vectors=c("v_CA21_1","v_CA21_386","v_CA21_906", "v_CA21_4875", "v_CA21_4914", "v_CA21_1010"), labels="detailed", geo_format="sf", level='CT')
 ```
 
 ```{r}
@@ -125,14 +125,6 @@ census_data <- census_data %>%
 ```
 
 The point data for parks, street trees, and homeless shelters in the Vancouver CSD was obtained from csv files from Vancouver's open data portal and transformed into data frames with columns describing the X and Y coordinates of each location.
-```{r}
-ggplot(census_data) +
-  geom_sf(aes(fill = cut_number(Population, 5)), colour = "White", size = 0.1) +
-  scale_fill_brewer(palette = "YlOrRd") +
-  coord_sf() +
-  labs(fill = "Population")
-```
-
 
 ```{r}
 # calculating the proportion of low income status in Vancouver census tracts
@@ -141,37 +133,8 @@ census_data <- census_data %>%
 ```
 
 ```{r}
-# constructing a continuous area cartogram for census tracts of the Vancouver CSD, being weighted by population
-CT_pop_cartogram <- cartogram_cont(census_data, weight = "Population")
-
-# using ggplot to create a cartogram for low income status households in census tracts for the Vancouver CSD
-ggplot(CT_pop_cartogram) +
-  geom_sf(aes(fill = cut_number(census_data$Proportion.low.income, 5)), colour = "white", size = 0.1) +
-  scale_fill_brewer(palete = "YlOrRd") +
-  labs(fill = "Proportion of Low Income Status")
-```
-
-
-
-
-```{r}
 # reading csv packages
-
 parks <- read.csv(file = "Project data/parks.csv", head = TRUE, sep = ";") 
-
-street_trees <- read.csv(file = "Project data/street-trees.csv", head = TRUE, sep = ";") 
-
-homeless_shelters <- read.csv(file = "Project data/homeless-shelter-locations.csv", head = TRUE, sep = ";") 
-```
-
-```{r}
-#extracting point data from homeless shelter csv file
-homeless_shelt_coord <- data.frame(do.call("rbind", strsplit(as.character(homeless_shelters$geo_point_2d), ",", fixed = TRUE)))
-
-# Rename multiple columns
-homeless_shelt_coord <- homeless_shelt_coord %>% 
-                    rename("X" = "X1",
-                           "Y" = "X2")
 ```
 
 ```{r}
@@ -185,15 +148,6 @@ parks_coord <- parks_coord %>%
 ```
 
 
-```{r}
-#extracting point data from trees csv files
-trees_coord <- data.frame(do.call("rbind", strsplit(as.character(street_trees$geo_point_2d), ",", fixed = TRUE)))
-
-# Rename multiple columns
-trees_coord <- trees_coord %>% 
-                    rename("X" = "X1",
-                           "Y" = "X2")
-```
 
 The point data for parks was prepared for use of the r5r package by renaming coulumns for latitude, longitude, and park ID data and to the names required by r5r. Data for latitude and longitude was converted into a numeric format. Lastly, a column to indicate that each park point was one singular park was added to meet the requirement of the opportunites parameter in r5r.  
 ```{r}
@@ -256,6 +210,13 @@ access <- accessibility(r5r_core = r5r_core,
                         cutoffs = 30)
 ```
 
+```{r}
+ggplot(census_data) +
+  geom_sf(aes(fill = cut_number(Population, 5)), colour = "White", size = 0.1) +
+  scale_fill_brewer(palette = "YlOrRd") +
+  coord_sf() +
+  labs(fill = "Population")
+```
 
 ```{r}
 # example
@@ -269,3 +230,13 @@ labs(fill = "Prop Visible Minority Vancouver CTs")
 minority_prop_map
 ```
 
+```{r}
+# constructing a continuous area cartogram for census tracts of the Vancouver CSD, being weighted by population
+CT_pop_cartogram <- cartogram_cont(census_data, weight = "Population")
+
+# using ggplot to create a cartogram for low income status households in census tracts for the Vancouver CSD
+ggplot(CT_pop_cartogram) +
+  geom_sf(aes(fill = cut_number(census_data$Proportion.low.income, 5)), colour = "white", size = 0.1) +
+  scale_fill_brewer(palete = "YlOrRd") +
+  labs(fill = "Proportion of Low Income Status")
+```

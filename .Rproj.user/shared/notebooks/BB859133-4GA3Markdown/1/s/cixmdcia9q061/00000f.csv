@@ -1,0 +1,2 @@
+"0","# replacing spaces for variable names with periods"
+"0","colnames(census_data) =  gsub(colnames(census_data),pattern=""\\s|[[:punct:]]"",replacement = ""."")"
