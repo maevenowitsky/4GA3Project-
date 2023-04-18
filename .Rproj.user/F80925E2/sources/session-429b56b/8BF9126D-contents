@@ -1,9 +1,19 @@
 ---
-title: "4GA3Project_markdown"
+title: "The Relationship between Urban Green Space and Socioeconomic Factors in the City of Vancouver: A Case of Environmental Injustice"
+author:
+  - name: Daina De Angelis 
+    student_number: 400240413
+  - name: Jill Mezenberg 
+    student_number: 4002
+  - name: Maeve Nowitsky
+    student_number: 400264259
+  - name: Tim Truong
+    student_number: 400243427
+  subject: "ENVSOCTY 4GA3"
+  
 output: html_document
 date: "2023-03-20"
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -14,21 +24,9 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
-```
-
 ```{r}
-# Cleaning data
+# Clearing data
 rm(list = ls())
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
@@ -36,9 +34,9 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 ```{r}
 # loading packages
-library(cancensus)
-library(ggplot2)
-library(tidyverse)
+library(cancensus) #this package allows us to download census data from Stats Canada
+library(ggplot2) 
+library(tidyverse) #collection of packages for data visualization and manipulation (includes dplyr and ggplot2)
 library(tidycensus)
 library(tigris)
 library(kableExtra)
@@ -51,8 +49,24 @@ library(dplyr)
 library(r5r)
 library(rJava)
 library(cartogram)
+library(kableExtra) 
+library(plotly) #packaged used to create interactive graphics 
+library(sf) #package to work with geospatial data of simple feature class
+library(spatialreg) #package used to perform spatial regression analysis
+library(spdep) #package used to compute spatial dependence, weighting schemes, and spatial statistics
+library(spgwr) # package for geographically weighted regression 
+library(dplyr) #package to work with and manipulate data frames
+library(r5r) #package to generate routing analysis and calculate the accessibility of parks in Vancouver
+library(rJava) #an r to java interface used to support the r5r package 
 ```
 
+#Introduction
+
+
+#Background
+
+#Study Area
+This study took place at the Census Subdivision level to target the municipality of Vancouver, BC. There are 127 census tracts in Vancouver that were studied.  
 ```{r}
 # storing the API key in system environment to be easily used in API calls
 options(cancensus.api_key = "CensusMapper_ff4c917e80df34b71900e0a048c999dd")
@@ -73,8 +87,24 @@ census_data <- get_census(dataset='CA21', regions=list(CSD="5915022"), vectors=c
 colnames(census_data) =  gsub(colnames(census_data),pattern="\\s|[[:punct:]]",replacement = ".")
 ```
 
+#Data
+The data used for analysis includes census data for variables of income, 
+
+for each census tract in the census subdivision of Vancouver. This data was obtained from Statistics Canada through use of the cancensus package in R. All census data used is from the 2021 census. Point data for each the location of each park, homeless shelter, and street tree in the census subdivision was downloaded in a .csv file format from the City of Vancouver’s open data portal. To use the r5r package so that accessibility to parks by both walking and public transit could be determined, a road network dataset of Vancouver, and as well as a public transport feed of the city was needed. The road network dataset was obtained from BBBike, and was stored as a .pbf file. The public transport feed was obtained from Transitland and stored in a GTFS.zip file. 
+
+#Methods
+To determine the relationship between greenspace and other socioeconomic factors in Vancouver, Rstudio was used to analyze and visualize the variables being examined. 
+Choropleth maps for variables 
+
+
+Regression analysis was used to determine the relationship between the independent variable studied (number of parks accessible within a 30 minute travel time) and dependent variables ( 
+Scatterplots were used to show a visual representation between independent and dependent variables studied to better understand the results of regression analysis. 
+
+#Results
+
+To begin our analysis, the centroids for each census tract in the Vancouver CSD were obtained and put into a dataframe with latitude, longitude, and census ID. This allowed us to have point data describing the middle of each CT. 
 ```{r}
-# obtaining centroids for census tracts in the Vancouver CMA
+# obtaining centroids for census tracts in the Vancouver CSD 
 CT_centroids <- st_coordinates(st_centroid(census_data))
 #converting centroids to data frame
 centroids_df <- as.data.frame(CT_centroids)
@@ -94,18 +124,7 @@ census_data <- census_data %>%
   mutate(Proportion.visible.minority = (v.CA21.4875..Total.visible.minority.population / v.CA21.1..Population..2021))
 ```
 
-```{r}
-# example
-minority_prop_map <- ggplot(census_data) +
-geom_sf(aes(fill = cut_number(Proportion.visible.minority, 5)),
-color = "black",
-size = 0.1) +
-scale_fill_brewer(palette = "YlOrRd") +
-labs(fill = "Prop Visible Minority Vancouver CTs")
-
-minority_prop_map
-```
-
+The point data for parks, street trees, and homeless shelters in the Vancouver CSD was obtained from csv files from Vancouver's open data portal and transformed into data frames with columns describing the X and Y coordinates of each location.
 ```{r}
 ggplot(census_data) +
   geom_sf(aes(fill = cut_number(Population, 5)), colour = "White", size = 0.1) +
@@ -165,6 +184,18 @@ parks_coord <- parks_coord %>%
                            "Y" = "X2")
 ```
 
+
+```{r}
+#extracting point data from trees csv files
+trees_coord <- data.frame(do.call("rbind", strsplit(as.character(street_trees$geo_point_2d), ",", fixed = TRUE)))
+
+# Rename multiple columns
+trees_coord <- trees_coord %>% 
+                    rename("X" = "X1",
+                           "Y" = "X2")
+```
+
+The point data for parks was prepared for use of the r5r package by renaming coulumns for latitude, longitude, and park ID data and to the names required by r5r. Data for latitude and longitude was converted into a numeric format. Lastly, a column to indicate that each park point was one singular park was added to meet the requirement of the opportunites parameter in r5r.  
 ```{r}
 #preparing park data for r5r
 class(parks_coord)
@@ -185,22 +216,13 @@ parks_coord <- parks_coord %>%
   add_column(Parks_count = 1)
 ```
 
-
-```{r}
-#extracting point data from trees csv files
-trees_coord <- data.frame(do.call("rbind", strsplit(as.character(street_trees$geo_point_2d), ",", fixed = TRUE)))
-
-# Rename multiple columns
-trees_coord <- trees_coord %>% 
-                    rename("X" = "X1",
-                           "Y" = "X2")
-```
-
+Next, the r5r package was used in order to build a transport network for Vancouver, so that the distances and routing between the centroids of census tracts and park locations can be calculated. 
 ```{r}
 #allocating RAM memory to Java to use the r5r package
 options(java.parameters = "-Xmx2G")
 ```
 
+The transport network was built with using a road network dataset of Vancouver, and as well as a public transport feed of the city. The road network dataset was obtained from BBBike, and was stored as a .pbf file. The public transport feed was obtained from Transitland and stored in a GTFS.zip file.  
 ```{r}
 #building transport network for r5r
 path <- file.path("Project data/r5rpath")
@@ -210,7 +232,7 @@ list.files(path)
 r5r_core <- setup_r5(data_path = path)
 ```
 ```{r}
-#load origin points 
+#load origin points as the centroids of census tracts
 points <- centroids_df
 class(points)
 #points of interest: parks
@@ -221,7 +243,9 @@ departure_datetime <- as.POSIXct("16-02-2023 14:00:00",
 
 ```
 
+The accessibility function in r5r was used to compute how many parks were accessible within 30 minutes of each census tracts centroid by walking or public transit. 
 ```{r}
+#using accessibility from r5r
 access <- accessibility(r5r_core = r5r_core,
                         origins = points,
                         destinations = poi,
@@ -230,5 +254,18 @@ access <- accessibility(r5r_core = r5r_core,
                         departure_datetime = departure_datetime,
                         decay_function = "step",
                         cutoffs = 30)
+```
+
+
+```{r}
+# example
+minority_prop_map <- ggplot(census_data) +
+geom_sf(aes(fill = cut_number(Proportion.visible.minority, 5)),
+color = "black",
+size = 0.1) +
+scale_fill_brewer(palette = "YlOrRd") +
+labs(fill = "Prop Visible Minority Vancouver CTs")
+
+minority_prop_map
 ```
 
