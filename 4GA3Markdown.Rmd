@@ -197,6 +197,7 @@ Next, the r5r package was used in order to build a transport network for Vancouv
 options(java.parameters = "-Xmx2G")
 ```
 
+The transport network was built with using a road network dataset of Vancouver, and as well as a public transport feed of the city. The road network dataset was obtained from BBBike, and was stored as a .pbf file. The public transport feed was obtained from Transitland and stored in a GTFS.zip file.  
 ```{r}
 #building transport network for r5r
 path <- file.path("Project data/r5rpath")
