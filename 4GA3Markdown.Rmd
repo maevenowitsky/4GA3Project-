@@ -67,7 +67,7 @@ library(rJava) #an r to java interface used to support the r5r package
 #Background
 
 #Study Area
-
+This study took place at the Census Subdivision level to target the municipality of Vancouver, BC. There are 
 ```{r}
 # storing the API key in system environment to be easily used in API calls
 options(cancensus.api_key = "CensusMapper_ff4c917e80df34b71900e0a048c999dd")
@@ -79,7 +79,7 @@ options(cancensus.cache_path = "/Users/dainadeangelis/Desktop/4GA3Project-/Proje
 ```
 
 ```{r}
-# returning census data and geography for the Vancouver CMA as an sf-class dataframe
+# returning census data and geography for the Vancouver CSD as an sf-class dataframe
 census_data <- get_census(dataset='CA21', regions=list(CSD="5915022"), vectors=c("v_CA21_1","v_CA21_386","v_CA21_906","v_CA21_4238","v_CA21_4239", "v_CA21_4240", "v_CA21_4875", "v_CA21_4914"), labels="detailed", geo_format="sf", level='CT')
 ```
 
@@ -94,8 +94,9 @@ colnames(census_data) =  gsub(colnames(census_data),pattern="\\s|[[:punct:]]",re
 
 #Results
 
+To begin our analysis, the centroids for each census tract in the Vancouver CSD were obtained and put into a dataframe with latitude, longitude, and census ID. This allowed us to have point data describing the middle of each CT. 
 ```{r}
-# obtaining centroids for census tracts in the Vancouver CMA
+# obtaining centroids for census tracts in the Vancouver CSD 
 CT_centroids <- st_coordinates(st_centroid(census_data))
 #converting centroids to data frame
 centroids_df <- as.data.frame(CT_centroids)
@@ -127,6 +128,7 @@ labs(fill = "Prop Visible Minority Vancouver CTs")
 minority_prop_map
 ```
 
+The point data for parks, street trees, and homeless shelters in the Vancouver CSD was obtained from csv files from Vancouver's open data portal and transformed into data frames with columns describing the X and Y coordinates of each location.
 ```{r}
 # reading csv packages
 
@@ -157,6 +159,17 @@ parks_coord <- parks_coord %>%
                            "Y" = "X2")
 ```
 
+
+```{r}
+#extracting point data from trees csv files
+trees_coord <- data.frame(do.call("rbind", strsplit(as.character(street_trees$geo_point_2d), ",", fixed = TRUE)))
+
+# Rename multiple columns
+trees_coord <- trees_coord %>% 
+                    rename("X" = "X1",
+                           "Y" = "X2")
+```
+
 The point data for parks was prepared for use of the r5r package by renaming coulumns for latitude, longitude, and park ID data and to the names required by r5r. Data for latitude and longitude was converted into a numeric format. Lastly, a column to indicate that each park point was one singular park was added to meet the requirement of the opportunites parameter in r5r.  
 ```{r}
 #preparing park data for r5r
@@ -176,17 +189,6 @@ parks_coord$lat <- as.numeric(parks_coord$lat)
 ```{r}
 parks_coord <- parks_coord %>%
   add_column(Parks_count = 1)
-```
-
-
-```{r}
-#extracting point data from trees csv files
-trees_coord <- data.frame(do.call("rbind", strsplit(as.character(street_trees$geo_point_2d), ",", fixed = TRUE)))
-
-# Rename multiple columns
-trees_coord <- trees_coord %>% 
-                    rename("X" = "X1",
-                           "Y" = "X2")
 ```
 
 Next, the r5r package was used in order to build a transport network for Vancouver, so that the distances and routing between the centroids of census tracts and park locations can be calculated. 
