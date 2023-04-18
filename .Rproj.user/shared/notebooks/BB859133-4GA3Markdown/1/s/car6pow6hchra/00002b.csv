@@ -1,0 +1,6 @@
+"0","# renaming the columns in the dataset"
+"0","names(census_data) [1] <- ""Shape_area_km2"""
+"0","names(census_data) [3] <- ""Number_of_households"""
+"0","names(census_data) [4] <- ""Region_name"""
+"0","names(census_data) [7] <- ""Number_of_dwellings"""
+"0","names(census_data) [10:15] <- c(""Population_2021"", ""Average_age"", ""Median_total_income_of_household_2020"", ""Total_visible_minority_population"", ""Not_a_visible_minority"", ""Low_income_status_for_the_population_in_private_households_2020"")"
