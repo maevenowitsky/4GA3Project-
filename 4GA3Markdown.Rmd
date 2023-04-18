@@ -66,7 +66,7 @@ library(rJava) #an r to java interface used to support the r5r package
 #Background
 
 #Study Area
-This study took place at the Census Subdivision level to target the municipality of Vancouver, BC. There are 
+This study took place at the Census Subdivision level to target the municipality of Vancouver, BC. There are 127 census tracts in Vancouver that were studied.  
 ```{r}
 # storing the API key in system environment to be easily used in API calls
 options(cancensus.api_key = "CensusMapper_ff4c917e80df34b71900e0a048c999dd")
@@ -91,8 +91,17 @@ colnames(census_data) =  gsub(colnames(census_data),pattern="\\s|[[:punct:]]",re
 ```
 
 #Data
+The data used for analysis includes census data for variables of income, 
+
+for each census tract in the census subdivision of Vancouver. This data was obtained from Statistics Canada through use of the cancensus package in R. All census data used is from the 2021 census. Point data for each the location of each park, homeless shelter, and street tree in the census subdivision was downloaded in a .csv file format from the City of Vancouver’s open data portal. To use the r5r package so that accessibility to parks by both walking and public transit could be determined, a road network dataset of Vancouver, and as well as a public transport feed of the city was needed. The road network dataset was obtained from BBBike, and was stored as a .pbf file. The public transport feed was obtained from Transitland and stored in a GTFS.zip file. 
 
 #Methods
+To determine the relationship between greenspace and other socioeconomic factors in Vancouver, Rstudio was used to analyze and visualize the variables being examined. 
+Choropleth maps for variables 
+
+
+Regression analysis was used to determine the relationship between the independent variable studied (number of parks accessible within a 30 minute travel time) and dependent variables ( 
+Scatterplots were used to show a visual representation between independent and dependent variables studied to better understand the results of regression analysis. 
 
 #Results
 
