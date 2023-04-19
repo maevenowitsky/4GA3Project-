@@ -1,2 +1,0 @@
-"0","# Clearing data"
-"0","rm(list = ls())"

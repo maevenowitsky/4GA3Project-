@@ -1,15 +1,15 @@
 ---
 title: "The Relationship between Urban Green Space and Socioeconomic Factors in the City of Vancouver: A Case of Environmental Injustice"
 author:
-  - name: Daina De Angelis 
-    student_number: 400240413
-  - name: Jill Mezenberg 
-    student_number: 400243427
-  - name: Maeve Nowitsky
-    student_number: 400264259
-  - name: Tim Truong
-    student_number: 400243427
-  subject: "ENVSOCTY 4GA3"
+- name: Daina De Angelis 
+  student_number: 400240413
+- name: Jill Mezenberg 
+  student_number: 400243427
+- name: Maeve Nowitsky
+  student_number: 400264259
+- name: Tim Truong
+  student_number: 400243427
+subject: "ENVSOCTY 4GA3"
   
 output: html_document
 date: "2023-03-20"
@@ -406,3 +406,7 @@ ggplot(data = census_data,
   xlab("Number of Parks Accessible within 30 Minutes (Through walking or public transit") 
 ```
 
+#Analysis
+
+
+#Conclusion 

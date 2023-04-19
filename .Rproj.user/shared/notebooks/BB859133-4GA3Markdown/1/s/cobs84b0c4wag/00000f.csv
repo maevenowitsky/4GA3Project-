@@ -1,2 +1,0 @@
-"0","#allocating RAM memory to Java to use the r5r package"
-"0","options(java.parameters = ""-Xmx2G"")"

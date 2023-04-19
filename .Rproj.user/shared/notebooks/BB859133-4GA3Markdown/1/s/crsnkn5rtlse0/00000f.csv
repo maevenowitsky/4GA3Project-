@@ -1,7 +1,0 @@
-"0","# creating a choropleth map displaying the number of parks accessible to a census tract's centroids within 30 minutes"
-"0","ggplot(census_data) +"
-"0","geom_sf(aes(fill = cut_number(accessibility, 5)),"
-"0","        color = ""black"","
-"0","        size = 0.1) +"
-"0","scale_fill_brewer(palette = ""YlOrRd"") +"
-"0","labs(fill = ""Number of Neighbourhoods Accessible Within 30 Minutes"")"
