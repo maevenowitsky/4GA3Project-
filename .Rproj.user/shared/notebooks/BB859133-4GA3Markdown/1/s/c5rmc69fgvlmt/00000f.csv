@@ -1,0 +1,7 @@
+"0","# creating a choropleth map for the proportion of the non-visible minority population"
+"0","ggplot(census_data) +"
+"0","geom_sf(aes(fill = cut_number(Proportion_nonvisible_minority, 5)),"
+"0","        color = ""black"","
+"0","        size = 0.1) +"
+"0","scale_fill_brewer(palette = ""YlOrRd"") +"
+"0","labs(fill = ""Prop Non-Visible Minority"")"
