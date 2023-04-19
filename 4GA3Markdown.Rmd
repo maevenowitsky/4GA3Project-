@@ -1,18 +1,19 @@
 ---
-title: "The Relationship between Urban Green Space and Socioeconomic Factors in the City of Vancouver: A Case of Environmental Injustice"
+title: "'The Relationship between Urban Green Space and Socioeconomic Factors in the City of Vancouver: A Case of Environmental Injustice"
 author:
-- name: Daina De Angelis 
+- name: Daina De Angelis
   student_number: 400240413
-- name: Jill Mezenberg 
+- name: Jill Mezenberg
   student_number: 400243427
 - name: Maeve Nowitsky
   student_number: 400264259
 - name: Tim Truong
   student_number: 400243427
-subject: "ENVSOCTY 4GA3"
-  
-output: html_document
 date: "2023-03-20"
+output:
+  pdf_document: default
+  html_document: default
+subject: ENVSOCTY 4GA3
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
