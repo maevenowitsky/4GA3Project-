@@ -98,17 +98,10 @@ names(census_data) [10:15] <- c("Population_2021", "Average_age", "Median_total_
 ```
 
 #Data
-The data used for analysis includes census data for variables of income, 
-
-for each census tract in the census subdivision of Vancouver. This data was obtained from Statistics Canada through use of the cancensus package in R. All census data used is from the 2021 census. Point data for each the location of each park, homeless shelter, and street tree in the census subdivision was downloaded in a .csv file format from the City of Vancouver’s open data portal. To use the r5r package so that accessibility to parks by both walking and public transit could be determined, a road network dataset of Vancouver, and as well as a public transport feed of the city was needed. The road network dataset was obtained from BBBike, and was stored as a .pbf file. The public transport feed was obtained from Transitland and stored in a GTFS.zip file. 
+The data used for analysis includes census data for variables of population, population density, visible minority status, non-visible minority status, and income for each census tract in the census subdivision of Vancouver. This data was obtained from Statistics Canada through use of the cancensus package in R. All census data used is from the 2021 census. Point data for each the location of each park, homeless shelter, and street tree in the census subdivision was downloaded in a .csv file format from the City of Vancouver’s open data portal. To use the r5r package so that accessibility to parks by both walking and public transit could be determined, a road network dataset of Vancouver, and as well as a public transport feed of the city was needed. The road network dataset was obtained from BBBike, and was stored as a .pbf file. The public transport feed was obtained from Transitland and stored in a GTFS.zip file. 
 
 #Methods
-To determine the relationship between greenspace and other socioeconomic factors in Vancouver, Rstudio was used to analyze and visualize the variables being examined. 
-Choropleth maps for variables 
-
-
-Regression analysis was used to determine the relationship between the independent variable studied (number of parks accessible within a 30 minute travel time) and dependent variables ( 
-Scatterplots were used to show a visual representation between independent and dependent variables studied to better understand the results of regression analysis. 
+To determine the relationship between greenspace and other socioeconomic factors in Vancouver, Rstudio was used to analyze and visualize the variables being examined. Choropleth maps for variables of population, population density, visible minority status, non-visible minority status, and income, and accessibility to parks were made to provide a visual representation of the difference between census tracts. Regression analysis was used to determine the relationship between the independent variable studied (number of parks accessible within a 30 minute travel time) and dependent variables (population, population density, visible minority status, non-visible minority status, and income). Scatterplots were used to show a visual representation between independent and dependent variables studied to better understand the results of regression analysis. 
 
 #Results
 
@@ -320,8 +313,95 @@ ggplot(data = census_data,
   geom_point() +
   geom_smooth(formula = y ~ x,
               method = "lm") +
-  xlab("Population (2021") +
+  xlab("Population (2021)") +
   ylab("Number of Parks Accessible within 30 Minutes (Through walking or public transit") 
 ```
 
+Model regressing population density on number of accessible marks
+```{r}
+#creating a regression model of population density regressing on number of accessible parks
+model_population_density <- lm(formula = population-density ~ access, 
+             data = census_data)
+
+stargazer(model_population_density,
+          header = FALSE,
+          title = "Population Density of Census Tracts regressed on Number of Parks Accessible")
+```
+Scatterplot of population density vs number of accessible parks
+```{r}
+ggplot(data = census_data, 
+       aes(x = access, 
+           y = population_density))+
+  geom_point() +
+  geom_smooth(formula = y ~ x,
+              method = "lm") +
+  xlab("Population Density") +
+  ylab("Number of Parks Accessible within 30 Minutes (Through walking or public transit") 
+```
+
+Model regressing proportion of visible minorities on number of accessible parks
+```{r}
+#creating a regression model of population density regressing on number of accessible parks
+model_visible_minority <- lm(formula = Proportion_visible_minority ~ access, 
+             data = census_data)
+
+stargazer(model_visible_minority,
+          header = FALSE,
+          title = "Percent Visible Minority Population in Census Tracts regressed on Number of Parks Accessible")
+```
+Scatterplot of proportion of visible minorites vs number of accessible parks
+```{r}
+ggplot(data = census_data, 
+       aes(x = access, 
+           y = Proportion_visible_minority))+
+  geom_point() +
+  geom_smooth(formula = y ~ x,
+              method = "lm") +
+  xlab("Visible Minority Population (%)") +
+  ylab("Number of Parks Accessible within 30 Minutes (Through walking or public transit") 
+```
+
+Model regressing proportion of non-visible minorities on number of accessible parks
+```{r}
+#creating a regression model of population density regressing on number of accessible parks
+model_nonvisible_minority <- lm(formula = Proportion_not_a_visible_minority ~ access, 
+             data = census_data)
+
+stargazer(model_nonvisible_minority,
+          header = FALSE,
+          title = "Percent Non-Visible Minority Population in Census Tracts regressed on Number of Parks Accessible")
+```
+Scatterplot of proportion of non-visible minorities vs number of accessible parks
+```{r}
+ggplot(data = census_data, 
+       aes(x = access, 
+           y = Proportion_not_a_visible_minority))+
+  geom_point() +
+  geom_smooth(formula = y ~ x,
+              method = "lm") +
+  xlab("Non-Visible Minority Population (%)") +
+  ylab("Number of Parks Accessible within 30 Minutes (Through walking or public transit") 
+```
+
+Model regressing proportion of low income population on number of accessible parks
+```{r}
+#creating a regression model of population density regressing on number of accessible parks
+model_income <- lm(formula = Proportion_not_a_visible_minority ~ access, 
+             data = census_data)
+
+stargazer(model_income,
+          header = FALSE,
+          title = "Percent Non-Visible Minority Population in Census Tracts regressed on Number of Parks Accessible")
+```
+Scatterplot of proportion of low income population vs number of accessible parks
+```{r}
+ggplot(data = census_data, 
+       aes(x = access, 
+           y = proportion_low_income))+
+  geom_point() +
+  geom_smooth(formula = y ~ x,
+              method = "lm") +
+  xlab("Low Income population (%)") +
+  ylab("Number of Parks Accessible within 30 Minutes (Through walking or public transit") 
+```
 
