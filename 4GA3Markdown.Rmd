@@ -263,7 +263,7 @@ scale_fill_brewer(palette = "YlOrRd") +
 labs(fill = "Prop Visible Minority")
 ```
 ```{r}
-# creating a choropleth map for the proportion of the non-visisble minority population
+# creating a choropleth map for the proportion of the non-visible minority population
 ggplot(census_data) +
 geom_sf(aes(fill = cut_number(Proportion_nonvisible_minority, 5)),
         color = "black",
@@ -287,7 +287,7 @@ Finally, a choropleth map was created to display the independent variable, parks
 ```{r}
 # creating a choropleth map displaying the number of parks accessible to a census tract's centroids within 30 minutes
 ggplot(census_data) +
-geom_sf(aes(fill = cut_number(census_data$acessibility, 5)),
+geom_sf(aes(fill = cut_number(accessibility, 5)),
         color = "black",
         size = 0.1) +
 scale_fill_brewer(palette = "YlOrRd") +
@@ -297,19 +297,20 @@ labs(fill = "Number of Neighbourhoods Accessible Within 30 Minutes")
 Next, to determine the relationship between the number of accessible parks and each independent variable, the independent variables were regressed to number of accessible parks for each CT. 
 ```{r}
 #creating a regression model of population regressing on number of accessible parks
-model_population <- lm(formula = population_2021 ~ access, 
+model_population <- lm(formula = Population_2021 ~ accessibility, 
              data = census_data)
 
-stargazer(model_population,
-          header = FALSE,
-          title = "Population of Census Tracts regressed on Number of Parks Accessible")
+#stargazer(model_population,
+          #header = FALSE,
+          #title = "Population of Census Tracts regressed on Number of Parks #Accessible")
 
+model_population
 ```
 For each regression, a scatter plot was created to provide a visual representation of the data
 ```{r}
 ggplot(data = census_data, 
-       aes(x = access, 
-           y = population_2021))+
+       aes(x = accessibility, 
+           y = Population_2021))+
   geom_point() +
   geom_smooth(formula = y ~ x,
               method = "lm") +

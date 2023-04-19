@@ -1,0 +1,8 @@
+"0","# creating a choropleth map for the 2021 population"
+"0","ggplot(census_data) +"
+"0","  geom_sf(aes(fill = cut_number(Population_2021, 5)),"
+"0","          colour = ""black"","
+"0","          size = 0.1) +"
+"0","  scale_fill_brewer(palette = ""YlOrRd"") +"
+"0","  coord_sf() +"
+"0","  labs(fill = ""Population"")"
