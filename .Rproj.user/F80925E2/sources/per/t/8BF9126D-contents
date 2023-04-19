@@ -58,6 +58,7 @@ library(spgwr) # package for geographically weighted regression
 library(dplyr) #package to work with and manipulate data frames
 library(r5r) #package to generate routing analysis and calculate the accessibility of parks in Vancouver
 library(rJava) #an r to java interface used to support the r5r package 
+library(stargazer) #package to show results of regression analysis as a table
 ```
 
 #Introduction
@@ -152,7 +153,6 @@ census_data <- census_data %>%
   mutate(Proportion_low_income = (Low_income_status_for_the_population_in_private_households_2020 / Population_2021))
 ```
 
-
 The point data for park in the Vancouver CSD was obtained from a csv file from Vancouver's open data portal and transformed into a data frame with columns describing the X and Y coordinates of each park.
 ```{r}
 # reading csv files
@@ -230,6 +230,14 @@ access <- accessibility(r5r_core = r5r_core,
                         cutoffs = 30)
 ```
 
+Once the number of accessible parks was calculated, this was added to the data frame displaying census data.
+```{r}
+census_data <- cbind(census_data, accessibility = access$accessibility)
+```
+
+After all variables were in one data frame and prepared for analysis, data was first visualized by creating choropleth maps for each variable of interest. Maps were created for each variable as follows:
+
+Population of each CT
 ```{r}
 # creating a choropleth map for the 2021 population
 ggplot(census_data) +
@@ -240,7 +248,7 @@ ggplot(census_data) +
   coord_sf() +
   labs(fill = "Population")
 ```
-
+Population density of each CT
 ```{r}
 # creating a choropleth map for the population density
 ggplot(census_data) +
@@ -251,7 +259,7 @@ ggplot(census_data) +
   coord_sf() +
   labs(fill = "Population Density")
 ```
-
+Proportion of population identifying as visible and non-visible minorities
 ```{r}
 # creating a choropleth map for the proportion of the visisble minority population
 ggplot(census_data) +
@@ -271,8 +279,9 @@ scale_fill_brewer(palette = "YlOrRd") +
 labs(fill = "Prop Non-Visible Minority")
 ```
 
+The proportion of the population considered low income for each CT 
 ```{r}
-# displaying the proportion of low-income groups on a choropleth map
+# creating a choropleth map displaying the proportion of low-income 
 ggplot(census_data) +
 geom_sf(aes(fill = cut_number(Proportion_low_income, 5)),
         color = "black",
@@ -280,4 +289,39 @@ geom_sf(aes(fill = cut_number(Proportion_low_income, 5)),
 scale_fill_brewer(palette = "YlOrRd") +
 labs(fill = "Prop Low Income")
 ```
+
+Finally, a choropleth map was created to display the independent variable, parks accessible within 30 mintues of a centroid. 
+```{r}
+# creating a choropleth map displaying the number of parks accessible to a census tract's centroids within 30 minutes
+ggplot(census_data) +
+geom_sf(aes(fill = cut_number(census_data$acessibility, 5)),
+        color = "black",
+        size = 0.1) +
+scale_fill_brewer(palette = "YlOrRd") +
+labs(fill = "Number of Neighbourhoods Accessible Within 30 Minutes")
+```
+
+Next, to determine the relationship between the number of accessible parks and each independent variable, the independent variables were regressed to number of accessible parks for each CT. 
+```{r}
+#creating a regression model of population regressing on number of accessible parks
+model_population <- lm(formula = population_2021 ~ access, 
+             data = census_data)
+
+stargazer(model_population,
+          header = FALSE,
+          title = "Population of Census Tracts regressed on Number of Parks Accessible")
+
+```
+For each regression, a scatter plot was created to provide a visual representation of the data
+```{r}
+ggplot(data = census_data, 
+       aes(x = access, 
+           y = population_2021))+
+  geom_point() +
+  geom_smooth(formula = y ~ x,
+              method = "lm") +
+  xlab("Population (2021") +
+  ylab("Number of Parks Accessible within 30 Minutes (Through walking or public transit") 
+```
+
 

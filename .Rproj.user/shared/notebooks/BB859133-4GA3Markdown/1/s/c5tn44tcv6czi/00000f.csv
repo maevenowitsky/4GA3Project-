@@ -1,0 +1,16 @@
+"0","# creating a choropleth map displaying the number of parks accessible to a census tract's centroids within 30 minutes"
+"0","ggplot(census_data) +"
+"0","geom_sf(aes(fill = cut_number(census_data$acessibility, 5)),"
+"0","        color = ""black"","
+"0","        size = 0.1) +"
+"0","scale_fill_brewer(palette = ""YlOrRd"") +"
+"0","labs(fill = ""Number of Neighbourhoods Accessible Within 30 Minutes"")"
+"1","[1m[33mError[39m in `geom_sf()`:[22m
+[38;5;232m[33m![38;5;232m Problem while computing aesthetics.
+[36mℹ[38;5;232m Error occurred in the 1st layer.[39m
+[1mCaused by error in `cut_number()`:[22m
+[38;5;232m[33m![38;5;232m Insufficient data values to produce 5 bins.[39m
+Backtrace:
+[90m  1. [39m[1mbase[22m (local) `<fn>`(x)
+[90m 17. [39m[1m[94mggplot2::cut_number([39m[22mcensus_data$acessibility, 5[1m[94m)[39m[22m
+"

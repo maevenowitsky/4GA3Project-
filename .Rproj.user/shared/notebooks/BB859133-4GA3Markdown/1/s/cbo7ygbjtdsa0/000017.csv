@@ -1,6 +1,0 @@
-"0","# creating a choropleth map for the population density"
-"0","ggplot(census_data) +"
-"0","  geom_sf(aes(fill = cut_number(Population_density, 5)), colour = ""black"", size = 0.1) +"
-"0","  scale_fill_brewer(palette = ""YlOrRd"") +"
-"0","  coord_sf() +"
-"0","  labs(fill = ""Population Density"")"

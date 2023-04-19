@@ -153,7 +153,6 @@ census_data <- census_data %>%
   mutate(Proportion_low_income = (Low_income_status_for_the_population_in_private_households_2020 / Population_2021))
 ```
 
-
 The point data for park in the Vancouver CSD was obtained from a csv file from Vancouver's open data portal and transformed into a data frame with columns describing the X and Y coordinates of each park.
 ```{r}
 # reading csv files
@@ -233,7 +232,7 @@ access <- accessibility(r5r_core = r5r_core,
 
 Once the number of accessible parks was calculated, this was added to the data frame displaying census data.
 ```{r}
-census_data <- cbind(census_data, access$accessibility)
+census_data <- cbind(census_data, accessibility = access$accessibility)
 ```
 
 After all variables were in one data frame and prepared for analysis, data was first visualized by creating choropleth maps for each variable of interest. Maps were created for each variable as follows:

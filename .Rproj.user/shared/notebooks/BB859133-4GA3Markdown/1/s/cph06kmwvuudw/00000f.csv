@@ -1,0 +1,4 @@
+"0","# calculating population density for the census tracts in Vancouver"
+"0","census_data <- census_data %>%"
+"0","  mutate(Population_density ="
+"0","           (Population_2021 / Shape_area_km2))"
