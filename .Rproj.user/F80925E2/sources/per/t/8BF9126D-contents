@@ -9,14 +9,22 @@ author:
   student_number: 400264259
 - name: Tim Truong
   student_number: 400243427
-date: "2023-03-20"
+subject: "ENVSOCTY 4GA3: Applied Spatial Statistics"
+date: "21/4/2023"
 output:
-  pdf_document: default
-  html_document: default
-subject: ENVSOCTY 4GA3
+  pdf_document:
+    # The project-template-default.tex file was minimally adapted from Steven V. Miller's template for academic manuscripts. See:
+    # http://svmiller.com/blog/2016/02/svm-r-markdown-manuscript/
+    # https://github.com/svmiller/svm-r-markdown-templates/blob/master/svm-latex-ms.tex
+    template: project-template-default.tex
+bibliography: [bibliography.bib, packages.bib]
+always_allow_html: true
 ---
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,
+                      fig.align='center',
+                      out.width = "0.8\\linewidth")
 ```
 
 ## R Markdown
