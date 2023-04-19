@@ -91,6 +91,7 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{fvextra} \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -112,15 +113,15 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={The Relationship between Urban Green Space and Socioeconomic Factors in the City of Vancouver: A Case of Environmental Injustice},
-  pdfsubject={ENVSOCTY 4GA3: Applied Spatial Statistics},
+  pdftitle={The Relationship between Urban Green Space and Socioeconomic Factors in the City of Vancouver, A Case of Environmental Injustice},
+  pdfsubject={ENVSOCTY 4GA3 \& Applied Spatial Statistics},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 \title{The Relationship between Urban Green Space and Socioeconomic
-Factors in the City of Vancouver: A Case of Environmental Injustice}
+Factors in the City of Vancouver, A Case of Environmental Injustice}
 \author{true \and true \and true \and true}
-\date{18 April, 2023}
+\date{21/4/2023}
 
 \begin{document}
 \maketitle
@@ -150,19 +151,6 @@ chunk to prevent printing of the R code that generated the plot.
 \begin{Highlighting}[]
 \CommentTok{\# loading packages}
 \FunctionTok{library}\NormalTok{(cancensus) }\CommentTok{\#this package allows us to download census data from Stats Canada}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## Census data is currently stored temporarily.
-## 
-##  In order to speed up performance, reduce API quota usage, and reduce unnecessary network calls, please set up a persistent cache directory by setting the environment variable CM_CACHE_PATH= '<path to cancensus cache directory>' or  setting options(cancensus.cache_path = '<path to cancensus cache directory>')
-## 
-##  You may add this environment varianble to your .Renviron or add this option, together with your API key, to your .Rprofile.
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(ggplot2) }
 \FunctionTok{library}\NormalTok{(tidyverse) }\CommentTok{\#collection of packages for data visualization and manipulation (includes dplyr and ggplot2)}
 \end{Highlighting}
@@ -174,9 +162,6 @@ chunk to prevent printing of the R code that generated the plot.
 ## v forcats   1.0.0     v stringr   1.5.0
 ## v lubridate 1.9.2     v tibble    3.2.0
 ## v purrr     1.0.1     v tidyr     1.3.0
-\end{verbatim}
-
-\begin{verbatim}
 ## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()
@@ -350,6 +335,7 @@ Vancouver that were studied.
 \begin{Highlighting}[]
 \CommentTok{\# assigning a persistent local cache}
 \FunctionTok{options}\NormalTok{(}\AttributeTok{cancensus.cache\_path =} \StringTok{"/Users/dainadeangelis/Desktop/4GA3Project{-}/Project data"}\NormalTok{)}
+\FunctionTok{Sys.setenv}\NormalTok{(}\AttributeTok{CM\_CACHE\_PATH =} \StringTok{"/Users/dainadeangelis/Desktop/4GA3Project{-}/Project data"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -669,8 +655,7 @@ Population of each CT
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.8\linewidth]{4GA3Markdown_files/figure-latex/unnamed-chunk-22-1} \end{center}
-
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf}
 Population density of each CT
 
 \begin{Shaded}
@@ -686,8 +671,7 @@ Population density of each CT
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.8\linewidth]{4GA3Markdown_files/figure-latex/unnamed-chunk-23-1} \end{center}
-
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf}
 Proportion of population identifying as visible and non-visible
 minorities
 
@@ -703,7 +687,7 @@ minorities
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.8\linewidth]{4GA3Markdown_files/figure-latex/unnamed-chunk-24-1} \end{center}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -717,7 +701,7 @@ minorities
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.8\linewidth]{4GA3Markdown_files/figure-latex/unnamed-chunk-25-1} \end{center}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf}
 
 The proportion of the population considered low income for each CT
 
@@ -733,7 +717,7 @@ The proportion of the population considered low income for each CT
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.8\linewidth]{4GA3Markdown_files/figure-latex/unnamed-chunk-26-1} \end{center}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-26-1.pdf}
 
 Finally, a choropleth map was created to display the independent
 variable, parks accessible within 30 mintues of a centroid.
@@ -750,7 +734,7 @@ variable, parks accessible within 30 mintues of a centroid.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.8\linewidth]{4GA3Markdown_files/figure-latex/unnamed-chunk-27-1} \end{center}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf}
 
 Next, to determine the relationship between the number of accessible
 parks and each independent variable, the independent variables were
@@ -842,7 +826,7 @@ representation of the data
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.8\linewidth]{4GA3Markdown_files/figure-latex/unnamed-chunk-29-1} \end{center}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf}
 
 Model regressing population density on number of accessible marks
 
@@ -904,7 +888,7 @@ Scatterplot of population density vs number of accessible parks
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.8\linewidth]{4GA3Markdown_files/figure-latex/unnamed-chunk-31-1} \end{center}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf}
 
 Model regressing proportion of visible minorities on number of
 accessible parks
@@ -968,7 +952,7 @@ parks
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.8\linewidth]{4GA3Markdown_files/figure-latex/unnamed-chunk-33-1} \end{center}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf}
 
 Model regressing proportion of non-visible minorities on number of
 accessible parks
@@ -1032,7 +1016,7 @@ accessible parks
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.8\linewidth]{4GA3Markdown_files/figure-latex/unnamed-chunk-35-1} \end{center}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf}
 
 Model regressing proportion of low income population on number of
 accessible parks
@@ -1096,7 +1080,7 @@ accessible parks
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.8\linewidth]{4GA3Markdown_files/figure-latex/unnamed-chunk-37-1} \end{center}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-37-1.pdf}
 
 \#Analysis
 

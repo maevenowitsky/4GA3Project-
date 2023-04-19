@@ -1,5 +1,6 @@
 ---
-title: "The Relationship between Urban Green Space and Socioeconomic Factors in the City of Vancouver: A Case of Environmental Injustice"
+title: The Relationship between Urban Green Space and Socioeconomic Factors in the
+  City of Vancouver, A Case of Environmental Injustice
 author:
 - name: Daina De Angelis
   student_number: 400240413
@@ -9,22 +10,16 @@ author:
   student_number: 400264259
 - name: Tim Truong
   student_number: 400243427
-subject: "ENVSOCTY 4GA3: Applied Spatial Statistics"
 date: "21/4/2023"
 output:
-  pdf_document:
-    # The project-template-default.tex file was minimally adapted from Steven V. Miller's template for academic manuscripts. See:
-    # http://svmiller.com/blog/2016/02/svm-r-markdown-manuscript/
-    # https://github.com/svmiller/svm-r-markdown-templates/blob/master/svm-latex-ms.tex
-    template: project-template-default.tex
-bibliography: [bibliography.bib, packages.bib]
-always_allow_html: true
+  html_document:
+    df_print: paged
+subject: ENVSOCTY 4GA3 & Applied Spatial Statistics
+header-includes: \usepackage{fvextra} \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,
-                      fig.align='center',
-                      out.width = "0.8\\linewidth")
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## R Markdown
@@ -85,6 +80,7 @@ options(cancensus.api_key = "CensusMapper_ff4c917e80df34b71900e0a048c999dd")
 ```{r}
 # assigning a persistent local cache
 options(cancensus.cache_path = "/Users/dainadeangelis/Desktop/4GA3Project-/Project data")
+Sys.setenv(CM_CACHE_PATH = "/Users/dainadeangelis/Desktop/4GA3Project-/Project data")
 ```
 
 ```{r}
@@ -336,6 +332,8 @@ model_population_density <- lm(formula = Population_density ~ accessibility,
 stargazer(model_population_density,
           header = FALSE,
           title = "Population Density of Census Tracts regressed on Number of Parks Accessible")
+
+summary(model_population_density)
 ```
 Scatterplot of population density vs number of accessible parks
 ```{r}
@@ -358,6 +356,8 @@ model_visible_minority <- lm(formula = Proportion_visible_minority ~ accessibili
 stargazer(model_visible_minority,
           header = FALSE,
           title = "Proportion of Visible Minority Population in Census Tracts regressed on Number of Parks Accessible")
+
+summary(model_visible_minority)
 ```
 Scatterplot of proportion of visible minorities vs number of accessible parks
 ```{r}
@@ -380,6 +380,8 @@ model_nonvisible_minority <- lm(formula = Proportion_nonvisible_minority ~ acces
 stargazer(model_nonvisible_minority,
           header = FALSE,
           title = "Proportion of Non-Visible Minority Population in Census Tracts regressed on Number of Parks Accessible")
+
+summary(model_nonvisible_minority)
 ```
 Scatterplot of proportion of non-visible minorities vs number of accessible parks
 ```{r}
@@ -402,6 +404,8 @@ model_income <- lm(formula = Proportion_low_income ~ accessibility,
 stargazer(model_income,
           header = FALSE,
           title = "Proportion of Low Income Population in Census Tracts regressed on Number of Parks Accessible")
+
+summary(model_income)
 ```
 Scatterplot of proportion of low income population vs number of accessible parks
 ```{r}
