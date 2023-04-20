@@ -1,6 +1,5 @@
 ---
-title: The Relationship between Urban Green Space and Socioeconomic Factors in the
-  City of Vancouver, A Case of Environmental Injustice
+title: "The Relationship between Urban Green Space and Socioeconomic Factors in the City of Vancouver: A Case of Environmental Injustice"
 author:
 - name: Daina De Angelis
   student_number: 400240413
@@ -14,7 +13,7 @@ date: "21/4/2023"
 output:
   html_document:
     df_print: paged
-subject: ENVSOCTY 4GA3 & Applied Spatial Statistics
+subject: "ENVSOCTY 4GA3 & Applied Spatial Statistics"
 header-includes: \usepackage{fvextra} \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 ---
 
