@@ -11,6 +11,7 @@ author:
   student_number: 400243427
 date: "21/4/2023"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 subject: "ENVSOCTY 4GA3 & Applied Spatial Statistics"
