@@ -1,0 +1,3 @@
+"0","#creating a regression model of population density regressing on number of accessible parks"
+"0","model_income <- lm(formula = Proportion_low_income ~ accessibility, "
+"0","             data = census_data)"

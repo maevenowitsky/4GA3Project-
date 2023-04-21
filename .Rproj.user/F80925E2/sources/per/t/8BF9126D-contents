@@ -3,20 +3,16 @@ title: "The Relationship between Urban Green Space and Socioeconomic Factors in 
 #subtitle: "A subtitle"
 thanks: "Paper submitted to complete the requirements of ENVSOCTY 4GA3 Applied Spatial Statistics; with additional edits by Antonio Paez for this version."
 author:
-- name: Zahra Akhtar
-  student_number: 400067162
-- name: Anastasiia Kalinina 
-  student_number: 400050085
-- name: Gabriella Morrone
-  student_number: 400085415
-- name: Jillian Walters
-  student_number: 400285085
-- name: Jocelyn Wu
-  student_number: 400051160
+- name: Daina De Angelis
+  student_number: 400240413
+- name: Tim Truong 
+  student_number: 400264793
+- name: Maeve Nowitsky
+  student_number: 400264259
+- name: Jillian Mezenberg
+  student_number: 400243427
 subject: "ENVSOCTY 4GA3"
-abstract: "This paper reports our analysis of opioid prescriptions in Kentucky, USA, and its relationship with income and education at the level of counties. Data were obtained from the Washington Post database and the US Census."
-keywords: "opioids, education, income, spatial analysis"
-date: "4/6/2020"
+date: "4/21/2023"
 output:
   pdf_document:
     # The project-template-default.tex file was minimally adapted from Steven V. Miller's template for academic manuscripts. See:
@@ -33,27 +29,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r}
-# Clearing data
-rm(list = ls())
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-
-```{r include=FALSE}
+```{r load-packages, include=FALSE}
 # loading packages
 library(cancensus) #this package allows us to download census data from Stats Canada
 library(ggplot2) 
 library(tidyverse) #collection of packages for data visualization and manipulation (includes dplyr and ggplot2)
 library(tidycensus)
 library(tigris)
-library(kableExtra)
-library(cartogram)
 library(kableExtra) 
 library(plotly) #packaged used to create interactive graphics 
 library(sf) #package to work with geospatial data of simple feature class
@@ -66,13 +48,16 @@ library(rJava) #an r to java interface used to support the r5r package
 library(stargazer) #package to show results of regression analysis as a table
 ```
 
-#Introduction
+## Introduction 
 
+  Vancouver is usually ranked as one the most sustainable as the city tries to move toward a zero-carbon emission city, the role of urban greeny became more important than ever. Urban green space plays an important role in creating liveable spaces and helping to maintain the well-being of the majority of residents. In addition,  Urban green spaces can reduce many climate change impacts, support urban ecology, improve property values, and increase social interactions (Nesbitt et al., 2019). The relationship between urban green space and socioeconomic factors in the city of Vancouver can be complex and multifaceted. The distribution of urban green space is inequitable in some cities (Nesbitt & Meitner, 2016). Equitable access to urban green space is often associated with higher levels of well-being, particularly among disadvantaged and lower socioeconomic groups. In this report, Vancouver is chosen because it has high resolution urban green space data and socioeconomic data available. It aims to explore the relationship between accessibility to green space and socioeconomic factors across different census subdivisions in Vancouver, Canada.
 
-#Background
+## Background
 
-#Study Area
-This study took place at the Census Subdivision level to target the municipality of Vancouver, BC. There are 127 census tracts in Vancouver that were studied.  
+## Study Area
+
+This study took place at the Census Subdivision level to target the municipality of Vancouver, BC. There are 127 census tracts in Vancouver that were studied. 
+
 ```{r}
 # storing the API key in system environment to be easily used in API calls
 options(cancensus.api_key = "CensusMapper_ff4c917e80df34b71900e0a048c999dd")
@@ -84,7 +69,7 @@ options(cancensus.cache_path = here::here("Project data"))
 Sys.setenv(CM_CACHE_PATH = here::here("Project data"))
 ```
 
-```{r}
+```{r include=FALSE}
 # returning census data and geography for the Vancouver CMA as an sf-class dataframe
 census_data <- get_census(dataset='CA21', regions=list(CSD="5915022"), vectors=c("v_CA21_1","v_CA21_386","v_CA21_906", "v_CA21_4875", "v_CA21_4914", "v_CA21_1010"), labels="detailed", geo_format="sf", level='CT')
 ```
@@ -103,16 +88,19 @@ names(census_data) [7] <- "Number_of_dwellings"
 names(census_data) [10:15] <- c("Population_2021", "Average_age", "Median_total_income_of_household_2020", "Total_visible_minority_population", "Not_a_visible_minority", "Low_income_status_for_the_population_in_private_households_2020")
 ```
 
-#Data
-The data used for analysis includes census data for variables of population, population density, visible minority status, non-visible minority status, and income for each census tract in the census subdivision of Vancouver. This data was obtained from Statistics Canada through use of the cancensus package in R. All census data used is from the 2021 census. Point data for each the location of each park, homeless shelter, and street tree in the census subdivision was downloaded in a .csv file format from the City of Vancouver’s open data portal. To use the r5r package so that accessibility to parks by both walking and public transit could be determined, a road network dataset of Vancouver, and as well as a public transport feed of the city was needed. The road network dataset was obtained from BBBike, and was stored as a .pbf file. The public transport feed was obtained from Transitland and stored in a GTFS.zip file. 
+## Data
 
-#Methods
-To determine the relationship between greenspace and other socioeconomic factors in Vancouver, Rstudio was used to analyze and visualize the variables being examined. Choropleth maps for variables of population, population density, visible minority status, non-visible minority status, and income, and accessibility to parks were made to provide a visual representation of the difference between census tracts. Regression analysis was used to determine the relationship between the independent variable studied (number of parks accessible within a 30 minute travel time) and dependent variables (population, population density, visible minority status, non-visible minority status, and income). Scatterplots were used to show a visual representation between independent and dependent variables studied to better understand the results of regression analysis. 
+  The data used for analysis includes census data for variables of population, population density, visible minority status, non-visible minority status, and income for each census tract in the census subdivision of Vancouver. This data was obtained from Statistics Canada through use of the cancensus package in R. All census data used is from the 2021 census. Point data for each the location of each park, homeless shelter, and street tree in the census subdivision was downloaded in a .csv file format from the City of Vancouver’s open data portal. To use the r5r package so that accessibility to parks by both walking and public transit could be determined, a road network dataset of Vancouver, and as well as a public transport feed of the city was needed. The road network dataset was obtained from BBBike, and was stored as a .pbf file. The public transport feed was obtained from Transitland and stored in a GTFS.zip file. 
 
-#Results
+## Methods
 
-To begin our analysis, the centroids for each census tract in the Vancouver CSD were obtained and put into a dataframe with latitude, longitude, and census ID. This allowed us to have point data describing the middle of each CT. 
-```{r}
+  To determine the relationship between greenspace and other socioeconomic factors in Vancouver, Rstudio was used to analyze and visualize the variables being examined. Choropleth maps for variables of population, population density, visible minority status, non-visible minority status, and income, and accessibility to parks were made to provide a visual representation of the difference between census tracts. Regression analysis was used to determine the relationship between the independent variable studied (number of parks accessible within a 30 minute travel time) and dependent variables (population, population density, visible minority status, non-visible minority status, and income). Scatterplots were used to show a visual representation between independent and dependent variables studied to better understand the results of regression analysis. 
+
+## Results
+
+To begin our analysis, the centroids for each census tract in the Vancouver CSD were obtained and put into a dataframe with latitude, longitude, and census ID. This allowed us to have point data describing the middle of each CT.
+
+```{r include=FALSE}
 # obtaining centroids for census tracts in the Vancouver CSD 
 CT_centroids <- st_coordinates(st_centroid(census_data))
 #converting centroids to data frame
@@ -153,6 +141,7 @@ census_data <- census_data %>%
 ```
 
 The point data for park in the Vancouver CSD was obtained from a csv file from Vancouver's open data portal and transformed into a data frame with columns describing the X and Y coordinates of each park.
+
 ```{r}
 # reading csv files
 parks <- read.csv(file = "Project data/parks.csv", head = TRUE, sep = ";") 
@@ -168,8 +157,9 @@ parks_coord <- parks_coord %>%
                            "Y" = "X2")
 ```
 
-The point data for parks was prepared for use of the r5r package by renaming coulumns for latitude, longitude, and park ID data and to the names required by r5r. Data for latitude and longitude was converted into a numeric format. Lastly, a column to indicate that each park point was one singular park was added to meet the requirement of the opportunites parameter in r5r.  
-```{r}
+The point data for parks was prepared for use of the r5r package by renaming columns for latitude, longitude, and park ID data and to the names required by r5r. Data for latitude and longitude was converted into a numeric format. Lastly, a column to indicate that each park point was one singular park was added to meet the requirement of the opportunities parameter in r5r.  
+
+```{r include=FALSE}
 #preparing park data for r5r
 class(parks_coord)
 parks_coord<- cbind(parks_coord, parks$ParkID)
@@ -184,19 +174,22 @@ parks_coord <- parks_coord %>%
 parks_coord$lon <- as.numeric(parks_coord$lon)
 parks_coord$lat <- as.numeric(parks_coord$lat)
 ```
+
 ```{r}
 parks_coord <- parks_coord %>%
   add_column(Parks_count = 1)
 ```
 
-Next, the r5r package was used in order to build a transport network for Vancouver, so that the distances and routing between the centroids of census tracts and park locations can be calculated. 
+Next, the r5r package was used in order to build a transport network for Vancouver, so that the distances and routing between the centroids of census tracts and park locations can be calculated.
+
 ```{r}
 #allocating RAM memory to Java to use the r5r package
 options(java.parameters = "-Xmx2G")
 ```
 
-The transport network was built with using a road network dataset of Vancouver, and as well as a public transport feed of the city. The road network dataset was obtained from BBBike, and was stored as a .pbf file. The public transport feed was obtained from Transitland and stored in a GTFS.zip file.  
-```{r}
+The transport network was built with using a road network dataset of Vancouver, and as well as a public transport feed of the city. The road network dataset was obtained from BBBike, and was stored as a .pbf file. The public transport feed was obtained from Transitland and stored in a GTFS.zip file.
+
+```{r include=FALSE}
 #building transport network for r5r
 path <- file.path("Project data/r5rpath")
 
@@ -204,7 +197,8 @@ path <- file.path("Project data/r5rpath")
 list.files(path)
 r5r_core <- setup_r5(data_path = path)
 ```
-```{r}
+
+```{r include=FALSE}
 #load origin points as the centroids of census tracts
 points <- centroids_df
 class(points)
@@ -216,8 +210,9 @@ departure_datetime <- as.POSIXct("16-02-2023 14:00:00",
 
 ```
 
-The accessibility function in r5r was used to compute how many parks were accessible within 30 minutes of each census tracts centroid by walking or public transit. 
-```{r}
+The accessibility function in r5r was used to compute how many parks were accessible within 30 minutes of each census tracts centroid by walking or public transit.
+
+```{r include=FALSE}
 #using accessibility from r5r
 access <- accessibility(r5r_core = r5r_core,
                         origins = points,
@@ -230,85 +225,138 @@ access <- accessibility(r5r_core = r5r_core,
 ```
 
 Once the number of accessible parks was calculated, this was added to the data frame displaying census data.
+
 ```{r}
 census_data <- cbind(census_data, accessibility = access$accessibility)
 ```
 
-After all variables were in one data frame and prepared for analysis, data was first visualized by creating choropleth maps for each variable of interest. Maps were created for each variable as follows:
+After all variables were in one data frame and prepared for analysis, data was first visualized by creating choropleth maps for each variable of interest. Maps were created for each variable as follows, beginning with creating a choropleth map for the 2021 population:
 
-Population of each CT
-
-```{r echo=FALSE, fig.width=2}
+```{r echo=FALSE}
 # creating a choropleth map for the 2021 population
-ggplot(census_data) +
-  geom_sf(aes(fill = cut_number(Population_2021, 5)),
-          colour = "black",
+ggplot() +
+  geom_sf(data = census_data,
+          aes(fill = cut_number(Population_2021, 5)),
+          color = "black",
           size = 0.1) +
   scale_fill_brewer(palette = "YlOrRd") +
-  coord_sf() +
-  labs(fill = "Population")
+  ggtitle("Population of Each Census Tract") +
+ theme(plot.title = element_text(size = 12),
+        legend.title = element_blank(),
+        legend.position = "right",  
+        legend.box = "horizontal",  
+        legend.key.width = unit(0.5, "cm"),  
+        legend.key.height = unit(0.5, "cm")) 
 ```
 
-Population density of each CT
+\newpage
 
-```{r}
+Next, creating a choropleth map for the population density of each census tract.
+
+```{r echo=FALSE}
 # creating a choropleth map for the population density
-ggplot(census_data) +
-  geom_sf(aes(fill = cut_number(Population_density, 5)),
-          colour = "black",
+ggplot() +
+  geom_sf(data = census_data,
+          aes(fill = cut_number(Population_density, 5)),
+          color = "black",
           size = 0.1) +
   scale_fill_brewer(palette = "YlOrRd") +
-  coord_sf() +
-  labs(fill = "Population Density")
-```
-Proportion of population identifying as visible and non-visible minorities
-
-```{r}
-# creating a choropleth map for the proportion of the visisble minority population
-ggplot(census_data) +
-geom_sf(aes(fill = cut_number(Proportion_visible_minority, 5)),
-        color = "black",
-        size = 0.1) +
-scale_fill_brewer(palette = "YlOrRd") +
-labs(fill = "Prop Visible Minority")
+  ggtitle("Population Density of Each Census Tract") +
+  theme(plot.title = element_text(size = 12),
+        legend.title = element_blank(),
+        legend.position = "right",  
+        legend.box = "horizontal",  
+        legend.key.width = unit(0.5, "cm"),  
+        legend.key.height = unit(0.5, "cm")) 
 ```
 
+\newpage
+
+Now creating a choropleth map for the proportion of the visible minority population.
+
 ```{r}
+# creating a choropleth map for the proportion of the visible minority population
+ggplot() +
+  geom_sf(data = census_data,
+          aes(fill = cut_number(Proportion_visible_minority, 5)),
+          color = "black",
+          size = 0.1) +
+  scale_fill_brewer(palette = "YlOrRd") +
+  ggtitle("Proportion of the Visible Minority Population") +
+   theme(plot.title = element_text(size = 12),
+        legend.title = element_blank(),
+        legend.position = "right",  
+        legend.box = "horizontal",  
+        legend.key.width = unit(0.5, "cm"),  
+        legend.key.height = unit(0.5, "cm")) 
+```
+
+\newpage
+
+Creating a choropleth map for the proportion of the non-visible minority population.
+
+```{r echo=FALSE}
 # creating a choropleth map for the proportion of the non-visible minority population
-ggplot(census_data) +
-geom_sf(aes(fill = cut_number(Proportion_nonvisible_minority, 5)),
-        color = "black",
-        size = 0.1) +
-scale_fill_brewer(palette = "YlOrRd") +
-labs(fill = "Prop Non-Visible Minority")
+ggplot() +
+  geom_sf(data = census_data,
+          aes(fill = cut_number(Proportion_nonvisible_minority, 5)),
+          color = "black",
+          size = 0.1) +
+  scale_fill_brewer(palette = "YlOrRd") +
+  ggtitle("Proportion of Non-Visible Minority Population") +
+   theme(plot.title = element_text(size = 12),
+        legend.title = element_blank(),
+        legend.position = "right",  
+        legend.box = "horizontal",  
+        legend.key.width = unit(0.5, "cm"),  
+        legend.key.height = unit(0.5, "cm")) 
 ```
 
-The proportion of the population considered low income for each CT 
+\newpage
 
-```{r}
-# creating a choropleth map displaying the proportion of low-income 
-ggplot(census_data) +
-geom_sf(aes(fill = cut_number(Proportion_low_income, 5)),
-        color = "black",
-        size = 0.1) +
-scale_fill_brewer(palette = "YlOrRd") +
-labs(fill = "Prop Low Income")
+Creating a choropleth map displaying the proportion of low-income areas.
+
+```{r echo=FALSE}
+# creating a choropleth map displaying the proportion of low-income areas.
+ggplot() +
+  geom_sf(data = census_data,
+          aes(fill = cut_number(Proportion_low_income, 5)),
+          color = "black",
+          size = 0.1) +
+  scale_fill_brewer(palette = "YlOrRd") +
+  ggtitle("Proportion of Population Considered Low-Income for Each CT") +
+ theme(plot.title = element_text(size = 12),
+        legend.title = element_blank(),
+        legend.position = "right",  
+        legend.box = "horizontal",  
+        legend.key.width = unit(0.5, "cm"),  
+        legend.key.height = unit(0.5, "cm")) 
 ```
 
-Finally, a choropleth map was created to display the independent variable, parks accessible within 30 mintues of a centroid. 
+\newpage
 
-```{r}
+Finally, a choropleth map was created to display the independent variable, parks accessible within 30 minutes of a centroid. 
+
+```{r echo=FALSE}
 # creating a choropleth map displaying the number of parks accessible to a census tract's centroids within 30 minutes
-ggplot(census_data) +
-geom_sf(aes(fill = cut_number(accessibility, 5)),
-        color = "black",
-        size = 0.1) +
-scale_fill_brewer(palette = "YlOrRd") +
-labs(fill = "Number of Neighbourhoods Accessible Within 30 Minutes") +
-  theme(legend.position = "bottom")
+ggplot() +
+  geom_sf(data = census_data,
+          aes(fill = cut_number(accessibility, 5)),
+          color = "black",
+          size = 0.1) +
+  scale_fill_brewer(palette = "YlOrRd") +
+  ggtitle("Number of Neighbourhoods Accessible Within 30 Minutes") +
+  theme(plot.title = element_text(size = 12),
+        legend.title = element_blank(),
+        legend.position = "right",  
+        legend.box = "horizontal",  
+        legend.key.width = unit(0.5, "cm"),  
+        legend.key.height = unit(0.5, "cm")) 
 ```
 
-Next, to determine the relationship between the number of accessible parks and each independent variable, the independent variables were regressed to number of accessible parks for each CT. 
+\newpage
+Next, to determine the relationship between the number of accessible parks and each independent variable, the independent variables were regressed to number of accessible parks for each CT.
+
 ```{r results='asis'}
 #creating a regression model of population regressing on number of accessible parks
 model_population <- lm(formula = Population_2021 ~ accessibility, 
@@ -317,10 +365,9 @@ model_population <- lm(formula = Population_2021 ~ accessibility,
 stargazer(model_population,
           header = FALSE,
           title = "Population of Census Tracts regressed on Number of Parks Accessible")
-
-summary(model_population)
 ```
-For each regression, a scatter plot was created to provide a visual representation of the data
+
+For each regression, a scatter plot was created to provide a visual representation of the data.
 
 ```{r}
 ggplot(data = census_data, 
@@ -330,11 +377,14 @@ ggplot(data = census_data,
   geom_smooth(formula = y ~ x,
               method = "lm") +
   ylab("Population (2021)") +
-  xlab("Number of Parks Accessible within 30 Minutes (Through walking or public transit") 
+  xlab("No. of Parks Accessible within 30 Minutes (walking or public transit)") 
 ```
 
-Model regressing population density on number of accessible marks
-```{r}
+\newpage
+
+Model regressing population density on number of accessible parks.
+
+```{r results='asis'}
 #creating a regression model of population density regressing on number of accessible parks
 model_population_density <- lm(formula = Population_density ~ accessibility, 
              data = census_data)
@@ -342,10 +392,10 @@ model_population_density <- lm(formula = Population_density ~ accessibility,
 stargazer(model_population_density,
           header = FALSE,
           title = "Population Density of Census Tracts regressed on Number of Parks Accessible")
-
-summary(model_population_density)
 ```
-Scatterplot of population density vs number of accessible parks
+
+Scatterplot of population density vs number of accessible parks.
+
 ```{r}
 ggplot(data = census_data, 
        aes(x = accessibility, 
@@ -354,11 +404,13 @@ ggplot(data = census_data,
   geom_smooth(formula = y ~ x,
               method = "lm") +
   ylab("Population Density") +
-  xlab("Number of Parks Accessible within 30 Minutes (Through walking or public transit") 
+  xlab("No. of Parks Accessible within 30 Minutes (walking or public transit)") 
 ```
 
-Model regressing proportion of visible minorities on number of accessible parks
-```{r}
+\newpage
+Model regressing proportion of visible minorities on number of accessible parks.
+
+```{r results='asis'}
 #creating a regression model of population density regressing on number of accessible parks
 model_visible_minority <- lm(formula = Proportion_visible_minority ~ accessibility, 
              data = census_data)
@@ -366,10 +418,10 @@ model_visible_minority <- lm(formula = Proportion_visible_minority ~ accessibili
 stargazer(model_visible_minority,
           header = FALSE,
           title = "Proportion of Visible Minority Population in Census Tracts regressed on Number of Parks Accessible")
-
-summary(model_visible_minority)
 ```
-Scatterplot of proportion of visible minorities vs number of accessible parks
+
+Scatterplot of proportion of visible minorities vs number of accessible parks.
+
 ```{r}
 ggplot(data = census_data, 
        aes(x = accessibility, 
@@ -378,22 +430,24 @@ ggplot(data = census_data,
   geom_smooth(formula = y ~ x,
               method = "lm") +
   ylab("Proportion of Visible Minority Population") +
-  xlab("Number of Parks Accessible within 30 Minutes (Through walking or public transit") 
+  xlab("No. of Parks Accessible within 30 Minutes (walking or public transit)") 
 ```
 
-Model regressing proportion of non-visible minorities on number of accessible parks
-```{r}
+\newpage
+Model regressing proportion of non-visible minorities on number of accessible parks.
+
+```{r results='asis'}
 #creating a regression model of population density regressing on number of accessible parks
 model_nonvisible_minority <- lm(formula = Proportion_nonvisible_minority ~ accessibility, 
              data = census_data)
 
 stargazer(model_nonvisible_minority,
           header = FALSE,
-          title = "Proportion of Non-Visible Minority Population in Census Tracts regressed on Number of Parks Accessible")
-
-summary(model_nonvisible_minority)
+          title = "Proportion of Non-Visible Minority Population in Census Tracts regressed on number of Parks Accessible")
 ```
-Scatterplot of proportion of non-visible minorities vs number of accessible parks
+
+Scatterplot of proportion of non-visible minorities vs number of accessible parks.
+
 ```{r}
 ggplot(data = census_data, 
        aes(x = accessibility, 
@@ -402,11 +456,13 @@ ggplot(data = census_data,
   geom_smooth(formula = y ~ x,
               method = "lm") +
   ylab("Proportion of Non-Visible Minority Population") +
-  xlab("Number of Parks Accessible within 30 Minutes (Through walking or public transit") 
+  xlab("No. of Parks Accessible within 30 Minutes (walking or public transit)") 
 ```
 
-Model regressing proportion of low income population on number of accessible parks
-```{r}
+\newpage
+Model regressing proportion of low income population on number of accessible parks.
+
+```{r results='asis'}
 #creating a regression model of population density regressing on number of accessible parks
 model_income <- lm(formula = Proportion_low_income ~ accessibility, 
              data = census_data)
@@ -414,10 +470,10 @@ model_income <- lm(formula = Proportion_low_income ~ accessibility,
 stargazer(model_income,
           header = FALSE,
           title = "Proportion of Low Income Population in Census Tracts regressed on Number of Parks Accessible")
-
-summary(model_income)
 ```
-Scatterplot of proportion of low income population vs number of accessible parks
+
+Scatterplot of proportion of low income population vs number of accessible parks.
+
 ```{r}
 ggplot(data = census_data, 
        aes(x = accessibility, 
@@ -426,10 +482,10 @@ ggplot(data = census_data,
   geom_smooth(formula = y ~ x,
               method = "lm") +
   ylab("Proportion of Low Income Population") +
-  xlab("Number of Parks Accessible within 30 Minutes (Through walking or public transit") 
+  xlab("No. of Parks Accessible within 30 Minutes (walking or public transit)")
 ```
 
-#Analysis
+## Analysis
 
 
-#Conclusion 
+## Conclusion 

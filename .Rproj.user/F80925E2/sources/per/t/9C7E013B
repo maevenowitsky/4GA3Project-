@@ -3,7 +3,7 @@
     "path": "~/Desktop/4GA3Project-/4GA3Markdown.tex",
     "project_path": "4GA3Markdown.tex",
     "type": "tex",
-    "hash": "700482398",
+    "hash": "442138007",
     "contents": "",
     "dirty": false,
     "created": 1682094068999.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "350,36",
-        "scrollLine": "347"
+        "cursorPosition": "350,22",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1682096038,
+    "lastKnownWriteTime": 1682104564,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1682096038,
+    "last_content_update": 1682104564,
     "read_only": false,
     "read_only_alternatives": []
 }
