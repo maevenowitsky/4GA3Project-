@@ -80,8 +80,8 @@ options(cancensus.api_key = "CensusMapper_ff4c917e80df34b71900e0a048c999dd")
 
 ```{r}
 # assigning a persistent local cache
-options(cancensus.cache_path = "/Users/dainadeangelis/Desktop/4GA3Project-/Project data")
-Sys.setenv(CM_CACHE_PATH = "/Users/dainadeangelis/Desktop/4GA3Project-/Project data")
+options(cancensus.cache_path = here::here("Project data"))
+Sys.setenv(CM_CACHE_PATH = here::here("Project data"))
 ```
 
 ```{r}
