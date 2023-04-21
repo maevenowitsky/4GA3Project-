@@ -1,3 +1,0 @@
-"0","# calculating the proportion of the non visible minority population and adding to census_data"
-"0","census_data <- census_data %>%"
-"0","  mutate(Proportion_nonvisible_minority= (Not_a_visible_minority / Population_2021))"

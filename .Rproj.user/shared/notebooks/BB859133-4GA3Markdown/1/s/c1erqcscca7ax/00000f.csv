@@ -1,2 +1,0 @@
-"0","# reading csv files"
-"0","parks <- read.csv(file = ""Project data/parks.csv"", head = TRUE, sep = "";"") "
