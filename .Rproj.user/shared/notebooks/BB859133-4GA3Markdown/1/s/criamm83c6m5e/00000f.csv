@@ -1,0 +1,3 @@
+"0","# assigning a persistent local cache"
+"0","options(cancensus.cache_path = here::here(""Project data""))"
+"0","Sys.setenv(CM_CACHE_PATH = here::here(""Project data""))"
