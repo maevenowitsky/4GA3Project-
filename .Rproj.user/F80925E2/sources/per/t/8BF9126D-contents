@@ -1,7 +1,7 @@
 ---
 title: "The Relationship between Urban Green Space and Socioeconomic Factors in the City of Vancouver: A Case of Environmental Injustice"
 #subtitle: "A subtitle"
-thanks: "Paper submitted to complete the requirements of ENVSOCTY 4GA3 Applied Spatial Statistics; with additional edits by Antonio Paez for this version."
+thanks: "Paper submitted to complete the requirements of ENVSOCTY 4GA3 Applied Spatial Statistics."
 author:
 - name: Daina De Angelis
   student_number: 400240413
@@ -11,6 +11,8 @@ author:
   student_number: 400264259
 - name: Jillian Mezenberg
   student_number: 400243427
+aspect:
+key words:
 subject: "ENVSOCTY 4GA3"
 date: "4/21/2023"
 output:
