@@ -1,0 +1,669 @@
+% This template was minimally adapted from Steven V. Miller's template for academic manuscripts. See:
+% http://svmiller.com/blog/2016/02/svm-r-markdown-manuscript/
+\documentclass[]{article}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in]{geometry}
+\newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
+\usepackage{lmodern}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{abstract}
+\renewcommand{\abstractname}{}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+
+\renewenvironment{abstract}
+ {{%
+    \setlength{\leftmargin}{0mm}
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \relax}
+ {\endlist}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage
+%  \null
+%  \vskip 2em%
+%  \begin{center}%
+  \let \footnote \thanks
+    {\fontsize{18}{20}\selectfont\raggedright  \setlength{\parindent}{0pt} \@title \par}%
+}
+%\fi
+\makeatother
+
+
+
+
+\setcounter{secnumdepth}{0}
+
+
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+
+\title{The Relationship between Urban Green Space and Socioeconomic
+Factors in the City of Vancouver: A Case of Environmental
+Injustice \thanks{Paper submitted to complete the requirements of
+ENVSOCTY 4GA3 Applied Spatial Statistics; with additional edits by
+Antonio Paez for this version.}  }
+ 
+
+
+
+\author{\Large Zahra
+Akhtar\vspace{0.05in} \newline\normalsize\emph{400067162}   \and \Large Anastasiia
+Kalinina\vspace{0.05in} \newline\normalsize\emph{400050085}   \and \Large Gabriella
+Morrone\vspace{0.05in} \newline\normalsize\emph{400085415}   \and \Large Jillian
+Walters\vspace{0.05in} \newline\normalsize\emph{400285085}   \and \Large Jocelyn
+Wu\vspace{0.05in} \newline\normalsize\emph{400051160}  }
+
+
+\date{}
+
+\usepackage{titlesec}
+
+\titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\normalsize\itshape}
+\titleformat*{\subsubsection}{\normalsize\itshape}
+\titleformat*{\paragraph}{\normalsize\itshape}
+\titleformat*{\subparagraph}{\normalsize\itshape}
+
+
+
+
+
+\newtheorem{hypothesis}{Hypothesis}
+\usepackage{setspace}
+
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+
+% move the hyperref stuff down here, after header-includes, to allow for - \usepackage{hyperref}
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{%
+\ifxetex
+  \PassOptionsToPackage{hyphens}{url}\usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \PassOptionsToPackage{hyphens}{url}\usepackage[draft,unicode=true]{hyperref}
+\fi
+}
+
+\@ifpackageloaded{color}{
+    \PassOptionsToPackage{usenames,dvipsnames}{color}
+}{%
+    \usepackage[usenames,dvipsnames]{color}
+}
+\makeatother
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Zahra Akhtar (400067162) and Anastasiia
+Kalinina (400050085) and Gabriella Morrone (400085415) and Jillian
+Walters (400285085) and Jocelyn Wu (400051160)},
+             pdfkeywords = {opioids, education, income, spatial
+analysis},  
+            pdftitle={The Relationship between Urban Green Space and
+Socioeconomic Factors in the City of Vancouver: A Case of Environmental
+Injustice},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+% Add an option for endnotes. -----
+
+
+% add tightlist ----------
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% add some other packages ----------
+
+% \usepackage{multicol}
+% This should regulate where figures float
+% See: https://tex.stackexchange.com/questions/2275/keeping-tables-figures-close-to-where-they-are-mentioned
+\usepackage[section]{placeins}
+
+
+\begin{document}
+	
+% \pagenumbering{arabic}% resets `page` counter to 1 
+%    
+
+% \maketitle
+
+{% \usefont{T1}{pnc}{m}{n}
+\setlength{\parindent}{0pt}
+\thispagestyle{plain}
+{\fontsize{18}{20}\selectfont\raggedright 
+\maketitle  % title \par  
+
+}
+
+{
+   \vskip 13.5pt\relax \normalsize\fontsize{11}{12} 
+\textbf{\authorfont Zahra
+Akhtar} \hskip 15pt \emph{\small 400067162}   \par \textbf{\authorfont Anastasiia
+Kalinina} \hskip 15pt \emph{\small 400050085}   \par \textbf{\authorfont Gabriella
+Morrone} \hskip 15pt \emph{\small 400085415}   \par \textbf{\authorfont Jillian
+Walters} \hskip 15pt \emph{\small 400285085}   \par \textbf{\authorfont Jocelyn
+Wu} \hskip 15pt \emph{\small 400051160}   
+
+}
+
+}
+
+
+
+
+
+
+
+
+\begin{abstract}
+
+    \hbox{\vrule height .2pt width 39.14pc}
+
+    \vskip 8.5pt % \small 
+
+\noindent This paper reports our analysis of opioid prescriptions in
+Kentucky, USA, and its relationship with income and education at the
+level of counties. Data were obtained from the Washington Post database
+and the US Census.
+
+
+\vskip 8.5pt \noindent \emph{Keywords}: opioids, education, income,
+spatial analysis \par
+
+    \hbox{\vrule height .2pt width 39.14pc}
+
+
+
+\end{abstract}
+
+
+\vskip -8.5pt
+
+
+ % removetitleabstract
+
+\noindent  
+
+\hypertarget{r-markdown}{%
+\subsection{R Markdown}\label{r-markdown}}
+
+This is an R Markdown document. Markdown is a simple formatting syntax
+for authoring HTML, PDF, and MS Word documents. For more details on
+using R Markdown see \url{http://rmarkdown.rstudio.com}.
+
+When you click the \textbf{Knit} button a document will be generated
+that includes both content as well as the output of any embedded R code
+chunks within the document. You can embed an R code chunk like this:
+
+Note that the \texttt{echo\ =\ FALSE} parameter was added to the code
+chunk to prevent printing of the R code that generated the plot.
+
+\#Introduction
+
+\#Background
+
+\#Study Area This study took place at the Census Subdivision level to
+target the municipality of Vancouver, BC. There are 127 census tracts in
+Vancouver that were studied.
+
+\begin{verbatim}
+## Reading vectors data from local cache.
+\end{verbatim}
+
+\begin{verbatim}
+## Reading geo data from local cache.
+\end{verbatim}
+
+\#Data The data used for analysis includes census data for variables of
+population, population density, visible minority status, non-visible
+minority status, and income for each census tract in the census
+subdivision of Vancouver. This data was obtained from Statistics Canada
+through use of the cancensus package in R. All census data used is from
+the 2021 census. Point data for each the location of each park, homeless
+shelter, and street tree in the census subdivision was downloaded in a
+.csv file format from the City of Vancouver's open data portal. To use
+the r5r package so that accessibility to parks by both walking and
+public transit could be determined, a road network dataset of Vancouver,
+and as well as a public transport feed of the city was needed. The road
+network dataset was obtained from BBBike, and was stored as a .pbf file.
+The public transport feed was obtained from Transitland and stored in a
+GTFS.zip file.
+
+\#Methods To determine the relationship between greenspace and other
+socioeconomic factors in Vancouver, Rstudio was used to analyze and
+visualize the variables being examined. Choropleth maps for variables of
+population, population density, visible minority status, non-visible
+minority status, and income, and accessibility to parks were made to
+provide a visual representation of the difference between census tracts.
+Regression analysis was used to determine the relationship between the
+independent variable studied (number of parks accessible within a 30
+minute travel time) and dependent variables (population, population
+density, visible minority status, non-visible minority status, and
+income). Scatterplots were used to show a visual representation between
+independent and dependent variables studied to better understand the
+results of regression analysis.
+
+\#Results
+
+To begin our analysis, the centroids for each census tract in the
+Vancouver CSD were obtained and put into a dataframe with latitude,
+longitude, and census ID. This allowed us to have point data describing
+the middle of each CT.
+
+\begin{verbatim}
+## [1] "data.frame"
+\end{verbatim}
+
+The point data for park in the Vancouver CSD was obtained from a csv
+file from Vancouver's open data portal and transformed into a data frame
+with columns describing the X and Y coordinates of each park.
+
+The point data for parks was prepared for use of the r5r package by
+renaming coulumns for latitude, longitude, and park ID data and to the
+names required by r5r. Data for latitude and longitude was converted
+into a numeric format. Lastly, a column to indicate that each park point
+was one singular park was added to meet the requirement of the
+opportunites parameter in r5r.
+
+\begin{verbatim}
+## [1] "data.frame"
+\end{verbatim}
+
+Next, the r5r package was used in order to build a transport network for
+Vancouver, so that the distances and routing between the centroids of
+census tracts and park locations can be calculated.
+
+The transport network was built with using a road network dataset of
+Vancouver, and as well as a public transport feed of the city. The road
+network dataset was obtained from BBBike, and was stored as a .pbf file.
+The public transport feed was obtained from Transitland and stored in a
+GTFS.zip file.
+
+\begin{verbatim}
+## [1] "GTFS_TRANIST.zip"          "network_settings.json"    
+## [3] "network.dat"               "Vancouver.osm.pbf"        
+## [5] "Vancouver.osm.pbf.mapdb"   "Vancouver.osm.pbf.mapdb.p"
+\end{verbatim}
+
+\begin{verbatim}
+## No raster .tif files found. Using elevation = 'NONE'.
+\end{verbatim}
+
+\begin{verbatim}
+## Using cached R5 version from /Library/Frameworks/R.framework/Versions/4.2/Resources/library/r5r/jar/r5-v6.9-all.jar
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Using cached network.dat from Project data/r5rpath/network.dat
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "data.frame"
+\end{verbatim}
+
+The accessibility function in r5r was used to compute how many parks
+were accessible within 30 minutes of each census tracts centroid by
+walking or public transit.
+
+\begin{verbatim}
+## Warning in assign_points_input(destinations, "destinations"): 'destinations$id'
+## forcefully cast to character.
+\end{verbatim}
+
+Once the number of accessible parks was calculated, this was added to
+the data frame displaying census data.
+
+After all variables were in one data frame and prepared for analysis,
+data was first visualized by creating choropleth maps for each variable
+of interest. Maps were created for each variable as follows:
+
+Population of each CT
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf}
+Population density of each CT
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf}
+Proportion of population identifying as visible and non-visible
+minorities
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf}
+
+The proportion of the population considered low income for each CT
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-26-1.pdf}
+
+Finally, a choropleth map was created to display the independent
+variable, parks accessible within 30 mintues of a centroid.
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf}
+
+Next, to determine the relationship between the number of accessible
+parks and each independent variable, the independent variables were
+regressed to number of accessible parks for each CT.
+
+\begin{table}[!htbp] \centering 
+  \caption{Population of Census Tracts regressed on Number of Parks Accessible} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & Population\_2021 \\ 
+\hline \\[-1.8ex] 
+ accessibility & 10.518 \\ 
+  & (7.816) \\ 
+  & \\ 
+ Constant & 4,904.639$^{***}$ \\ 
+  & (264.208) \\ 
+  & \\ 
+\hline \\[-1.8ex] 
+Observations & 127 \\ 
+R$^{2}$ & 0.014 \\ 
+Adjusted R$^{2}$ & 0.006 \\ 
+Residual Std. Error & 1,459.451 (df = 125) \\ 
+F Statistic & 1.811 (df = 1; 125) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
+Call: lm(formula = Population\_2021 \textasciitilde{} accessibility,
+data = census\_data)
+
+Residuals: Min 1Q Median 3Q Max -4118.5 -1065.2 -159.5 1192.0 3319.0
+
+Coefficients: Estimate Std. Error t value
+Pr(\textgreater\textbar t\textbar)\\
+(Intercept) 4904.639 264.208 18.564 \textless2e-16 *** accessibility
+10.518 7.816 1.346 0.181\\
+--- Signif. codes: 0 `\emph{\textbf{' 0.001 '}' 0.01 '}' 0.05 `.' 0.1 '
+' 1
+
+Residual standard error: 1459 on 125 degrees of freedom Multiple
+R-squared: 0.01428, Adjusted R-squared: 0.006395 F-statistic: 1.811 on 1
+and 125 DF, p-value: 0.1808 For each regression, a scatter plot was
+created to provide a visual representation of the data
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf}
+
+Model regressing population density on number of accessible marks
+
+\begin{verbatim}
+## 
+## \begin{table}[!htbp] \centering 
+##   \caption{Population Density of Census Tracts regressed on Number of Parks Accessible} 
+##   \label{} 
+## \begin{tabular}{@{\extracolsep{5pt}}lc} 
+## \\[-1.8ex]\hline 
+## \hline \\[-1.8ex] 
+##  & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+## \cline{2-2} 
+## \\[-1.8ex] & Population\_density \\ 
+## \hline \\[-1.8ex] 
+##  accessibility & 215.382$^{***}$ \\ 
+##   & (39.775) \\ 
+##   & \\ 
+##  Constant & 2,995.220$^{**}$ \\ 
+##   & (1,344.555) \\ 
+##   & \\ 
+## \hline \\[-1.8ex] 
+## Observations & 127 \\ 
+## R$^{2}$ & 0.190 \\ 
+## Adjusted R$^{2}$ & 0.184 \\ 
+## Residual Std. Error & 7,427.142 (df = 125) \\ 
+## F Statistic & 29.322$^{***}$ (df = 1; 125) \\ 
+## \hline 
+## \hline \\[-1.8ex] 
+## \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+## \end{tabular} 
+## \end{table}
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Population_density ~ accessibility, data = census_data)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -12200  -3462  -1687    715  44466 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)    2995.22    1344.55   2.228   0.0277 *  
+## accessibility   215.38      39.78   5.415 3.02e-07 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 7427 on 125 degrees of freedom
+## Multiple R-squared:   0.19,  Adjusted R-squared:  0.1835 
+## F-statistic: 29.32 on 1 and 125 DF,  p-value: 3.018e-07
+\end{verbatim}
+
+Scatterplot of population density vs number of accessible parks
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf}
+
+Model regressing proportion of visible minorities on number of
+accessible parks
+
+\begin{verbatim}
+## 
+## \begin{table}[!htbp] \centering 
+##   \caption{Proportion of Visible Minority Population in Census Tracts regressed on Number of Parks Accessible} 
+##   \label{} 
+## \begin{tabular}{@{\extracolsep{5pt}}lc} 
+## \\[-1.8ex]\hline 
+## \hline \\[-1.8ex] 
+##  & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+## \cline{2-2} 
+## \\[-1.8ex] & Proportion\_visible\_minority \\ 
+## \hline \\[-1.8ex] 
+##  accessibility & $-$0.004$^{***}$ \\ 
+##   & (0.001) \\ 
+##   & \\ 
+##  Constant & 0.654$^{***}$ \\ 
+##   & (0.037) \\ 
+##   & \\ 
+## \hline \\[-1.8ex] 
+## Observations & 127 \\ 
+## R$^{2}$ & 0.110 \\ 
+## Adjusted R$^{2}$ & 0.103 \\ 
+## Residual Std. Error & 0.205 (df = 125) \\ 
+## F Statistic & 15.511$^{***}$ (df = 1; 125) \\ 
+## \hline 
+## \hline \\[-1.8ex] 
+## \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+## \end{tabular} 
+## \end{table}
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Proportion_visible_minority ~ accessibility, data = census_data)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.41644 -0.15748  0.00557  0.18028  0.37338 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)    0.654239   0.037080  17.644  < 2e-16 ***
+## accessibility -0.004320   0.001097  -3.938 0.000135 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.2048 on 125 degrees of freedom
+## Multiple R-squared:  0.1104, Adjusted R-squared:  0.1033 
+## F-statistic: 15.51 on 1 and 125 DF,  p-value: 0.0001355
+\end{verbatim}
+
+Scatterplot of proportion of visible minorities vs number of accessible
+parks
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf}
+
+Model regressing proportion of non-visible minorities on number of
+accessible parks
+
+\begin{verbatim}
+## 
+## \begin{table}[!htbp] \centering 
+##   \caption{Proportion of Non-Visible Minority Population in Census Tracts regressed on Number of Parks Accessible} 
+##   \label{} 
+## \begin{tabular}{@{\extracolsep{5pt}}lc} 
+## \\[-1.8ex]\hline 
+## \hline \\[-1.8ex] 
+##  & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+## \cline{2-2} 
+## \\[-1.8ex] & Proportion\_nonvisible\_minority \\ 
+## \hline \\[-1.8ex] 
+##  accessibility & 0.004$^{***}$ \\ 
+##   & (0.001) \\ 
+##   & \\ 
+##  Constant & 0.336$^{***}$ \\ 
+##   & (0.037) \\ 
+##   & \\ 
+## \hline \\[-1.8ex] 
+## Observations & 127 \\ 
+## R$^{2}$ & 0.097 \\ 
+## Adjusted R$^{2}$ & 0.090 \\ 
+## Residual Std. Error & 0.203 (df = 125) \\ 
+## F Statistic & 13.473$^{***}$ (df = 1; 125) \\ 
+## \hline 
+## \hline \\[-1.8ex] 
+## \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+## \end{tabular} 
+## \end{table}
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Proportion_nonvisible_minority ~ accessibility, 
+##     data = census_data)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.36102 -0.18133 -0.00251  0.16906  0.39551 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)   0.336380   0.036681   9.170  1.2e-15 ***
+## accessibility 0.003983   0.001085   3.671 0.000357 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.2026 on 125 degrees of freedom
+## Multiple R-squared:  0.0973, Adjusted R-squared:  0.09007 
+## F-statistic: 13.47 on 1 and 125 DF,  p-value: 0.0003571
+\end{verbatim}
+
+Scatterplot of proportion of non-visible minorities vs number of
+accessible parks
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf}
+
+Model regressing proportion of low income population on number of
+accessible parks
+
+\begin{verbatim}
+## 
+## \begin{table}[!htbp] \centering 
+##   \caption{Proportion of Low Income Population in Census Tracts regressed on Number of Parks Accessible} 
+##   \label{} 
+## \begin{tabular}{@{\extracolsep{5pt}}lc} 
+## \\[-1.8ex]\hline 
+## \hline \\[-1.8ex] 
+##  & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+## \cline{2-2} 
+## \\[-1.8ex] & Proportion\_low\_income \\ 
+## \hline \\[-1.8ex] 
+##  accessibility & $-$0.0004$^{*}$ \\ 
+##   & (0.0002) \\ 
+##   & \\ 
+##  Constant & 0.993$^{***}$ \\ 
+##   & (0.008) \\ 
+##   & \\ 
+## \hline \\[-1.8ex] 
+## Observations & 127 \\ 
+## R$^{2}$ & 0.028 \\ 
+## Adjusted R$^{2}$ & 0.020 \\ 
+## Residual Std. Error & 0.041 (df = 125) \\ 
+## F Statistic & 3.571$^{*}$ (df = 1; 125) \\ 
+## \hline 
+## \hline \\[-1.8ex] 
+## \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+## \end{tabular} 
+## \end{table}
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Proportion_low_income ~ accessibility, data = census_data)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.304258 -0.001073  0.011271  0.017072  0.032010 
+## 
+## Coefficients:
+##                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)    0.9933794  0.0075109  132.26   <2e-16 ***
+## accessibility -0.0004199  0.0002222   -1.89   0.0611 .  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.04149 on 125 degrees of freedom
+## Multiple R-squared:  0.02777,    Adjusted R-squared:  0.01999 
+## F-statistic: 3.571 on 1 and 125 DF,  p-value: 0.06112
+\end{verbatim}
+
+Scatterplot of proportion of low income population vs number of
+accessible parks
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-37-1.pdf}
+
+\#Analysis
+
+\#Conclusion
+
+
+
+
+
+\newpage
+\singlespacing 
+\end{document}
