@@ -21,7 +21,7 @@ output:
     # http://svmiller.com/blog/2016/02/svm-r-markdown-manuscript/
     # https://github.com/svmiller/svm-r-markdown-templates/blob/master/svm-latex-ms.tex
     template: project-template-default.tex
-#bibliography: [bibliography.bib, packages.bib]
+bibliography: [bibliography.bib, packages.bib]
 always_allow_html: true
 ---
 

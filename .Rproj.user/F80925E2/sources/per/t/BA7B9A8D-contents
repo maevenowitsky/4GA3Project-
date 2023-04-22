@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.21)  21 APR 2023 18:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.21)  21 APR 2023 20:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -662,24 +662,24 @@ Overfull \hbox (14.99884pt too wide) in paragraph at lines 529--530
 [][] 
  []
 
-[12 <./4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf>] (./4GA3Markdown.aux)
+[12 <./4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf>] [13] (./4GA3Markdown.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 11929 strings out of 477961
- 197249 string characters out of 5837004
+ 11930 strings out of 477961
+ 197261 string characters out of 5837004
  1865074 words of memory out of 5000000
- 31903 multiletter control sequences out of 15000+600000
+ 31904 multiletter control sequences out of 15000+600000
  575678 words of font info for 71 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,11n,76p,252b,431s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,76p,252b,432s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on 4GA3Markdown.pdf (12 pages, 372984 bytes).
+Output written on 4GA3Markdown.pdf (13 pages, 373483 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 135 compressed objects within 2 object streams
+ 201 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

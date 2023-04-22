@@ -54,8 +54,7 @@
 \title{The Relationship between Urban Green Space and Socioeconomic
 Factors in the City of Vancouver: A Case of Environmental
 Injustice \thanks{Paper submitted to complete the requirements of
-ENVSOCTY 4GA3 Applied Spatial Statistics; with additional edits by
-Antonio Paez for this version.}  }
+ENVSOCTY 4GA3 Applied Spatial Statistics.}  }
  
 
 
@@ -90,7 +89,6 @@ Mezenberg\vspace{0.05in} \newline\normalsize\emph{400243427}  }
 \def\fps@figure{htbp}
 \makeatother
 
-\usepackage{fvextra} \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -198,55 +196,90 @@ Mezenberg} \hskip 15pt \emph{\small 400243427}
 \hypertarget{r-markdown}{%
 \subsection{R Markdown}\label{r-markdown}}
 
-This is an R Markdown document. Markdown is a simple formatting syntax
-for authoring HTML, PDF, and MS Word documents. For more details on
-using R Markdown see \url{http://rmarkdown.rstudio.com}.
+\hypertarget{introduction}{%
+\subsection{Introduction}\label{introduction}}
 
-When you click the \textbf{Knit} button a document will be generated
-that includes both content as well as the output of any embedded R code
-chunks within the document. You can embed an R code chunk like this:
+Vancouver is usually ranked as one the most sustainable cities
+worldwide. As the city tries to move toward a zero-carbon emission city,
+the role of urban greenery is more important than ever. Urban green
+space plays an important role in creating liveable spaces and helping to
+maintain the well-being of the majority of residents. In addition, Urban
+green spaces can reduce many climate change impacts, support urban
+ecology, improve property values, and increase social interactions
+(Nesbitt et al., 2019). The relationship between urban green space and
+socioeconomic factors in the city of Vancouver can be complex and
+multifaceted. The distribution of urban green space is inequitable in
+some cities (Nesbitt \& Meitner, 2016). Equitable access to urban green
+space is often associated with higher levels of well-being, particularly
+among disadvantaged socioeconomic groups. In this report, Vancouver is
+chosen because it has high resolution urban green space data and
+socioeconomic data available. It aims to explore the relationship
+between accessibility to green space and socioeconomic factors across
+different census subdivisions in Vancouver, Canada.
 
-Note that the \texttt{echo\ =\ FALSE} parameter was added to the code
-chunk to prevent printing of the R code that generated the plot.
+\hypertarget{background}{%
+\subsection{Background}\label{background}}
 
-\#Introduction
-
-\#Background
-
-\#Study Area
+\hypertarget{study-area}{%
+\subsection{Study Area}\label{study-area}}
 
 This study took place at the Census Subdivision level to target the
 municipality of Vancouver, BC. There are 127 census tracts in Vancouver
 that were studied.
 
-\#Data
+\hypertarget{data}{%
+\subsection{Data}\label{data}}
 
-\begin{verbatim}
-The data used for analysis includes census data for variables of population, population density, visible minority status, non-visible minority status, and income for each census tract in the census subdivision of Vancouver. This data was obtained from Statistics Canada through use of the cancensus package in R. All census data used is from the 2021 census. Point data for each the location of each park, homeless shelter, and street tree in the census subdivision was downloaded in a .csv file format from the City of Vancouver’s open data portal. To use the r5r package so that accessibility to parks by both walking and public transit could be determined, a road network dataset of Vancouver, and as well as a public transport feed of the city was needed. The road network dataset was obtained from BBBike, and was stored as a .pbf file. The public transport feed was obtained from Transitland and stored in a GTFS.zip file. 
-\end{verbatim}
+The data used for analysis includes census data for variables of
+population, population density, visible minority status, non-visible
+minority status, and income for each census tract in the census
+subdivision of Vancouver. This data was obtained from Statistics Canada
+through use of the cancensus package in R. All census data used is from
+the 2021 census. Point data for each the location of each park, homeless
+shelter, and street tree in the census subdivision was downloaded in a
+.csv file format from the City of Vancouver's open data portal. To use
+the r5r package so that accessibility to parks by both walking and
+public transit could be determined, a road network dataset of Vancouver,
+and as well as a public transport feed of the city was needed. The road
+network dataset was obtained from BBBike, and was stored as a .pbf file.
+The public transport feed was obtained from Transitland and stored in a
+GTFS.zip file.
 
-\#Methods
+\hypertarget{methods}{%
+\subsection{Methods}\label{methods}}
 
-\begin{verbatim}
-To determine the relationship between greenspace and other socioeconomic factors in Vancouver, Rstudio was used to analyze and visualize the variables being examined. Choropleth maps for variables of population, population density, visible minority status, non-visible minority status, and income, and accessibility to parks were made to provide a visual representation of the difference between census tracts. Regression analysis was used to determine the relationship between the independent variable studied (number of parks accessible within a 30 minute travel time) and dependent variables (population, population density, visible minority status, non-visible minority status, and income). Scatterplots were used to show a visual representation between independent and dependent variables studied to better understand the results of regression analysis. 
-\end{verbatim}
+To determine the relationship between greenspace and other socioeconomic
+factors in Vancouver, Rstudio was used to analyze and visualize the
+variables being examined. Choropleth maps for variables of population,
+population density, visible minority status, non-visible minority
+status, and income, and accessibility to parks were made to provide a
+visual representation of the difference between census tracts.
+Regression analysis was used to determine the relationship between the
+independent variable studied (number of parks accessible within a 30
+minute travel time) and dependent variables (population, population
+density, visible minority status, non-visible minority status, and
+income). Scatterplots were used to show a visual representation between
+independent and dependent variables studied to better understand the
+results of regression analysis.
 
-\#Results
+\hypertarget{results}{%
+\subsection{Results}\label{results}}
 
-\begin{verbatim}
-To begin our analysis, the centroids for each census tract in the Vancouver CSD were obtained and put into a dataframe with latitude, longitude, and census ID. This allowed us to have point data describing the middle of each CT.
-\end{verbatim}
+To begin our analysis, the centroids for each census tract in the
+Vancouver CSD were obtained and put into a dataframe with latitude,
+longitude, and census ID. This allowed us to have point data describing
+the middle of each CT.
 
 The point data for park in the Vancouver CSD was obtained from a csv
 file from Vancouver's open data portal and transformed into a data frame
 with columns describing the X and Y coordinates of each park.
 
 The point data for parks was prepared for use of the r5r package by
-renaming coulumns for latitude, longitude, and park ID data and to the
+renaming columns for latitude, longitude, and park ID data and to the
 names required by r5r. Data for latitude and longitude was converted
 into a numeric format. Lastly, a column to indicate that each park point
 was one singular park was added to meet the requirement of the
-opportunites parameter in r5r.
+opportunities parameter in r5r.
 
 Next, the r5r package was used in order to build a transport network for
 Vancouver, so that the distances and routing between the centroids of
@@ -267,30 +300,46 @@ the data frame displaying census data.
 
 After all variables were in one data frame and prepared for analysis,
 data was first visualized by creating choropleth maps for each variable
-of interest. Maps were created for each variable as follows:
+of interest. Maps were created for each variable as follows, beginning
+with creating a choropleth map for the 2021 population:
 
-Population of each CT
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-20-1.pdf}
+
+\newpage
+
+Next, creating a choropleth map for the population density of each
+census tract.
+
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf}
+
+\newpage
+
+Now creating a choropleth map for the proportion of the visible minority
+population.
+
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf}
+
+\newpage
+
+Creating a choropleth map for the proportion of the non-visible minority
+population.
 
 \includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf}
 
-Population density of each CT
+\newpage
+
+Creating a choropleth map displaying the proportion of low-income areas.
 
 \includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf}
-Proportion of population identifying as visible and non-visible
-minorities
 
-\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf}
-
-\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-26-1.pdf}
-
-The proportion of the population considered low income for each CT
-
-\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf}
+\newpage
 
 Finally, a choropleth map was created to display the independent
 variable, parks accessible within 30 minutes of a centroid.
 
-\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-28-1.pdf}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf}
+
+\newpage
 
 Next, to determine the relationship between the number of accessible
 parks and each independent variable, the independent variables were
@@ -325,11 +374,13 @@ F Statistic & 1.811 (df = 1; 125) \\
 \end{table}
 
 For each regression, a scatter plot was created to provide a visual
-representation of the data
+representation of the data.
 
-\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-30-1.pdf}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf}
 
-Model regressing population density on number of accessible marks
+\newpage
+
+Model regressing population density on number of accessible parks.
 
 \begin{table}[!htbp] \centering 
   \caption{Population Density of Census Tracts regressed on Number of Parks Accessible} 
@@ -359,12 +410,14 @@ F Statistic & 29.322$^{***}$ (df = 1; 125) \\
 \end{tabular} 
 \end{table}
 
-Scatterplot of population density vs number of accessible parks
+Scatterplot of population density vs number of accessible parks.
 
-\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-32-1.pdf}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf}
+
+\newpage
 
 Model regressing proportion of visible minorities on number of
-accessible parks
+accessible parks.
 
 \begin{table}[!htbp] \centering 
   \caption{Proportion of Visible Minority Population in Census Tracts regressed on Number of Parks Accessible} 
@@ -395,15 +448,17 @@ F Statistic & 15.511$^{***}$ (df = 1; 125) \\
 \end{table}
 
 Scatterplot of proportion of visible minorities vs number of accessible
-parks
+parks.
 
-\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-34-1.pdf}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf}
+
+\newpage
 
 Model regressing proportion of non-visible minorities on number of
-accessible parks
+accessible parks.
 
 \begin{table}[!htbp] \centering 
-  \caption{Proportion of Non-Visible Minority Population in Census Tracts regressed on Number of Parks Accessible} 
+  \caption{Proportion of Non-Visible Minority Population in Census Tracts regressed on number of Parks Accessible} 
   \label{} 
 \begin{tabular}{@{\extracolsep{5pt}}lc} 
 \\[-1.8ex]\hline 
@@ -431,12 +486,14 @@ F Statistic & 13.473$^{***}$ (df = 1; 125) \\
 \end{table}
 
 Scatterplot of proportion of non-visible minorities vs number of
-accessible parks
+accessible parks.
 
-\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-36-1.pdf}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf}
+
+\newpage
 
 Model regressing proportion of low income population on number of
-accessible parks
+accessible parks.
 
 \begin{table}[!htbp] \centering 
   \caption{Proportion of Low Income Population in Census Tracts regressed on Number of Parks Accessible} 
@@ -466,31 +523,21 @@ F Statistic & 3.571$^{*}$ (df = 1; 125) \\
 \end{tabular} 
 \end{table}
 
-Call: lm(formula = Proportion\_low\_income \textasciitilde{}
-accessibility, data = census\_data)
-
-Residuals: Min 1Q Median 3Q Max -0.304258 -0.001073 0.011271 0.017072
-0.032010
-
-Coefficients: Estimate Std. Error t value
-Pr(\textgreater\textbar t\textbar)\\
-(Intercept) 0.9933794 0.0075109 132.26 \textless2e-16 *** accessibility
--0.0004199 0.0002222 -1.89 0.0611 .\\
---- Signif. codes: 0 `\emph{\textbf{' 0.001 '}' 0.01 '}' 0.05 `.' 0.1 '
-' 1
-
-Residual standard error: 0.04149 on 125 degrees of freedom Multiple
-R-squared: 0.02777, Adjusted R-squared: 0.01999 F-statistic: 3.571 on 1
-and 125 DF, p-value: 0.06112
-
 Scatterplot of proportion of low income population vs number of
-accessible parks
+accessible parks.
 
-\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-38-1.pdf}
+\includegraphics{4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf}
 
-\#Analysis
+\hypertarget{analysis}{%
+\subsection{Analysis}\label{analysis}}
 
-\#Conclusion
+\hypertarget{conclusion}{%
+\subsection{Conclusion}\label{conclusion}}
+
+\hypertarget{references}{%
+\subsection{References}\label{references}}
+
+City of Vanco
 
 
 
