@@ -36,7 +36,6 @@ knitr::opts_chunk$set(echo = FALSE)
 library(cancensus) #this package allows us to download census data from Stats Canada
 library(ggplot2) 
 library(tidyverse) #collection of packages for data visualization and manipulation (includes dplyr and ggplot2)
-library(tidycensus)
 library(tigris)
 library(kableExtra) 
 library(plotly) #packaged used to create interactive graphics 
