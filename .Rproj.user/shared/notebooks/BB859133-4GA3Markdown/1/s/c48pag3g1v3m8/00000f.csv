@@ -1,0 +1,2 @@
+"0","# This function is used to write a bibliography for the `R` packages used in the paper"
+"0","knitr::write_bib(file = 'packages.bib')"

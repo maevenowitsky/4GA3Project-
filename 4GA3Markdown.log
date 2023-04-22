@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.21)  21 APR 2023 20:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.21)  21 APR 2023 22:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -86,13 +86,15 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks18
 \inpenc@posthook=\toks19
-) (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/abstract/abstract.sty
+)
+\cslhangindent=\skip50
+(/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/abstract/abstract.sty
 Package: abstract 2009/06/08 v1.2a configurable abstracts
-\abstitleskip=\skip50
-\absleftindent=\skip51
-\absrightindent=\skip52
-\absparindent=\skip53
-\absparsep=\skip54
+\abstitleskip=\skip51
+\absleftindent=\skip52
+\absrightindent=\skip53
+\absparindent=\skip54
+\absparsep=\skip55
 ) (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
@@ -114,8 +116,8 @@ Package grffile Info: This package is an empty stub for compatibility on input l
 ) (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box51
-\beforetitleunit=\skip55
-\aftertitleunit=\skip56
+\beforetitleunit=\skip56
+\aftertitleunit=\skip57
 \ttl@plus=\dimen151
 \ttl@minus=\dimen152
 \ttl@toksa=\toks20
@@ -147,10 +149,10 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisrulewidth=\dimen168
 ) (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
-\LTleft=\skip57
-\LTright=\skip58
-\LTpre=\skip59
-\LTpost=\skip60
+\LTleft=\skip58
+\LTright=\skip59
+\LTpre=\skip60
+\LTpost=\skip61
 \LTchunksize=\count267
 \LTcapwidth=\dimen169
 \LT@head=\box52
@@ -169,14 +171,14 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \ar@mcellbox=\box57
 \extrarowheight=\dimen171
 \NC@list=\toks22
-\extratabsurround=\skip61
-\backup@length=\skip62
+\extratabsurround=\skip62
+\backup@length=\skip63
 \ar@cellbox=\box58
 ) (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip63
+\multirow@colwidth=\skip64
 \multirow@cntb=\count272
-\multirow@dima=\skip64
+\multirow@dima=\skip65
 \bigstrutjot=\dimen172
 ) (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen173
@@ -202,7 +204,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 149.
 (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx))
 \everycr=\toks26
-\minrowclearance=\skip65
+\minrowclearance=\skip66
 \rownum=\count275
 ) (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
@@ -242,7 +244,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \tabu@arstrutbox=\box64
 \tabu@hleads=\box65
 \tabu@vleads=\box66
-\tabu@cellskip=\skip66
+\tabu@cellskip=\skip67
 ) (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box67
@@ -255,11 +257,11 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
 \@envbody=\toks29
 )
-\TPTL@width=\skip67
+\TPTL@width=\skip68
 ) (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
 \UL@box=\box68
 \UL@hyphenbox=\box69
-\UL@skip=\skip68
+\UL@skip=\skip69
 \UL@hook=\toks30
 \UL@height=\dimen186
 \UL@pe=\count283
@@ -398,14 +400,14 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip69
+\Hy@SectionHShift=\skip70
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 139.
+Package hyperref Info: Option `breaklinks' set `true' on input line 144.
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 139.
+(hyperref)                setting the option has no effect on input line 144.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 139.
+Package hyperref Info: Option `colorlinks' set `true' on input line 144.
 (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 ) (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -428,24 +430,24 @@ LaTeX Warning: Label `' multiply defined.
 )
 \openout1 = `4GA3Markdown.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -495,56 +497,56 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 Package hyperref Warning: Draft mode on.
 
-Package hyperref Info: Link coloring ON on input line 157.
-LaTeX Font Info:    Calculating math sizes for size <18> on input line 169.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 169.
+Package hyperref Info: Link coloring ON on input line 162.
+LaTeX Font Info:    Calculating math sizes for size <18> on input line 174.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 174.
 (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 169.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 174.
 (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 169.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 174.
 (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 169.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 174.
 (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <18> on input line 169.
+(Font)              <18> on input line 174.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12.59995> on input line 169.
+(Font)              <12.59995> on input line 174.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 169.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 169.
+(Font)              <9> on input line 174.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 174.
 (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 169.
+(Font)              <8> on input line 174.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 169.
+(Font)              <6> on input line 174.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 169.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 175.
+(Font)              <5> on input line 174.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 180.
 (/Users/dainadeangelis/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <11> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 175.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 180.
 [1
 
 {/Users/dainadeangelis/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}]
 <4GA3Markdown_files/figure-latex/unnamed-chunk-20-1.pdf, id=14, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-20-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-20-1.pdf  used on input line 340.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-20-1.pdf  used on input line 348.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 340--341
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 348--349
 [][] 
  []
 
@@ -552,10 +554,10 @@ Overfull \hbox (14.99884pt too wide) in paragraph at lines 340--341
 <4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf, id=27, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf  used on input line 347.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf  used on input line 355.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 347--348
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 355--356
 [][] 
  []
 
@@ -563,10 +565,10 @@ Overfull \hbox (14.99884pt too wide) in paragraph at lines 347--348
 <4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf, id=37, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf  used on input line 354.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf  used on input line 362.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 354--355
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 362--363
 [][] 
  []
 
@@ -574,10 +576,10 @@ Overfull \hbox (14.99884pt too wide) in paragraph at lines 354--355
 <4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf, id=47, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf  used on input line 361.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf  used on input line 369.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 361--362
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 369--370
 [][] 
  []
 
@@ -585,10 +587,10 @@ Overfull \hbox (14.99884pt too wide) in paragraph at lines 361--362
 <4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf, id=57, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf  used on input line 367.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf  used on input line 375.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 367--368
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 375--376
 [][] 
  []
 
@@ -596,25 +598,25 @@ Overfull \hbox (14.99884pt too wide) in paragraph at lines 367--368
 <4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf, id=68, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf  used on input line 374.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf  used on input line 382.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 374--375
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 382--383
 [][] 
  []
 
 [8 <./4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 385.
+(Font)              <10> on input line 393.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 385.
+(Font)              <7> on input line 393.
 <4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf, id=78, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf  used on input line 413.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf  used on input line 421.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 413--414
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 421--422
 [][] 
  []
 
@@ -622,10 +624,10 @@ Overfull \hbox (14.99884pt too wide) in paragraph at lines 413--414
 <4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf, id=93, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf  used on input line 449.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf  used on input line 457.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 449--450
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 457--458
 [][] 
  []
 
@@ -633,10 +635,10 @@ Overfull \hbox (14.99884pt too wide) in paragraph at lines 449--450
 <4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf, id=105, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf  used on input line 487.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf  used on input line 495.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 487--488
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 495--496
 [][] 
  []
 
@@ -644,10 +646,10 @@ Overfull \hbox (14.99884pt too wide) in paragraph at lines 487--488
 <4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf, id=118, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf  used on input line 525.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf  used on input line 533.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 525--526
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 533--534
 [][] 
  []
 
@@ -655,31 +657,31 @@ Overfull \hbox (14.99884pt too wide) in paragraph at lines 525--526
 <4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf, id=130, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf  used on input line 563.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf  used on input line 571.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 563--564
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 571--572
 [][] 
  []
 
-[13 <./4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf>] [14] (./4GA3Markdown.aux)
+[13 <./4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf>] [14] [15] (./4GA3Markdown.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 11930 strings out of 477961
- 197261 string characters out of 5837004
- 1867074 words of memory out of 5000000
- 31904 multiletter control sequences out of 15000+600000
+ 11933 strings out of 477961
+ 197319 string characters out of 5837004
+ 1865074 words of memory out of 5000000
+ 31907 multiletter control sequences out of 15000+600000
  575678 words of font info for 71 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,11n,76p,252b,431s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,76p,252b,450s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on 4GA3Markdown.pdf (14 pages, 377187 bytes).
+Output written on 4GA3Markdown.pdf (15 pages, 385511 bytes).
 PDF statistics:
- 204 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
+ 207 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
