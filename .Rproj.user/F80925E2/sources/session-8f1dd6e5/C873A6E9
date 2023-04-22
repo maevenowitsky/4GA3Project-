@@ -1,26 +1,24 @@
 {
-    "id": "C7CB87AC",
-    "path": "~/Desktop/4GA3Project-/packages.bib",
-    "project_path": "packages.bib",
+    "id": "C873A6E9",
+    "path": "~/Desktop/4GA3Project-/bibliography.bib",
+    "project_path": "bibliography.bib",
     "type": "text",
-    "hash": "0",
+    "hash": "2289739796",
     "contents": "",
     "dirty": false,
-    "created": 1682124009357.0,
+    "created": 1682128445609.0,
     "source_on_save": false,
     "relative_order": 4,
     "properties": {
         "source_window_id": "",
-        "Source": "Source",
-        "cursorPosition": "255,1",
-        "scrollLine": "0"
+        "Source": "Source"
     },
     "folds": "",
-    "lastKnownWriteTime": 1650794890,
+    "lastKnownWriteTime": 1682128366,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1650794890,
+    "last_content_update": 1682128366,
     "read_only": false,
     "read_only_alternatives": []
 }
