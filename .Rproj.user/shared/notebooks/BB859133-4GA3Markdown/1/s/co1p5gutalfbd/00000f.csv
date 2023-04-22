@@ -1,2 +1,0 @@
-"0","# removing columns that are not needed for analysis"
-"0","census_data <- census_data[,-c(4,5,9,10,13,15,16)]"

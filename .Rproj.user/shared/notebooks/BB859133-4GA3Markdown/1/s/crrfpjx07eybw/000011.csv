@@ -1,8 +1,0 @@
-"0","ggplot(data = census_data, "
-"0","       aes(x = accessibility, "
-"0","           y = Population_density))+"
-"0","  geom_point() +"
-"0","  geom_smooth(formula = y ~ x,"
-"0","              method = ""lm"") +"
-"0","  ylab(""Population Density"") +"
-"0","  xlab(""No. of Parks Accessible within 30 Minutes (walking or public transit)"") "
