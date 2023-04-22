@@ -364,6 +364,7 @@ ggplot() +
 ```
 
 \newpage
+
 Next, to determine the relationship between the number of accessible parks and each independent variable, the independent variables were regressed to number of accessible parks for each CT.
 
 ```{r results='asis'}
@@ -417,6 +418,7 @@ ggplot(data = census_data,
 ```
 
 \newpage
+
 Model regressing proportion of visible minorities on number of accessible parks.
 
 ```{r results='asis'}
@@ -443,6 +445,7 @@ ggplot(data = census_data,
 ```
 
 \newpage
+
 Model regressing proportion of non-visible minorities on number of accessible parks.
 
 ```{r results='asis'}
@@ -469,6 +472,7 @@ ggplot(data = census_data,
 ```
 
 \newpage
+
 Model regressing proportion of low income population on number of accessible parks.
 
 ```{r results='asis'}
