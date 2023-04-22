@@ -502,4 +502,3 @@ ggplot(data = census_data,
 
 ## References
 
-City of Vanco

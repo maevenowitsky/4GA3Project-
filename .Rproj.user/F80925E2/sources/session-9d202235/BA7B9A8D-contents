@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.21)  21 APR 2023 20:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.21)  21 APR 2023 20:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -541,128 +541,128 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <11> not available
 <4GA3Markdown_files/figure-latex/unnamed-chunk-20-1.pdf, id=14, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-20-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-20-1.pdf  used on input line 306.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 306--307
-[][] 
- []
-
-[2 <./4GA3Markdown_files/figure-latex/unnamed-chunk-20-1.pdf>]
-<4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf, id=24, 469.755pt x 325.215pt>
-File: 4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type pdf)
-<use 4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf  used on input line 313.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 313--314
-[][] 
- []
-
-[3 <./4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf>]
-<4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf, id=34, 469.755pt x 325.215pt>
-File: 4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
-<use 4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf  used on input line 320.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 320--321
-[][] 
- []
-
-[4 <./4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf>]
-<4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf, id=44, 469.755pt x 325.215pt>
-File: 4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type pdf)
-<use 4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf  used on input line 327.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 327--328
-[][] 
- []
-
-[5 <./4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf>]
-<4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf, id=54, 469.755pt x 325.215pt>
-File: 4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (type pdf)
-<use 4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf  used on input line 333.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 333--334
-[][] 
- []
-
-[6 <./4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf>]
-<4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf, id=64, 469.755pt x 325.215pt>
-File: 4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type pdf)
-<use 4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf  used on input line 340.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-20-1.pdf  used on input line 340.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
 Overfull \hbox (14.99884pt too wide) in paragraph at lines 340--341
 [][] 
  []
 
-[7 <./4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf>]
+[2] [3 <./4GA3Markdown_files/figure-latex/unnamed-chunk-20-1.pdf>]
+<4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf, id=27, 469.755pt x 325.215pt>
+File: 4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type pdf)
+<use 4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf>
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf  used on input line 347.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 347--348
+[][] 
+ []
+
+[4 <./4GA3Markdown_files/figure-latex/unnamed-chunk-21-1.pdf>]
+<4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf, id=37, 469.755pt x 325.215pt>
+File: 4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
+<use 4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf>
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf  used on input line 354.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 354--355
+[][] 
+ []
+
+[5 <./4GA3Markdown_files/figure-latex/unnamed-chunk-22-1.pdf>]
+<4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf, id=47, 469.755pt x 325.215pt>
+File: 4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type pdf)
+<use 4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf>
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf  used on input line 361.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 361--362
+[][] 
+ []
+
+[6 <./4GA3Markdown_files/figure-latex/unnamed-chunk-23-1.pdf>]
+<4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf, id=57, 469.755pt x 325.215pt>
+File: 4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (type pdf)
+<use 4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf>
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf  used on input line 367.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 367--368
+[][] 
+ []
+
+[7 <./4GA3Markdown_files/figure-latex/unnamed-chunk-24-1.pdf>]
+<4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf, id=68, 469.755pt x 325.215pt>
+File: 4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type pdf)
+<use 4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf>
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf  used on input line 374.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 374--375
+[][] 
+ []
+
+[8 <./4GA3Markdown_files/figure-latex/unnamed-chunk-25-1.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 351.
+(Font)              <10> on input line 385.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 351.
-<4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf, id=75, 469.755pt x 325.215pt>
+(Font)              <7> on input line 385.
+<4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf, id=78, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf  used on input line 379.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf  used on input line 413.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 379--380
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 413--414
 [][] 
  []
 
-[8{/Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf>]
-<4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf, id=90, 469.755pt x 325.215pt>
+[9{/Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./4GA3Markdown_files/figure-latex/unnamed-chunk-27-1.pdf>]
+<4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf, id=93, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf  used on input line 415.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf  used on input line 449.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 415--416
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 449--450
 [][] 
  []
 
-[9 <./4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf>]
-<4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf, id=102, 469.755pt x 325.215pt>
+[10 <./4GA3Markdown_files/figure-latex/unnamed-chunk-29-1.pdf>]
+<4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf, id=105, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf  used on input line 453.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf  used on input line 487.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 453--454
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 487--488
 [][] 
  []
 
-[10 <./4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf>]
-<4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf, id=115, 469.755pt x 325.215pt>
+[11 <./4GA3Markdown_files/figure-latex/unnamed-chunk-31-1.pdf>]
+<4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf, id=118, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf  used on input line 491.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf  used on input line 525.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 491--492
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 525--526
 [][] 
  []
 
-[11 <./4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf>]
-<4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf, id=127, 469.755pt x 325.215pt>
+[12 <./4GA3Markdown_files/figure-latex/unnamed-chunk-33-1.pdf>]
+<4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf, id=130, 469.755pt x 325.215pt>
 File: 4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf Graphic file (type pdf)
 <use 4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf>
-Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf  used on input line 529.
+Package pdftex.def Info: 4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf  used on input line 563.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (14.99884pt too wide) in paragraph at lines 529--530
+Overfull \hbox (14.99884pt too wide) in paragraph at lines 563--564
 [][] 
  []
 
-[12 <./4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf>] [13] (./4GA3Markdown.aux)
+[13 <./4GA3Markdown_files/figure-latex/unnamed-chunk-35-1.pdf>] [14] (./4GA3Markdown.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -670,16 +670,16 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  11930 strings out of 477961
  197261 string characters out of 5837004
- 1865074 words of memory out of 5000000
+ 1867074 words of memory out of 5000000
  31904 multiletter control sequences out of 15000+600000
  575678 words of font info for 71 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,11n,76p,252b,432s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users/dainadeangelis/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on 4GA3Markdown.pdf (13 pages, 373483 bytes).
+Output written on 4GA3Markdown.pdf (14 pages, 377211 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
+ 204 PDF objects out of 1000 (max. 8388607)
+ 140 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
