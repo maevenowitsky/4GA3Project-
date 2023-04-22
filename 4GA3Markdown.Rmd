@@ -23,7 +23,6 @@ output:
     template: project-template-default.tex
 bibliography: bibliography.bib
 always_allow_html: true
-
 ---
 
 ```{r setup, include=FALSE}
@@ -62,7 +61,6 @@ library(stargazer) #package to show results of regression analysis as a table
   In one study in 2021, they found out that elementary schools in high income neighborhoods are surrounded by an average of 14% more greenspace and 16% less greenspace than in schools in low income. The presence of green spaces around schools can potentially provide various health benefits for children, as they spend significant amounts of time in or near their school premises. However, the study only focuses on income as a factor and should consider including additional factors in their analysis to provide a more comprehensive understanding of the relationship between green space and children's health. This report will incorporate additional demographic characteristics, such as ethnicity, in order to broaden the analysis (Ng et al., 2021).
   
   Vancouver, being one of the top ten census metropolitan areas in Canada, with a population of 662,248 in 2022, of which are highly diverse, it will be interesting to analyze if more affluent groups get to experience the benefits of greenery (“The 2022 Canadian city parks report”). 
-
 
 ## Study Area
 
@@ -355,7 +353,7 @@ ggplot() +
           color = "black",
           size = 0.1) +
   scale_fill_brewer(palette = "YlOrRd") +
-  ggtitle("Number of Neighbourhoods Accessible Within 30 Minutes") +
+  ggtitle("Number of Parks Accessible Within 30 Minutes") +
   theme(plot.title = element_text(size = 12),
         legend.title = element_blank(),
         legend.position = "right",  
@@ -365,6 +363,7 @@ ggplot() +
 ```
 
 \newpage
+
 Next, to determine the relationship between the number of accessible parks and each independent variable, the independent variables were regressed to number of accessible parks for each CT.
 
 ```{r results='asis'}
@@ -418,6 +417,7 @@ ggplot(data = census_data,
 ```
 
 \newpage
+
 Model regressing proportion of visible minorities on number of accessible parks.
 
 ```{r results='asis'}
@@ -444,6 +444,7 @@ ggplot(data = census_data,
 ```
 
 \newpage
+
 Model regressing proportion of non-visible minorities on number of accessible parks.
 
 ```{r results='asis'}
@@ -470,6 +471,7 @@ ggplot(data = census_data,
 ```
 
 \newpage
+
 Model regressing proportion of low income population on number of accessible parks.
 
 ```{r results='asis'}

@@ -21,7 +21,7 @@ output:
     # http://svmiller.com/blog/2016/02/svm-r-markdown-manuscript/
     # https://github.com/svmiller/svm-r-markdown-templates/blob/master/svm-latex-ms.tex
     template: project-template-default.tex
-#bibliography: [bibliography.bib, packages.bib]
+bibliography: bibliography.bib
 always_allow_html: true
 ---
 
@@ -61,7 +61,6 @@ library(stargazer) #package to show results of regression analysis as a table
   In one study in 2021, they found out that elementary schools in high income neighborhoods are surrounded by an average of 14% more greenspace and 16% less greenspace than in schools in low income. The presence of green spaces around schools can potentially provide various health benefits for children, as they spend significant amounts of time in or near their school premises. However, the study only focuses on income as a factor and should consider including additional factors in their analysis to provide a more comprehensive understanding of the relationship between green space and children's health. This report will incorporate additional demographic characteristics, such as ethnicity, in order to broaden the analysis (Ng et al., 2021).
   
   Vancouver, being one of the top ten census metropolitan areas in Canada, with a population of 662,248 in 2022, of which are highly diverse, it will be interesting to analyze if more affluent groups get to experience the benefits of greenery (“The 2022 Canadian city parks report”). 
-
 
 ## Study Area
 
@@ -354,7 +353,7 @@ ggplot() +
           color = "black",
           size = 0.1) +
   scale_fill_brewer(palette = "YlOrRd") +
-  ggtitle("Number of Neighbourhoods Accessible Within 30 Minutes") +
+  ggtitle("Number of Parks Accessible Within 30 Minutes") +
   theme(plot.title = element_text(size = 12),
         legend.title = element_blank(),
         legend.position = "right",  
